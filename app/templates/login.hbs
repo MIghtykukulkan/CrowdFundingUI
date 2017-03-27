@@ -1,0 +1,43 @@
+ <div class="home-background">
+   <div class="home-box">
+      <div class="home-box-body">
+         <div class="text-color-title">
+         <h1><b>Login</b></h1>
+         </div>
+         <br>
+         
+         <div class="col-sm-6-btm">
+            <div class="form-inline">
+               <br>
+               
+               <div class="text-box">
+               <div class="input-group">
+                  <div class="input-group-addon">
+                     <span class="glyphicon glyphicon-user"></span>
+                  </div>
+                  <div class ="error">
+                  {{input type="text" model=this valuePath='email' placeholder='Email Id'}}
+                  </div>
+                </div>
+               </div>
+               <br>
+               <br>
+               <div class="text-box">
+               <div class="input-group">
+                  <div class="input-group-addon">
+                     <span class="glyphicon glyphicon-lock"></span>
+                  </div>
+                  {{input type="password" model=this valuePath='password' placeholder='Password'}}
+               </div>
+               </div>
+               <br>
+            </div>
+          
+            <div class="btngroup">
+               <button type="button" class="btn btn-primary" {{action 'login'}}> Sign In</button> 
+               <button type="button" class="btn btn-primary" {{action 'register'}}> Sign Up</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
