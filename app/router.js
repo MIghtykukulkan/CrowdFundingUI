@@ -10,6 +10,8 @@ Router.map(function() {
     this.route('home');
     this.route('login');
     this.route('sign-up');
+    this.route('coming-soon');
+    this.route('start-campaign');
 });
 
 export default Router;
