@@ -1,0 +1,61 @@
+.login-box {
+    width: 50%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.login-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: larger;
+}
+
+.signup-box {
+    width: 50%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 10%;
+}
+
+.signup-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+  
+  
+
+  .bg-1 { 
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .left
+  {
+      text-align: right;
+  }
+  
+ 
