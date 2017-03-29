@@ -1,4 +1,4 @@
-.home-box {
+.login-box {
     width: 50%;
     height: 100%;
     margin-top: auto;
@@ -9,9 +9,27 @@
     padding-top: 15%;
 }
 
-.home-box-body {
+.login-box-body {
     background: rgba(5, 5, 5, 0.2)!important;
     padding-top: 10px;
     padding-bottom: 20px;
     font-size: larger;
+}
+
+.signup-box {
+    width: 50%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 10%;
+}
+
+.signup-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    text-align: center;
 }

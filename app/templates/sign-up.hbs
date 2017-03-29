@@ -1,6 +1,6 @@
-<div class="home-background">
-    <div class="register-box">
-        <div class="register-box-body">
+<div class="signup-background">
+    <div class="signup-box">
+        <div class="signup-box-body">
 
             <div class="col-md-6-header">
                 <h3 class="text-color">Sign up</h3>
@@ -35,6 +35,47 @@
                     </div>
                     <br>
                 </div>
+
+
+
+                <div class="form-group">
+                    <div class="text-color">
+                    <label class="col-sm-4">Organisation</label></div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-briefcase"></span>
+                        </div>
+                        {{input type="text" model=this valuePath='Organisation' placeholder='Organisation'}}
+                    </div>
+                    <br>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="text-color">
+                    <label class="col-sm-4">Organisation name</label></div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-hand-right"></span>
+                        </div>
+                        {{input type="text" model=this valuePath='Organisationname' placeholder='Organisation name'}}
+                    </div>
+                    <br>
+                </div>
+
+
+                 <div class="form-group">
+                    <div class="text-color">
+                    <label class="col-sm-4">Phone Number</label></div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                        </div>
+                        {{input type="number" model=this valuePath='phone' placeholder='Phone Number'}}
+                    </div>
+                    <br>
+                </div>
+
 
                 <div class="form-group">
                     <div class="text-color">
