@@ -7,20 +7,16 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('home');
-  this.route('login');
-  this.route('sign-up');
-  this.route('coming-soon');
-  this.route('start-campaign');
-  this.route('reward');
-  this.route('home');
-  this.route('login');
-  this.route('sign-up');
-  this.route('coming-soon');
-  this.route('start-campaign');
-  this.route('fund-raiser');
-  this.route('list-approve-bids');
-  this.route('status-of-fund-transfer');
+    this.route('home');
+    this.route('login');
+    this.route('sign-up');
+    this.route('coming-soon');
+    this.route('start-campaign');
+    this.route('reward');
+    this.route('fund-raiser');
+    this.route('list-approve-bids');
+    //this.route('service-provider');
+    this.route('browse');
 });
 
 export default Router;
