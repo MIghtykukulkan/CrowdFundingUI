@@ -11,6 +11,11 @@ fundtransfer:function(){
 
             this.transitionToRoute('status-of-fund-transfer');
 
+},
+executecampaign:function(){
+
+            this.transitionToRoute('execute-campaign');
+
 }
      },
 });

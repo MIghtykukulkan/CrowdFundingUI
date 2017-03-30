@@ -24,6 +24,8 @@ Router.map(function() {
         });
     });
     this.route('browse');
+    this.route('status-of-fund-transfer');
+    this.route('execute-campaign');
 });
 
 export default Router;
