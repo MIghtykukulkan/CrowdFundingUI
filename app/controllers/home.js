@@ -16,6 +16,11 @@ executecampaign:function(){
 
             this.transitionToRoute('execute-campaign');
 
+},
+delivercommitments:function(){
+
+            this.transitionToRoute('deliver-commitments');
+
 }
      },
 });
