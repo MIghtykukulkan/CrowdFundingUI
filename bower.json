@@ -1,5 +1,8 @@
 {
-  "name": "crowdfunding",
-  "dependencies": {
-  }
+    "name": "crowdfunding",
+    "dependencies": {
+        "datatables.net": "^2.1.1",
+        "datatables.net-dt": "^3.2.2",
+        "datatables.net-plugins": "^1.10.13"
+    }
 }
