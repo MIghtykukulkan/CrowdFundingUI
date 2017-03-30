@@ -15,7 +15,8 @@ Router.map(function() {
     this.route('reward');
     this.route('fund-raiser');
     this.route('list-approve-bids');
-    this.route('service-provider');
+    //this.route('service-provider');
+    this.route('browse');
 });
 
 export default Router;
