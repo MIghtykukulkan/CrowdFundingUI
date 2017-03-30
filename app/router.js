@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('coming-soon');
   this.route('start-campaign');
   this.route('fund-raiser');
+  this.route('list-approve-bids');
 });
 
 export default Router;
