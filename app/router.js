@@ -15,7 +15,14 @@ Router.map(function() {
     this.route('reward');
     this.route('fund-raiser');
     this.route('list-approve-bids');
-    //this.route('service-provider');
+    this.route('service-provider', function() {
+        this.route('participants', {
+            path: '/participants'
+        });
+        this.route('campaigns', {
+            path: '/campaigns'
+        });
+    });
     this.route('browse');
 });
 
