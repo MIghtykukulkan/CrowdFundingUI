@@ -12,9 +12,12 @@ export default Ember.Controller.extend({
 
             if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') {
                 sessionStorage.setItem('userType', "Admin");
-            } else {
+            } else if (emailId === 'fund' || emailId === 'Fund' || emailId === 'FUND') {
                 sessionStorage.setItem('userType', "Fund");
+            } else if (emailId === 'funder' || emailId === 'Funder' || emailId === 'FUNDER') {
+                sessionStorage.setItem('userType', "Funder");
             }
+            
             window.location.reload(true);
         }
     }

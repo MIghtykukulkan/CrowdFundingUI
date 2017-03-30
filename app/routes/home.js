@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var showAdmin, showFund = false;
+var showAdmin, showFund, showFunder = false;
 export default Ember.Route.extend({
 
     model() {
@@ -12,6 +12,9 @@ export default Ember.Route.extend({
         } else if (userType === "Fund") {
             showFund = true;
             this.controllerFor('home').set('showFund', showFund);
+        } else if (userType === "Funder") {
+            showFunder = true;
+            this.controllerFor('home').set('showFunder', showFunder);
         }
     }
 });
