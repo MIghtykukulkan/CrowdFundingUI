@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
 
             this.transitionToRoute('list-approve-bids');
 
+},
+fundtransfer:function(){
+
+            this.transitionToRoute('status-of-fund-transfer');
+
 }
      },
 });
