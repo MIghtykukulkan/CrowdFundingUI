@@ -1,17 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-     columns: [ {
+    columns: [ {
         "propertyName": "campaignId", "title": "Campaign Id"
     }
     , {
-        "propertyName": "campaignname", "title": "Campaign Name"
+        "propertyName": "campaigndetails", "title": "Campaign Details"
     }
     , {
         "propertyName": "fundername", "title": "Funder Name"
     }
     , {
-        "propertyName": "funderamount", "title": "Funder Amount"
+        "propertyName": "donation", "title": "Donation"
+    }
+    ,{
+        "propertyName": "eligible", "title": "Eligible"
     }
     , ],
 });

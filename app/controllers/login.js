@@ -10,11 +10,9 @@ export default Ember.Controller.extend({
             var emailId = this.get('email');
             var password = this.get('password');
 
-            if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') 
-            {
-                sessionStorage.setItem('userType', "Admin");                
-            }
-            else {
+            if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') {
+                sessionStorage.setItem('userType', "Admin");
+            } else {
                 sessionStorage.setItem('userType', "Fund");
             }
             window.location.reload(true);

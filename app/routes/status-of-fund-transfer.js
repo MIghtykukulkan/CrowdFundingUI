@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    model() {
+     model() {
         var data=[ {
             "campaignId": "125", "campaignname": "xyz", "fundername": "Rahul", "funderamount": "300"
         }
