@@ -1,0 +1,5 @@
+{{#if record.status}}
+    Authorized
+{{else}}
+    <button {{action 'sendAction' 'action' record}}>Authorize</button>
+{{/if}}
