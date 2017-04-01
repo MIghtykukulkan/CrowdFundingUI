@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     isCampAuthorize: false,
+    isCampClosure: false,
 
     columns: [{
             "propertyName": "campaignId",
@@ -20,18 +21,30 @@ export default Ember.Controller.extend({
         },
         {
             "title": "Action",
-            "template": "action-buttons"
+            "template": "campaign-action-button"
         }
     ],
 
     actions: {
         authorize: function(record) {
-            this.set('isCampAuthorize', true);
-            this.set('campaignName', record.campaignName);
+            if (record.regStatus) {
+                this.send('closecampaign', record);
+            } else {
+                this.set('isCampAuthorize', true);
+                this.set('isCampClosure', false);
+                this.set('campaignName', record.campaignName);
+            }
         },
 
         dismissModal: function() {
             this.set('isCampAuthorize', false);
+            this.set('isCampClosure', false);
+        },
+
+        closecampaign: function(record) {
+            this.set('isCampClosure', true);
+            this.set('isCampAuthorize', false);
+            this.set('campaignName', record.campaignName);
         }
     }
 });
