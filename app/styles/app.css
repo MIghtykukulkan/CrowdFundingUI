@@ -81,3 +81,7 @@
 .text-color-title {
     padding-top: 5%;
 }
+
+.chart-container {
+  height: 500px;
+}

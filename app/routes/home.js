@@ -9,6 +9,7 @@ export default Ember.Route.extend({
         if (userType === "Admin") {
             showAdmin = true;
             this.controllerFor('home').set('showAdmin', showAdmin);
+            this.controllerFor('application').set('showAdminHeaderModules', false);
         } else if (userType === "Fund") {
             showFund = true;
             this.controllerFor('home').set('showFund', showFund);

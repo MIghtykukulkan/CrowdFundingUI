@@ -24,43 +24,45 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>{{#link-to "start-campaign"}}Start Campaign{{/link-to}}</li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Campaigns<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Education</a>
-                        </li>
-                        <li><a href="#">Children</a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Animal Welfare</a>
-                        </li>
-                        <li><a href="#">Environment</a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Film</a>
-                        </li>
-                        <li><a href="#">Dance</a>
-                        </li>
-                    </ul>
-                </li>
+                {{#if showAdminHeaderModules}}
+                    <li>{{#link-to "start-campaign"}}Start Campaign{{/link-to}}</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Campaigns<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Education</a>
+                            </li>
+                            <li><a href="#">Children</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Animal Welfare</a>
+                            </li>
+                            <li><a href="#">Environment</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Film</a>
+                            </li>
+                            <li><a href="#">Dance</a>
+                            </li>
+                        </ul>
+                    </li>
+                {{/if}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{#if showUser}}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user">&nbsp;{{userType}}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a {{action 'logout'}}>&nbsp;Logout</a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user">&nbsp;{{userType}}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a {{action 'logout'}}>&nbsp;Logout</a>
+                            </li>
+                        </ul>
+                    </li>
                 {{else}}
-                <li>
-                    {{#link-to "login"}}
-                    <span class="glyphicon glyphicon-user">&nbsp;{{userType}}</span> {{/link-to}}
-                </li>
+                    <li>
+                        {{#link-to "login"}}
+                        <span class="glyphicon glyphicon-user">&nbsp;{{userType}}</span> {{/link-to}}
+                    </li>
                 {{/if}}
             </ul>
 <!--

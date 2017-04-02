@@ -8,14 +8,16 @@ export default Ember.Controller.extend({
 
         login: function() {
             var emailId = this.get('email');
-            var password = this.get('password');
 
             if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') {
                 sessionStorage.setItem('userType', "Admin");
+                sessionStorage.setItem('showAdminHeaderModules', false);
             } else if (emailId === 'fund' || emailId === 'Fund' || emailId === 'FUND') {
                 sessionStorage.setItem('userType', "Fund");
+                sessionStorage.setItem('showAdminHeaderModules', true);                
             } else if (emailId === 'funder' || emailId === 'Funder' || emailId === 'FUNDER') {
                 sessionStorage.setItem('userType', "Funder");
+                sessionStorage.setItem('showAdminHeaderModules', true);
             }
             
             window.location.reload(true);
