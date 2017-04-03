@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('start-campaign');
   this.route('reward');
   this.route('fund-raiser');
+  this.route('browse');
   this.route('service-provider', function() {
       this.route('participants', {
           path: '/participants'
@@ -21,12 +22,8 @@ Router.map(function() {
       this.route('campaigns', {
           path: '/campaigns'
       });
-      this.route('report', {
-          path: '/report'
-      });
   });
-  this.route('browse');
-  this.route('funder-history');
+  //this.route('browse');
   this.route('campaign-detail');
   this.route('fund-raiser', function() {
       this.route('list-approve-bids', {
@@ -42,6 +39,27 @@ Router.map(function() {
           path: '/deliver-commitments'
       });
   });
+
+  this.route('browse', function() {
+      this.route('funder-history', {
+          path: '/funder-history'
+      });
+      this.route('report', {
+          path: '/report'
+      });
+  });
+ 
+
+  this.route('customer', function() {
+        this.route('status-commitments', {
+          path: '/status-commitments'
+      });
+  });
+
 });
+
+
+
+
 
 export default Router;

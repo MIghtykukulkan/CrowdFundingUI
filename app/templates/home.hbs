@@ -4,4 +4,8 @@
     {{partial 'fund-raiser'}}
 {{else if showFunder}}
     {{partial 'browse'}}
+{{else if showCustomer}}
+    {{partial 'customer'}}
+{{else}}
+    {{partial 'browse'}}
 {{/if}}
