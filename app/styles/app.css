@@ -85,3 +85,7 @@
 .chart-container {
   height: 500px;
 }
+
+.mouse {
+    cursor: pointer;
+}
