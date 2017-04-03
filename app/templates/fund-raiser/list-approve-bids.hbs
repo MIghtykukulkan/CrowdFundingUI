@@ -1,20 +1,19 @@
 <div class="register-logo">
-    <h1 align="center">List of Aprove Bids</h1>
+    <h1 align="center">List And Approve Bids</h1>
 </div>
-<div class="col-sm-11">
-    {{models-table data=model columns=columns}}
+<div>
+    {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 </div>
-<br>
-<br>
-<br>
-<div class="col-sm-12">
-    <div class="col-sm-6">
-        <div class="anchor-ok">
-            <button type="submit">ok</button>
+{{#if isFunderAuthorize}}
+<div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" {{action "dismissModal"}}>×</button>
+            </div>
+            <div class="modal-body">
+             {{fundername}} bids has been successfully authorized.
+            </div>
         </div>
     </div>
-    <br>
-    <div class="anchor-cancel">
-        <button type="submit">cancel</button>
-    </div>
-</div>
+{{/if}}

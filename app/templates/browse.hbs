@@ -1,5 +1,5 @@
 <div class="container">
-{{myprop}}
+
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -14,11 +14,11 @@
             <div class="item active">
                 <img src="assets/image/one.jpg" alt="New York" width="1200" height="500">
                 <div class="carousel-caption">
-
+                    <!--
                     <ul class="nav nav-pills">
    <li>{{#link-to 'browse.funder-history'}}funder-history{{/link-to}}</li>
    <li>{{#link-to 'browse.report'}}Report{{/link-to}}</li>
-   </ul>
+   </ul> -->
 
 
                     <h3>Hope</h3>
@@ -60,7 +60,7 @@
 
     <!--Education-->
 
-{{#if education}}
+    {{#if education}}
     <h2><b>Education</b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
@@ -69,20 +69,18 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <!--<a href="assets/image/one.jpg" target="_blank">-->
+                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Education' 'Edu_Campaign_1'}}>
+                    <img src="assets/image/one.jpg" alt="Lights">
+                    <div class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </a>
 
-                {{#link-to 'campaign-detail'}}
-                <img src="assets/image/one.jpg" alt="Lights">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-                <!--</a> -->
-                {{/link-to}}
             </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/two.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Education' 'Edu_Campaign_2'}}>
                     <img src="assets/image/two.jpg" alt="Nature">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -92,7 +90,7 @@
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/three.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Education' 'Edu_Campaign_3'}}>
                     <img src="assets/image/three.jpg" alt="Fjords">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -101,7 +99,7 @@
             </div>
         </div>
     </div>
-{{/if}}
+    {{/if}}
 
 
     <!--Children-->
@@ -113,19 +111,17 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <!--<a href="assets/image/one.jpg" target="_blank">-->
-                {{#link-to 'reward'}}
-                <img src="assets/image/one.jpg" alt="Lights">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-                <!--</a> -->
-                {{/link-to}}
+                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Children' 'Child_Campaign_1'}}>
+                    <img src="assets/image/one.jpg" alt="Lights">
+                    <div class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/two.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Children' 'Child_Campaign_2'}}>
                     <img src="assets/image/two.jpg" alt="Nature">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -135,7 +131,7 @@
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/three.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Children' 'Child_Campaign_3'}}>
                     <img src="assets/image/three.jpg" alt="Fjords">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -155,19 +151,19 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <!--<a href="assets/image/one.jpg" target="_blank">-->
-                {{#link-to 'reward'}}
-                <img src="assets/image/one.jpg" alt="Lights">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-                <!--</a> -->
-                {{/link-to}}
+                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Animal_Welfare' 'Animal_Welfare_Campaign_1'}}>
+
+                    <img src="assets/image/one.jpg" alt="Lights">
+                    <div class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                    </a>
+            
             </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/two.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Animal_Welfare' 'Animal_Welfare_Campaign_2'}}>
                     <img src="assets/image/two.jpg" alt="Nature">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -177,7 +173,7 @@
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/three.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Animal_Welfare' 'Animal_Welfare_Campaign_3'}}>
                     <img src="assets/image/three.jpg" alt="Fjords">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -196,19 +192,17 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <!--<a href="assets/image/one.jpg" target="_blank">-->
-                {{#link-to 'reward'}}
-                <img src="assets/image/one.jpg" alt="Lights">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-                <!--</a> -->
-                {{/link-to}}
+                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Enviorment' 'Env_Campaign_1'}}>
+                    <img src="assets/image/one.jpg" alt="Lights">
+                    <div class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/two.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Enviorment' 'Env_Campaign_2'}}>
                     <img src="assets/image/two.jpg" alt="Nature">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -218,7 +212,7 @@
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/three.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Enviorment' 'Env_Campaign_3'}}>
                     <img src="assets/image/three.jpg" alt="Fjords">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -237,19 +231,19 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <!--<a href="assets/image/one.jpg" target="_blank">-->
-                {{#link-to 'reward'}}
-                <img src="assets/image/one.jpg" alt="Lights">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-                <!--</a> -->
-                {{/link-to}}
+                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Film' 'Film_Campaign_1'}}>
+
+                    <img src="assets/image/one.jpg" alt="Lights">
+                    <div class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </a>
+
             </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/two.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Film' 'Film_Campaign_2'}}>
                     <img src="assets/image/two.jpg" alt="Nature">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -259,7 +253,7 @@
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/three.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Film' 'Film_Campaign_3'}}>
                     <img src="assets/image/three.jpg" alt="Fjords">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -278,19 +272,17 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <!--<a href="assets/image/one.jpg" target="_blank">-->
-                {{#link-to 'reward'}}
-                <img src="assets/image/one.jpg" alt="Lights">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-                <!--</a> -->
-                {{/link-to}}
+                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Dance' 'Dance_Campaign_1'}}>
+                    <img src="assets/image/one.jpg" alt="Lights">
+                    <div class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/two.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Dance' 'Dance_Campaign_2'}}>
                     <img src="assets/image/two.jpg" alt="Nature">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
@@ -300,7 +292,7 @@
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="assets/image/three.jpg" target="_blank">
+                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Dance' 'Dance_Campaign_3'}}>
                     <img src="assets/image/three.jpg" alt="Fjords">
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>

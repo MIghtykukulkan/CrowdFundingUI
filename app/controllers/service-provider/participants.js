@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
         },
         {
             "title": "Action",
-            "template": "action-buttons"
+            "template": "participant-action-button"
         }
     ],
 

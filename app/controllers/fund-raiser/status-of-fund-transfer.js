@@ -2,16 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
      columns: [ {
-        "propertyName": "campaignId", "title": "Campaign Id"
+        "propertyName": "campaignname", "title": "Campaign Name", "filterPlaceholder": "Campaign Name"
     }
     , {
-        "propertyName": "campaignname", "title": "Campaign Name"
+        "propertyName": "fundername", "title": "Funder Name", "filterPlaceholder": "Funder Name"
     }
     , {
-        "propertyName": "fundername", "title": "Funder Name"
+        "propertyName": "funderamount", "title": "Funder Amount", "filterPlaceholder": "Funder Amount"
     }
     , {
-        "propertyName": "funderamount", "title": "Funder Amount"
+        "propertyName": "status", "title": "Status", "filterPlaceholder": "Status"
     }
     , ],
 });

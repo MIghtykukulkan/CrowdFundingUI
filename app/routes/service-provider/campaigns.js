@@ -6,19 +6,22 @@ export default Ember.Route.extend({
                 "campaignId": "1",
                 "campaignName": "Help",
                 "campaignType": "Campaign1",
-                "status": true
+                "regStatus": true,
+                "campStatus": false
             },
             {
                 "campaignId": "2",
                 "campaignName": "Promote",
                 "campaignType": "Campaign2",
-                "status": false
+                "regStatus": false,
+                "campStatus": false
             },
             {
                 "campaignId": "3",
                 "campaignName": "Partner",
                 "campaignType": "Campaign3",
-                "status": true
+                "regStatus": true,
+                "campStatus": true
             }
         ];
 

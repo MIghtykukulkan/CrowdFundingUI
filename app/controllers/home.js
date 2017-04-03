@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+        education : true, 
      actions: {
-        approvebids:function(){
+             approvebids:function(){
 
             this.transitionToRoute('list-approve-bids');
 
@@ -23,4 +24,6 @@ delivercommitments:function(){
 
 }
      },
+
+
 });
