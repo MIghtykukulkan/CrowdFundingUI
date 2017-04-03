@@ -18,17 +18,11 @@ export default Ember.Controller.extend({
             } else if (emailId === 'funder' || emailId === 'Funder' || emailId === 'FUNDER') {
                 sessionStorage.setItem('userType', "Funder");
                 sessionStorage.setItem('showAdminHeaderModules', true);
-<<<<<<< HEAD
-            } 
-
-        
-=======
             } else if (emailId === 'customer' || emailId === 'Customer' || emailId === 'CUSTOMER') {
                 sessionStorage.setItem('userType', "Customer");
                 sessionStorage.setItem('showAdminHeaderModules', false);
             }
             
->>>>>>> a94abd0c4e940f9c19988d1959893c23999eff35
             window.location.reload(true);
         }
     }

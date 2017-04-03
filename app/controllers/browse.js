@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    myprop: "sweta",
+   /* myprop: "sweta",
     myprop1: null,
     education: true,
 
@@ -21,5 +21,5 @@ export default Ember.Controller.extend({
             this.transitionToRoute('campaign-detail');
         }
     }
-
+*/
 });
