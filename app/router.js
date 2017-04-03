@@ -15,6 +15,8 @@ Router.map(function() {
   this.route('reward');
   this.route('fund-raiser');
   this.route('browse');
+  this.route('funder-history');
+  this.route('report');
   this.route('service-provider', function() {
       this.route('participants', {
           path: '/participants'
@@ -40,15 +42,6 @@ Router.map(function() {
       });
   });
 
-  this.route('browse', function() {
-      this.route('funder-history', {
-          path: '/funder-history'
-      });
-      this.route('report', {
-          path: '/report'
-      });
-  });
- 
 
   this.route('customer', function() {
         this.route('status-commitments', {
