@@ -39,6 +39,7 @@ Router.map(function() {
           path: '/deliver-commitments'
       });
   });
+
   this.route('browse', function() {
       this.route('funder-history', {
           path: '/funder-history'
@@ -48,6 +49,13 @@ Router.map(function() {
       });
   });
  
+
+  this.route('customer', function() {
+        this.route('status-commitments', {
+          path: '/status-commitments'
+      });
+  });
+
 });
 
 

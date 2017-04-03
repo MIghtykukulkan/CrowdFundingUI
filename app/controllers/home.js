@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
         education : true, 
-     actions: {
+actions: {
              approvebids:function(){
 
             this.transitionToRoute('list-approve-bids');
