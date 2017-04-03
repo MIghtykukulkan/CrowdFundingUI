@@ -42,6 +42,11 @@ Router.map(function() {
           path: '/deliver-commitments'
       });
   });
+  this.route('customer', function() {
+        this.route('status-commitments', {
+          path: '/status-commitments'
+      });
+  });
 });
 
 export default Router;
