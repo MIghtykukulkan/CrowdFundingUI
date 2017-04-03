@@ -4,6 +4,7 @@ export default Ember.Route.extend({
     model() {
         var userType = sessionStorage.getItem('userType');
         var adminHeader = sessionStorage.getItem('showAdminHeaderModules');
+        var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
         
         if (userType === null || userType === undefined) {
             this.controllerFor('application').set('userType', "Login");
@@ -14,6 +15,9 @@ export default Ember.Route.extend({
             this.controllerFor('application').set('showUser', true);
             this.controllerFor('application').set('showAdminHeaderModules', adminHeader);
         }
-        this.transitionTo('home');
+
+        if (!goToStartCampaign) {
+           this.transitionTo('home');
+        }
     }
 });

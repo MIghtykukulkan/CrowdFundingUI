@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
         },
 
         login: function() {
+            var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
             var emailId = this.get('email');
 
             if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') {
@@ -21,9 +22,13 @@ export default Ember.Controller.extend({
             } else if (emailId === 'customer' || emailId === 'Customer' || emailId === 'CUSTOMER') {
                 sessionStorage.setItem('userType', "Customer");
                 sessionStorage.setItem('showAdminHeaderModules', false);
-            }
+            } 
             
-            window.location.reload(true);
+            if (goToStartCampaign) {
+                this.transitionToRoute('start-campaign');
+            } else {
+                window.location.reload(true);
+            }
         }
     }
 });
