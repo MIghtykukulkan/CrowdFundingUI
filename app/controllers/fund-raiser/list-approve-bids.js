@@ -1,5 +1,6 @@
 import Ember from 'ember';
 export default Ember.Controller.extend( {
+    isFunderAuthorize: false,
     columns: [ {
         "propertyName": "campaignId", "title": "Campaign Id", "filterPlaceholder": "Campaign Id"
     }
