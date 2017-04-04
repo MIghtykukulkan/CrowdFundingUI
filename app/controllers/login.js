@@ -15,10 +15,13 @@ export default Ember.Controller.extend({
                 sessionStorage.setItem('showAdminHeaderModules', false);
             } else if (emailId === 'fund' || emailId === 'Fund' || emailId === 'FUND') {
                 sessionStorage.setItem('userType', "Fund");
-                sessionStorage.setItem('showAdminHeaderModules', true);                
+                sessionStorage.setItem('showAdminHeaderModules', true);
+                sessionStorage.setItem('showStartCampaign', true);                
             } else if (emailId === 'funder' || emailId === 'Funder' || emailId === 'FUNDER') {
                 sessionStorage.setItem('userType', "Funder");
                 sessionStorage.setItem('showAdminHeaderModules', true);
+                sessionStorage.setItem('showFunderModules', true);
+                sessionStorage.setItem('showStartCampaign', false);
             } else if (emailId === 'customer' || emailId === 'Customer' || emailId === 'CUSTOMER') {
                 sessionStorage.setItem('userType', "Customer");
                 sessionStorage.setItem('showAdminHeaderModules', false);
