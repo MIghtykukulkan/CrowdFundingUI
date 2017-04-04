@@ -89,3 +89,23 @@
 .mouse {
     cursor: pointer;
 }
+
+.text-muted {
+    color: #B8DAFE;
+}
+
+.footer-top {
+    padding: 15px 0px 10px;
+}
+
+.mt20 {
+	margin-top: 20px!important;
+}
+
+.footer {
+	background: inherit;
+}
+
+.center-align {
+    text-align: center;
+}
