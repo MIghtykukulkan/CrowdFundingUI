@@ -51,13 +51,13 @@
 }
 
 .bg-1 {
-    background-color: #1abc9c;
+    background-color:darkslategrey;
     /* Green */
     color: #ffffff;
 }
 
 .bg-2 {
-    background-color: #474e5d;
+    background-color:lightgray;
     /* Dark Blue */
     color: #ffffff;
 }
@@ -69,7 +69,7 @@
 }
 
 .bg-4 {
-    background-color: #2f2f2f;
+    background-color: white;
     /* Black Gray */
     color: #fff;
 }

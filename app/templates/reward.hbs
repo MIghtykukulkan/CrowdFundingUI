@@ -1,52 +1,97 @@
 <br/><br/><br/>
 <div class="container-fluid bg-1">
-<div class="row">
-<div class="col-sm-12">
-    <p> <h3>Please Select Reward </h3> </p>
-</div>
-</div>
-</div>
-
-
-<div class="container-fluid bg-2">
-        <p> <br><b>No Rewards </b><br> I Just want to continue <br> </p>
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                <h3>Please Select Reward </h3>
+            </p>
+        </div>
     </div>
+</div>
+
+
+<div class="container-fluid bg-2">
+    <a {{action 'rewardSelection' 'nill' 'nill'}}>
+        <p> <br><b>No Rewards </b><br> I Just want to continue <br> </p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button> <br>
+    </a>
+</div>
 
 
 <div class="container-fluid bg-4">
-<p> <br><b>Rs.500/-</b><br><b>High Five!!</b><br>The Donor will get a shoutout on our social media handles<br> </p>
+    <a {{action 'rewardSelection' '500' 'shoutout on our social media'}}>
+        <p> <br><b>Rs.500/-</b><br><b>High Five!!</b><br>The Donor will get a shoutout on our social media handles<br> </p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button>
+    </a>
 </div>
 
 <div class="container-fluid bg-2">
-<p> <br> <b>Rs.1000/-</b><br><b>Horse Power</b><br>Special Shoutout on our social media handles and Delivery of customised postcard <br></p>
+    <a {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}>
+        <p> <br> <b>Rs.1000/-</b><br><b>Horse Power</b><br>Special Shoutout on our social media handles and Delivery of customised postcard <br></p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button>
+    </a>
 </div>
 
 
 <div class="container-fluid bg-4">
-<p> <br><b>Rs.5000/-</b><br><b>Unstoppable</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+    <a {{action 'rewardSelection' '5000' 'shoutout on social media & T-shirt + Postcard'}}>
+        <p> <br><b>Rs.5000/-</b><br><b>Unstoppable</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button>
+    </a>
 </div>
 
 <div class="container-fluid bg-2">
-<p> <br><b>Rs.10000/-</b><br><b>T-10</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+    <a {{action 'rewardSelection' '10000' 'shoutout on social media & T-shirt + Postcard + Mug'}}>
+        <p> <br><b>Rs.10000/-</b><br><b>T-10</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button>
+    </a>
 </div>
 
 <div class="container-fluid bg-4">
-<p> <br><b>Rs.25000/-</b><br><b>Lightspeed</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+    <a {{action 'rewardSelection' '25000' 'shoutout on social media & PhotoFrame + Mug + T-shirt + Postcard + Mug'}}>
+        <p> <br><b>Rs.25000/-</b><br><b>Lightspeed</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button>
+    </a>
 </div>
 
 <div class="container-fluid bg-2">
-<p> <br><b>Rs.50000/-</b><br><b>Lift-Off</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+    <a {{action 'rewardSelection' '50000' 'shoutout on social media & Pen + PhotoFrame + Mug + T-shirt + Postcard + Mug'}}>
+        <p> <br><b>Rs.50000/-</b><br><b>Lift-Off</b><br>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles<br> </p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Reward </button>
+    </a>
 </div>
 
 <br>
 
-<!-- Footer -->
-<footer class="container-fluid bg-3">
-  <p>
-      <div class="right"> Made By Sweta 
-          <!--<a href="#"> <div class="left"> www.w3schools.com</div> </a>-->
-      </div>
-  </p> 
-</footer>   
 
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4><span class="glyphicon glyphicon-lock"></span> Rewards</h4>
+            </div>
+            <div class="modal-body">
+               You have selected <strong> Rs. {{amount}} </strong> and You will get <strong> {{reward}} </strong> reward.<br>
+                <br>
+                <center> Do you want to continue payment? </center>
+                <button type="submit" class="btn btn-block" {{action 'payment'}}> Pay
+                        <span class="glyphicon glyphicon-ok"></span>
+                </button>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </button>
+                <p>Need <a href="#">help?</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
