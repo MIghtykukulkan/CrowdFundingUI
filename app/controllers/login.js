@@ -14,9 +14,9 @@ export default Ember.Controller.extend({
             if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') {
                 sessionStorage.setItem('userType', "Admin");
                 sessionStorage.setItem('showAdminHeaderModules', false);
-            } else if (emailId === 'fund' || emailId === 'Fund' || emailId === 'FUND') {
+            } else if (emailId === 'fundraiser' || emailId === 'Fundraiser' || emailId === 'FUNDRAISER') {
                 showStartCampaign = true;
-                sessionStorage.setItem('userType', "Fund");
+                sessionStorage.setItem('userType', "Fundraiser");
                 sessionStorage.setItem('showAdminHeaderModules', true);
                 sessionStorage.setItem('showStartCampaign', true);                
             } else if (emailId === 'funder' || emailId === 'Funder' || emailId === 'FUNDER') {
