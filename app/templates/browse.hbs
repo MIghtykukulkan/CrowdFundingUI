@@ -1,4 +1,3 @@
-
 <div class="container">
 
 
@@ -8,12 +7,14 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="assets/image/one.jpg" alt="New York" width="1200" height="500">
+                <img src="assets/image/1.jpg" alt="New York" width="1200" height="500">
                 <div class="carousel-caption">
                     <h3>Hope</h3>
                     <p>Life is beautiful.</p>
@@ -21,7 +22,7 @@
             </div>
 
             <div class="item">
-                <img src="assets/image/two.jpg" alt="Chicago" width="1200" height="500">
+                <img src="assets/image/2.jpg" alt="Chicago" width="1200" height="500">
                 <div class="carousel-caption">
                     <h3>Light</h3>
                     <p>Thank you,- A night we won't forget.</p>
@@ -29,7 +30,16 @@
             </div>
 
             <div class="item">
-                <img src="assets/image/three.jpg" alt="Los Angeles" width="1200" height="500">
+                <img src="assets/image/3.jpg" alt="Los Angeles" width="1200" height="500">
+                <div class="carousel-caption">
+                    <h3>Happiness</h3>
+                    <p>Even though the life is a mess, we had the best time!</p>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <img src="assets/image/5.jpg" alt="Los Angeles" width="1200" height="500">
                 <div class="carousel-caption">
                     <h3>Happiness</h3>
                     <p>Even though the life is a mess, we had the best time!</p>
@@ -55,7 +65,7 @@
     <!--Education-->
 
     {{#if education}}
-    <h2><b>Education</b></h2>
+    <h2><b><a {{action 'goTo' 'education'}}>Education </a></b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
 
@@ -97,7 +107,7 @@
 
 
     <!--Children-->
-    <h2><b>Children</b></h2>
+    <h2><b><a {{action 'goTo' 'children'}}>Children </a></b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
 
@@ -137,7 +147,7 @@
 
 
     <!--Animal Welfare-->
-    <h2><b>Animal Welfare</b></h2>
+    <h2><b><a {{action 'goTo' 'animal-welfare'}}>Animal Welfare</a></b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
 
@@ -151,8 +161,8 @@
                     <div class="caption">
                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
                     </div>
-                    </a>
-            
+                </a>
+
             </div>
         </div>
         <div class="col-md-4">
@@ -178,7 +188,7 @@
     </div>
 
     <!--Enviorment-->
-    <h2><b>Enviorment</b></h2>
+    <h2><b> <a {{action 'goTo' 'environment'}}> Enviorment</a></b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
 
@@ -217,7 +227,7 @@
     </div>
 
     <!--Film-->
-    <h2><b>Film</b></h2>
+    <h2><b><a {{action 'goTo' 'film'}}>Film </a></b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
 
@@ -258,7 +268,7 @@
     </div>
 
     <!--Dance-->
-    <h2><b>Dance</b></h2>
+    <h2><b><a {{action 'goTo' 'dance'}}>Dance </a></b></h2>
     <h4>Made easy</h4>
     <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
 

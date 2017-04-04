@@ -7,8 +7,13 @@ export default Ember.Controller.extend({
            rewardSelection: function(arg, arg1) {
             var amount= arg;
             var reward= arg1;
-            this.set('amount', arg);
-            this.set('reward', arg1);
+            if (amount==="nill")
+            {
+            this.set('message', "You have not selected any rewards. Are you sure to continue?");
+            }
+            else{
+            this.set('message', "You have selected Rs. "+ amount +" and You will get "+ reward + " reward. Do you want to continue?");
+            }
             //console.log('IMG: '+ arg);
             console.log(amount);
             console.log(reward);

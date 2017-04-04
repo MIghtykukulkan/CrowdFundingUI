@@ -76,9 +76,9 @@
                 <h4><span class="glyphicon glyphicon-lock"></span> Rewards</h4>
             </div>
             <div class="modal-body">
-               You have selected <strong> Rs. {{amount}} </strong> and You will get <strong> {{reward}} </strong> reward.<br>
+               {{message}} 
+               <br>
                 <br>
-                <center> Do you want to continue payment? </center>
                 <button type="submit" class="btn btn-block" {{action 'payment'}}> Pay
                         <span class="glyphicon glyphicon-ok"></span>
                 </button>
