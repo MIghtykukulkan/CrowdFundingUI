@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
+var showStartCampaign = false;
 export default Ember.Controller.extend({
     actions: {
         register: function() {
@@ -14,6 +15,7 @@ export default Ember.Controller.extend({
                 sessionStorage.setItem('userType', "Admin");
                 sessionStorage.setItem('showAdminHeaderModules', false);
             } else if (emailId === 'fund' || emailId === 'Fund' || emailId === 'FUND') {
+                showStartCampaign = true;
                 sessionStorage.setItem('userType', "Fund");
                 sessionStorage.setItem('showAdminHeaderModules', true);
                 sessionStorage.setItem('showStartCampaign', true);                
@@ -28,10 +30,19 @@ export default Ember.Controller.extend({
             } 
             
             if (goToStartCampaign) {
-                this.transitionToRoute('start-campaign');
+                if (showStartCampaign)
+                    this.transitionToRoute('start-campaign');
+                else
+                    sessionStorage.clear();
+                    this.set('showValidation', true);
+
             } else {
                 window.location.reload(true);
             }
+        },
+
+        dismissModal: function() {
+            this.set('showValidation', false);
         }
     }
 });
