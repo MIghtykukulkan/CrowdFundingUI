@@ -24,6 +24,9 @@ Router.map(function() {
         this.route('campaigns', {
             path: '/campaigns'
         });
+        this.route('report', {
+            path: '/report'
+        });        
     });
     this.route('campaign-detail');
     this.route('fund-raiser', function() {
