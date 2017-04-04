@@ -22,6 +22,7 @@ export default Ember.Controller.extend( {
         authorize: function(record) {
             this.set('isFunderAuthorize', true);
             this.set('fundername', record.fundername);
+            this.set('campaignname',record.campaignname);
         },
 
         dismissModal: function() {
