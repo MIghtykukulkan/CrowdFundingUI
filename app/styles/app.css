@@ -17,11 +17,9 @@
     font-size: larger;
 }
 
-.btn-colour{
-   background:rgb(0, 0, 0); 
-}
-.btngroup{
-    -webkit-text-fill-color: white;
+.btn-color{
+   background-color: #222; 
+      -webkit-text-fill-color: white; 
 }
 
 .signup-box {
@@ -42,9 +40,35 @@
     text-align: center;
 }
 
-.text-color-title {
-    padding-top: 5%;
+
+.start-campaign-box {
+    width: 60%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 10%;
 }
+
+.start-campaign-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    
+}
+
+.btn-color{
+     background-color: #222; 
+      -webkit-text-fill-color: white;
+     }
+
+.btn-take{
+  text-align: center;  
+}
+
+
 
 .anchor-ok {
     position: absolute;
