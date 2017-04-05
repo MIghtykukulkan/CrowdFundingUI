@@ -3,7 +3,7 @@
         <div class="thumbnail">
             <h2> {{category}} </h2>
             <h4> {{c_title}} </h4>
-            <img src={{imgURL}}>
+            <img src={{imgURL}} class="img-rounded">
             <p><strong>Lorem ipsum donec id elit non mi porta gravida at eget metus.</strong>
             </p>
             <p>Friday 27 November 2015</p>
@@ -13,7 +13,9 @@
     <div class="col-sm-4">
         <div class="thumbnail">
             <br>
-            <button class="btn" data-toggle="modal">{{#link-to 'reward'}}Contribute Now {{/link-to}}</button>
+
+            <button class="btn btn-color" data-toggle="modal" {{action 'callReward'}}><strong>Contribute Now </strong></button>
+
             <br>
             <br>
         </div>
