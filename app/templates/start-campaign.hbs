@@ -1,3 +1,18 @@
+{{#if showStartResponse}}
+<div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" {{action "dismissModal"}}>×</button>
+            </div>
+            <div class="modal-body">
+             You have been successfully registered
+             <br>
+            <button type="button" class="btn btn-color" {{action "regOK"}}>OK</button>
+            </div>
+        </div>
+    </div>
+{{else}}
 <div class="start-campaign-background">
     <div class="start-campaign-box">
 
@@ -119,3 +134,4 @@
         </div>
     </div>
 </div>
+{{/if}}
