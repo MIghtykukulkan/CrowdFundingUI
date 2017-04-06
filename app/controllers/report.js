@@ -5,16 +5,16 @@ export default Ember.Controller.extend({
         "propertyName": "campaignname", "title": "Campaign Name", "filterPlaceholder": "Campaign Name"
     }
     , {
-        "propertyName": "fundername", "title": "Funder Name", "filterPlaceholder": "Funder Name"
+        "propertyName": "pledgeamount", "title": "Pledge Amount", "filterPlaceholder": "Pledge Amount"
     }
     , {
-        "propertyName": "funderamount", "title": "Funder Amount", "filterPlaceholder": "Funder Amount"
+        "propertyName": "receivedamount", "title": "Received Amount", "filterPlaceholder": "Received Amount"
     }
     , {
-        "propertyName": "fundtransfer", "title": "Fund Transfer", "filterPlaceholder": "Fund Transfer"
+        "propertyName": "%ofreceivedamount", "title": "% of Received Amount", "filterPlaceholder": "% of Rcvd Amount"
     }
     ,{
-        "propertyName": "deliverablestatus", "title": "Deliverable Status", "filterPlaceholder": "Deliverable Status"
+        "propertyName": "status", "title": "Status", "filterPlaceholder": "Status"
     }
     , ],
 });

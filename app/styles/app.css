@@ -120,3 +120,6 @@
 .panel-body {
     color: black;
 }
+tr.selected-row>td {
+    background: lightgray;
+}
