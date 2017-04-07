@@ -1,3 +1,4 @@
+//@import 'ember-data-table';
 @import 'ember-paper';
 @import "ember-paper-stepper";
 @import "ember-bootstrap/bootstrap";
@@ -5,8 +6,134 @@
 .md-steppers-alternative .md-steppers-horizontal .md-stepper-indicator {
     min-height: 130px;
 
-}
-
-.smallicon{
+}.smallicon{
     font-size: 26px !important ;
+}
+.login-box {
+    width: 50%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    text-align: center;
+    padding-top: 15%;
+}
+.login-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: larger;
+}
+.btn-color {
+    background-color: #222;
+    -webkit-text-fill-color: white;
+}
+.signup-box {
+    width: 50%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 10%;
+}
+.signup-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    text-align: center;
+}
+.start-campaign-box {
+    width: 60%;
+    height: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 10%;
+}
+.start-campaign-box-body {
+    background: rgba(5, 5, 5, 0.2)!important;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+}
+.btn-color {
+    background-color: #222;
+    -webkit-text-fill-color: white;
+}
+.btn-center {
+    text-align: center;
+}
+.anchor-ok {
+    position: absolute;
+    left: 680px;
+    top: 20px;
+}
+.anchor-cancel {
+    position: absolute;
+    left: 750px;
+    top: 20px;
+}
+.bg-1 {
+    background-color: black;
+    /* Green */
+    
+    color: #ffffff;
+}
+.bg-2 {
+    background-color: lightgray;
+    /* Dark Blue */
+    
+    color: #ffffff;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.bg-3 {
+    background-color: #ffffff;
+    /* White */
+    
+    color: #555555;
+}
+.left {
+    text-align: right;
+}
+.text-color-title {
+    padding-top: 5%;
+}
+.chart-container {
+    height: 500px;
+}
+.mouse {
+    cursor: pointer;
+}
+.text-muted {
+    color: #B8DAFE;
+}
+.footer-top {
+    padding: 15px 0px 10px;
+}
+.mt20 {
+    margin-top: 20px!important;
+}
+.footer {
+    background: inherit;
+}
+.center-align {
+    text-align: center;
+}
+.panel-heading {
+    color: #fff !important;
+    background-color: black !important;
+}
+.panel-body {
+    color: black;
+}
+tr.selected-row>td {
+    background: lightgray;
+}
+.md-button.md-default-theme.md-primary.md-raised.md-fab {
+    background-color: black;
 }
