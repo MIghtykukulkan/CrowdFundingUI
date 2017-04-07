@@ -4,7 +4,7 @@ var showStartCampaign = false;
 export default Ember.Controller.extend({
     actions: {
         register: function() {
-            this.transitionToRoute('sign-up');
+            this.transitionToRoute('signup');
         },
 
         login: function() {
