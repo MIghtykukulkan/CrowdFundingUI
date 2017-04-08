@@ -22,7 +22,7 @@
     </div>
 </div>
 
-{{#if isIndividualAuthorize}} 
+{{#if isIndividualAuthorize}}
 <div class="container">
     <div class="row main">
 
@@ -89,130 +89,129 @@
         </div>
     </div>
 </div>
- {{/if}}
+{{/if}} {{#if isOrganisationAuthorize}}
 
+<div class="container">
+    <div class="row main">
 
-      {{#if isOrganisationAuthorize}}
- 
- <div class="container">
-			<div class="row main">
+        <div class="panel-title text-center">
+            <h1 class="title">Organisation Information</h1>
 
-	               <div class="panel-title text-center">
-	               		<h1 class="title">Organisation Information</h1>
+        </div>
+        <div class="main-login main-center">
+            <form class="form-horizontal" method="post" action="#">
 
-	            </div> 
-				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+                <div class="form-group">
 
-						<div class="form-group">
-
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-briefcase"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-briefcase"></span>
+                            </div>
+                            <input type="text" class="form-control" name="organisationname" id="organisationname" placeholder="Enter Organisation Name" />
                         </div>
-									<input type="text" class="form-control" name="organisationname" id="organisationname"  placeholder="Enter Organisation Name"/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-                        <div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-hand-right"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-hand-right"></span>
+                            </div>
+                            <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter Full Name" />
                         </div>
-									<input type="text" class="form-control" name="fullname" id="fullname"  placeholder="Enter Full Name"/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-						<div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-envelope"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="text" class="form-control" name="emailid" id="emailid" placeholder="Enter Email Id" />
                         </div>
-									<input type="text" class="form-control" name="emailid" id="emailid"  placeholder="Enter Email Id"/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-                        <div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-envelope"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="text" class="form-control" name="confirmemailid" id="confirmemailid" placeholder="Confirm Email Id" />
                         </div>
-									<input type="text" class="form-control" name="confirmemailid" id="confirmemailid"  placeholder="Confirm Email Id"/>
-								</div>
-							</div>
-						</div><br>
+                    </div>
+                </div>
+                <br>
 
-						<div class="panel-title text-center">
-	               		<h4 class="title">Key Individual Contact Information</h4>
+                <div class="panel-title text-center">
+                    <h4 class="title">Key Individual Contact Information</h4>
 
-	               	</div><br><br>
+                </div>
+                <br>
+                <br>
 
-						<div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-user"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" />
                         </div>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your name"/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-						<div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-user"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                            <input type="text" class="form-control" name="enterdesignation" id="enterdesignation" placeholder="Enter your Designation" />
                         </div>
-									<input type="text" class="form-control" name="enterdesignation" id="enterdesignation"  placeholder="Enter your Designation"/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-						<div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-envelope"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="text" class="form-control" name="emailid" id="emailid" placeholder="Enter your Email Id" />
                         </div>
-									<input type="text" class="form-control" name="emailid" id="emailid"  placeholder="Enter your Email Id"/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-						<div class="form-group">
+                <div class="form-group">
 
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<div class="input-group-addon">
-                            <span class="glyphicon glyphicon-earphone"></span>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                            </div>
+                            <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Enter your Phone Number " />
                         </div>
-									<input type="text" class="form-control" name="phonenumber" id="phonenumber"  placeholder="Enter your Phone Number "/>
-								</div>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-						<div class="form-group ">
-							<button type="button" class="btn btn-color">Register</button>
-						</div>
+                <div class="form-group ">
+                    <button type="button" class="btn btn-color">Register</button>
+                </div>
 
-					</form>
-				</div>
-			</div>
-		</div>
-		
- {{/if}}
-   
+            </form>
+        </div>
+    </div>
+</div>
+
+{{/if}}

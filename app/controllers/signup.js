@@ -1,16 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-     isIndividualAuthorize: false,
-     isOrganisationAuthorize:false,
-     actions: {
-    
+    isIndividualAuthorize: false,
+    isOrganisationAuthorize: false,
+    actions: {
 
-       registerindividual: function(record) {
-        
-                this.set('isIndividualAuthorize', true);
-                this.set('isOrganisationAuthorize', false);
-       
+        registerindividual: function(record) {
+
+            this.set('isIndividualAuthorize', true);
+            this.set('isOrganisationAuthorize', false);
+
         },
 
         registerorganisation: function(record) {
@@ -18,9 +17,9 @@ export default Ember.Controller.extend({
             this.set('isIndividualAuthorize', false);
         },
 
-        register:function(){
-           
+        register: function() {
+
         }
-    
+
     }
 });
