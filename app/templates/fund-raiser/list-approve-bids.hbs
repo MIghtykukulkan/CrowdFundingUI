@@ -1,19 +1,24 @@
 <div class="register-logo">
-    <h1 align="center">List And Approve Bids</h1>
+    <h1 align="center">Bids</h1>
 </div>
 <div>
     {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 </div>
 {{#if isFunderAuthorize}}
 <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" {{action "dismissModal"}}>×</button>
-            </div>
-            <div class="modal-body">
-             {{fundername}} bids for {{campaignname}} has been successfully approved.
-            </div>
+    <!--    Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4><span class="glyphicon glyphicon-lock"></span> Bids Approval</h4>
+        </div>
+        <div class="modal-body">
+            Do you want to Approve Bid?
+            <br>
+            <br>
+            <button type="button" class="btn btn-color" {{action "approvebids"}}> Approve</button>
+            <button type="button" class="btn btn-color" {{action "dismissModal"}}> Reject</button>
+
         </div>
     </div>
+</div>
 {{/if}}

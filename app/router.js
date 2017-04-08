@@ -33,6 +33,9 @@ Router.map(function() {
       this.route('list-approve-bids', {
           path: '/list-approve-bids'
       });
+      this.route('dashboard', {
+          path: '/dashboard'
+      });
       this.route('status-of-fund-transfer', {
           path: '/status-of-fund-transfer'
       });
