@@ -18,8 +18,7 @@ export default Ember.Controller.extend({
         },
 
         register: function() {
-
+            console.log("Test");
         }
-
     }
 });
