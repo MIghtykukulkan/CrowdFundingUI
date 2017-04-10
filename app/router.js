@@ -59,6 +59,7 @@ Router.map(function() {
   this.route('dance');
   this.route('signup');
   this.route('help');
+  this.route('funder_dashboard');
 });
 
 export default Router;
