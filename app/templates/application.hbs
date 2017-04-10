@@ -11,4 +11,12 @@
     </div>
 </div>
 
+{{#if isShowingModel}}
+    {{#modal-dialog close="toggleModel"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+        {{partial 'help'}}
+    {{/modal-dialog}}
+{{/if}}
+
 {{partial 'footer'}}

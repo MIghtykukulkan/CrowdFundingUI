@@ -58,6 +58,7 @@ Router.map(function() {
   this.route('film');
   this.route('dance');
   this.route('signup');
+  this.route('help');
 });
 
 export default Router;

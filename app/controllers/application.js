@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
+var showHelpPopUp = false;
 export default Ember.Controller.extend({
+    isShowingModel: false,
+
     actions: {
         logout: function() {
             sessionStorage.clear();
@@ -20,6 +23,10 @@ export default Ember.Controller.extend({
                 this.transitionToRoute('film');
             else if (arg === 'dance')
                 this.transitionToRoute('dance');
+        },
+
+        toggleModel: function() {
+            this.toggleProperty('isShowingModel');
         }
     }
 });
