@@ -5,19 +5,19 @@ export default Ember.Route.extend({
         var data = [{
                 "participantId": "1",
                 "participantType": "Funder",
-                "participantName": "FirstName1 LastName1",
+                "participantName": "Sweta Vahia",
                 "regStatus": false
             },
             {
                 "participantId": "2",
                 "participantType": "Funder-Raiser",
-                "participantName": "FirstName2 LastName2",
+                "participantName": "Rakesh Bharati",
                 "regStatus": true
             },
             {
                 "participantId": "3",
                 "participantType": "Customer",
-                "participantName": "FirstName3 LastName3",
+                "participantName": "Shraddha Kharat",
                 "regStatus": false
             }
         ];

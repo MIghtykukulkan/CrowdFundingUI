@@ -5,21 +5,21 @@ export default Ember.Route.extend({
         var data = [{
                 "campaignId": "1",
                 "campaignName": "Help",
-                "campaignType": "Campaign1",
+                "campaignType": "Save Water Campaign",
                 "regStatus": true,
                 "campStatus": false
             },
             {
                 "campaignId": "2",
                 "campaignName": "Promote",
-                "campaignType": "Campaign2",
+                "campaignType": "Animal exploitation",
                 "regStatus": false,
                 "campStatus": false
             },
             {
                 "campaignId": "3",
                 "campaignName": "Partner",
-                "campaignType": "Campaign3",
+                "campaignType": "Orphans Campaign",
                 "regStatus": true,
                 "campStatus": true
             }
