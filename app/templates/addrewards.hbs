@@ -1,0 +1,41 @@
+<h3 class="center-align">Add Rewards</h3>
+<div class="main-login start-campaign-center" style="width:500px">
+    <form class="form-horizontal" method="post" action="#">
+        <div class="form-group">
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-triangle-right"></span>
+                    </div>
+                    <input type="text" class="form-control" name="rewardtitle" id="rewardtitle" placeholder="Reward Title" />
+                </div>
+                <br/>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-triangle-right"></span>
+                    </div>
+                    <input type="text" class="form-control" name="rewardamount" id="rewardamount" placeholder="Minimum Donation amount required to obtain this reward (Rs.)" />
+                </div>
+                <br/>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-triangle-right"></span>
+                    </div>
+                    <input type="text" class="form-control" name="rewarddescription" id="rewarddescription" placeholder="Reward Description" />
+                </div>
+                <br/>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-triangle-right"></span>
+                    </div>
+                    {{pikaday-input class="form-control" value=deliveryDate onSelection=(action (mut deliveryDate)) 
+                                    placeholder="Delivery Date" readonly=true format="DD/MMM/YYYY"}}
+                </div>
+                <br/><br/>
+                <div class="form-group ">
+                    <button type="button" class="btn btn-color" {{action "saveRewards"}}>Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
