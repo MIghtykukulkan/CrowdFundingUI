@@ -1,5 +1,5 @@
 <select {{action 'change' on='change' }}>
-    <option default>--Select your {{dropdowntype}}--</option>
+    <option default>--Select {{dropdowntype}}--</option>
     {{#each listitem as |item|}}
     <option value={{item}} selected={{selecteditem}}>{{item}} </option>
     {{/each}}
