@@ -60,6 +60,7 @@ Router.map(function() {
   this.route('signup');
   this.route('help');
   this.route('funder_dashboard');
+  this.route('addrewards');
 });
 
 export default Router;
