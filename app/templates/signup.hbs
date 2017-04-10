@@ -63,7 +63,15 @@
                         </div>
                     </div>
                     <div class="form-group ">
-                        <button type="button" class="btn btn-color">Register</button>
+                        <button type="button" class="btn btn-color" {{action "toggleModal"}}>Register</button>
+                      
+{{#if isShowingModal}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+     You have been successfully registered
+  {{/modal-dialog}}
+{{/if}}
                     </div>
                 </form>
             </div>
@@ -198,9 +206,16 @@
                 </div>
             {{/step.body}}
             {{#step.actions as |nextStep previousStep|}}
-                {{#paper-button primary=true raised=true onClick=(action nextStep)}}
+                {{#paper-button primary=true raised=true onClick=(action "toggleModal1")}}
                     Register
                 {{/paper-button}}
+                {{#if isShowingModal}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    You have been successfully registered
+  {{/modal-dialog}}
+{{/if}}
                 {{#paper-button onClick=(action previousStep)}}
                     Back
                 {{/paper-button}}
