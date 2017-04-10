@@ -4,6 +4,8 @@ export default Ember.Controller.extend({
     isIndividualAuthorize: false,
     isOrganisationAuthorize: false,
     isShowingModal: false,
+    organisationtype: ['NGO / Nonprofit', 'Social Enterprise', 'Community Organization', 'Corporate', 'Startup', 'Others', ],
+
     actions: {
 
         registerindividual: function(record) {
@@ -18,11 +20,11 @@ export default Ember.Controller.extend({
             this.set('isIndividualAuthorize', false);
         },
         toggleModal: function() {
-      this.toggleProperty('isShowingModal');
-    },
-    toggleModal1: function() {
-      this.toggleProperty('isShowingModal');
-    },
+            this.toggleProperty('isShowingModal');
+        },
+        toggleModal1: function() {
+            this.toggleProperty('isShowingModal');
+        },
 
         register: function() {
             console.log("Test");
