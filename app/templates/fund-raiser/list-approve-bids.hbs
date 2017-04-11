@@ -1,24 +1,19 @@
 <div class="register-logo">
-    <h1 align="center">Bids</h1>
+   <h1 align="center">Bids</h1>
 </div>
 <div>
-    {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
+   {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 </div>
 {{#if isFunderAuthorize}}
-<div class="modal-dialog">
-    <!--    Modal content-->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4><span class="glyphicon glyphicon-lock"></span> Bids Approval</h4>
-        </div>
-        <div class="modal-body">
-            Do you want to Approve Bid?
-            <br>
-            <br>
-            <button type="button" class="btn btn-color" {{action "approvebids"}}> Approve</button>
-            <button type="button" class="btn btn-color" {{action "dismissModal"}}> Reject</button>
-
-        </div>
-    </div>
+{{#modal-dialog close="toggleModal"
+targetAttachment="center"
+translucentOverlay=true}}
+<!--    Modal content-->
+<h4><span class="glyphicon glyphicon-lock"></span> Bids Approval</h4>
+Do you want to Approve Bid?
+<div class="modal-body">
+   <button type="button" class="btn btn-color" {{action "approvebids"}}> Approve</button>
+   <button type="button" class="btn btn-color" {{action "dismissModal"}}> Reject</button>
 </div>
+{{/modal-dialog}}
 {{/if}}
