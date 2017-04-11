@@ -41,6 +41,7 @@
     "ember-data": "^2.11.0",
     "ember-datatables": "0.1.0",
     "ember-export-application-global": "^1.0.5",
+    "ember-google-charts": "1.5.3",
     "ember-load-initializers": "^0.6.0",
     "ember-modal-dialog": "1.0.0",
     "ember-models-table": "1.11.0",

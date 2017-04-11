@@ -1,7 +1,7 @@
 import Ember from 'ember';
 export default Ember.Controller.extend( {
     // Used only for time series chart
-    content: [ {
+   /* content: [ {
         label: "New Campaigns", value: 10, type: "total"
     }
     , {
@@ -19,7 +19,7 @@ export default Ember.Controller.extend( {
     , {
         label: "Total Fund Received", value: 10, type: "total"
     }
-    ]
+    ]*/
 }
 
 );
