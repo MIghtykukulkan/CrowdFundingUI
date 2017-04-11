@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
             if (record.regStatus) {
                 this.send('closecampaign', record);
             } else {
-                this.set('isCampAuthorize', true);
+                this.toggleProperty('isCampAuthorize');
                 this.set('isCampClosure', false);
                 this.set('campaignName', record.campaignName);
             }
@@ -42,7 +42,8 @@ export default Ember.Controller.extend({
         },
 
         closecampaign: function(record) {
-            this.set('isCampClosure', true);
+            
+            this.toggleProperty('isCampClosure');
             this.set('isCampAuthorize', false);
             this.set('campaignName', record.campaignName);
         }

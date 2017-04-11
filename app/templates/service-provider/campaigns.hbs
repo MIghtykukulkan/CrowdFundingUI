@@ -1,29 +1,17 @@
 {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 
 {{#if isCampAuthorize}}
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" {{action "dismissModal"}}>×</button>
-            </div>
-            <div class="modal-body">
-                Campaign {{campaignName}} has been successfully authorized.
-            </div>
-        </div>
-    </div>
+    {{#modal-dialog close="dismissModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+        Campaign {{campaignName}} has been successfully authorized.
+    {{/modal-dialog}}
 {{/if}}
 
 {{#if isCampClosure}}
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" {{action "dismissModal"}}>×</button>
-            </div>
-            <div class="modal-body">
-                Campaign {{campaignName}} has been successfully closed.
-            </div>
-        </div>
-    </div>
+    {{#modal-dialog close="dismissModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+        Campaign {{campaignName}} has been successfully closed.
+    {{/modal-dialog}}
 {{/if}}

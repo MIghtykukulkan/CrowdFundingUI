@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
 
     actions: {
         authorize: function(record) {
-            this.set('isPartAuthorize', true);
+            this.toggleProperty('isPartAuthorize');
             this.set('participantName', record.participantName);
         },
 
