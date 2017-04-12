@@ -11,10 +11,6 @@ export default Ember.Controller.extend({
             } else {
                 this.set('message', "You have selected Rs. " + amount + " and You will get " + reward + " reward. Do you want to continue?");
             }
-            //console.log('IMG: '+ arg);
-            console.log(amount);
-            console.log(reward);
-            //this.transitionToRoute('campaign-detail');
         },
 
         payment: function() {

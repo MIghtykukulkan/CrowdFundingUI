@@ -5,17 +5,15 @@ export default Ember.Controller.extend({
         
 actions: {
 
-           campaignDetails: function(arg, arg1, arg2) {
+           campaignDetails: function(arg, arg1, arg2, arg3) {
             var imgURL = arg;
-            var category = arg1;
+            var desc = arg1;
             var c_title = arg2;
+            var createdby = arg3;
             sessionStorage.setItem('imgURL', arg);
-            sessionStorage.setItem('category', arg1);
+            sessionStorage.setItem('desc', arg1);
             sessionStorage.setItem('c_title', arg2);
-            //console.log('IMG: '+ arg);
-            console.log(imgURL);
-            console.log(category);
-            console.log(c_title);
+            sessionStorage.setItem('createdby', arg3);
             this.transitionToRoute('campaign-detail');
         },
 
@@ -32,29 +30,6 @@ actions: {
                 this.transitionToRoute('film');
             else if (arg === 'dance')
                 this.transitionToRoute('dance');
-        },
-   
-             approvebids:function(){
-
-            this.transitionToRoute('list-approve-bids');
-
-},
-fundtransfer:function(){
-
-            this.transitionToRoute('status-of-fund-transfer');
-
-},
-executecampaign:function(){
-
-            this.transitionToRoute('execute-campaign');
-
-},
-delivercommitments:function(){
-
-            this.transitionToRoute('deliver-commitments');
-
+        }  ,
 }
-     },
-
-
 });

@@ -1,6 +1,5 @@
 <div class="container">
 
-
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -46,7 +45,7 @@
                 </div>
             </div>
 
-            
+
             <div class="item">
                 <img src="assets/image/5.jpg" alt="Los Angeles" width="1200" height="500" class="img-rounded">
                 <div class="carousel-caption">
@@ -68,256 +67,16 @@
         </a>
     </div>
 
-
-
-
-
     <!--Education-->
-
-    {{#if education}}
-    <h2><b><a {{action 'goTo' 'education'}}>Education </a></b></h2>
-    <h4>Made easy</h4>
-    <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Education' 'Edu_Campaign_1'}}>
-                    <img src="assets/image/one.jpg" alt="Lights" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Education' 'Edu_Campaign_2'}}>
-                    <img src="assets/image/two.jpg" alt="Nature" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Education' 'Edu_Campaign_3'}}>
-                    <img src="assets/image/three.jpg" alt="Fjords" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    {{/if}}
-
-
+    {{#if education}} {{partial 'education'}} {{/if}}
     <!--Children-->
-    <h2><b><a {{action 'goTo' 'children'}}>Children </a></b></h2>
-    <h4>Made easy</h4>
-    <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Children' 'Child_Campaign_1'}}>
-                    <img src="assets/image/one.jpg" alt="Lights" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Children' 'Child_Campaign_2'}}>
-                    <img src="assets/image/two.jpg" alt="Nature" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Children' 'Child_Campaign_3'}}>
-                    <img src="assets/image/three.jpg" alt="Fjords" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
+    {{partial 'children'}}
     <!--Animal Welfare-->
-    <h2><b><a {{action 'goTo' 'animal-welfare'}}>Animal Welfare</a></b></h2>
-    <h4>Made easy</h4>
-    <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Animal_Welfare' 'Animal_Welfare_Campaign_1'}}>
-
-                    <img src="assets/image/one.jpg" alt="Lights" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Animal_Welfare' 'Animal_Welfare_Campaign_2'}}>
-                    <img src="assets/image/two.jpg" alt="Nature" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Animal_Welfare' 'Animal_Welfare_Campaign_3'}}>
-                    <img src="assets/image/three.jpg" alt="Fjords" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
+    {{partial 'animal-welfare'}}
     <!--Enviorment-->
-    <h2><b> <a {{action 'goTo' 'environment'}}> Enviorment</a></b></h2>
-    <h4>Made easy</h4>
-    <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Enviorment' 'Env_Campaign_1'}}>
-                    <img src="assets/image/one.jpg" alt="Lights" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Enviorment' 'Env_Campaign_2'}}>
-                    <img src="assets/image/two.jpg" alt="Nature" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Enviorment' 'Env_Campaign_3'}}>
-                    <img src="assets/image/three.jpg" alt="Fjords" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
+    {{partial 'environment'}}
     <!--Film-->
-    <h2><b><a {{action 'goTo' 'film'}}>Film </a></b></h2>
-    <h4>Made easy</h4>
-    <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Film' 'Film_Campaign_1'}}>
-
-                    <img src="assets/image/one.jpg" alt="Lights" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Film' 'Film_Campaign_2'}}>
-                    <img src="assets/image/two.jpg" alt="Nature" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Film' 'Film_Campaign_3'}}>
-                    <img src="assets/image/three.jpg" alt="Fjords" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
+    {{partial 'film'}}
     <!--Dance-->
-    <h2><b><a {{action 'goTo' 'dance'}}>Dance </a></b></h2>
-    <h4>Made easy</h4>
-    <p>Crowdfunding is an online fundraising and crowdfunding platform. We help individuals, non-profits, social enterprises, and corporates to raise money online for social or personal projects.</p>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/one.jpg' 'Dance' 'Dance_Campaign_1'}}>
-                    <img src="assets/image/one.jpg" alt="Lights" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/two.jpg' 'Dance' 'Dance_Campaign_2'}}>
-                    <img src="assets/image/two.jpg" alt="Nature" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a {{action 'campaignDetails' 'assets/image/three.jpg' 'Dance' 'Dance_Campaign_3'}}>
-                    <img src="assets/image/three.jpg" alt="Fjords" class="img-rounded">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
+    {{partial 'dance'}}
 </div>
