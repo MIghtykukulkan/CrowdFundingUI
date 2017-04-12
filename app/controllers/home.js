@@ -31,5 +31,16 @@ actions: {
             else if (arg === 'dance')
                 this.transitionToRoute('dance');
         }  ,
+
+        truncateText:function(text, maxLength) {
+            var ret = text;
+            var retLen=ret.length;
+            if (retLen > maxLength)
+            {
+            ret = (ret.substr(0,maxLength)) + "...";
+            }
+            return ret;
+            },
+
 }
 });
