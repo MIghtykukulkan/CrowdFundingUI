@@ -43,6 +43,7 @@ export default Ember.Route.extend({
         }];
 
         this.controllerFor('application').set('listItem', listItem);
+        this.controllerFor('reward').set('listItem', listItem);
 
         if (!goToStartCampaign) {
            this.transitionTo('home');
