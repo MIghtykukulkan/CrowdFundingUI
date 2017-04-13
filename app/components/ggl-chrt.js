@@ -8,18 +8,18 @@ google.charts.setOnLoadCallback(drawRegionsMap);
   function drawRegionsMap() {
 
     var data = google.visualization.arrayToDataTable([
-      ['Country', 'Campaigns'],
-      ['Germany', 100],
-      ['United States', 300],
-      ['Brazil', 400],
-      ['Canada', 500],
-      ['France', 600],
-      ['Russia', 700],
-      ['India',200],
-      ['Australia',800],
-      ['Pakistan',50],
-      ['China',900],
-      ['Greenland',1000],
+      ['Country', 'Campaigns','Percentage of Funder'],
+      ['Germany', 100,65],
+      ['United States', 300,20],
+      ['Brazil', 400,86],
+      ['Canada', 500,50],
+      ['France', 600,60],
+      ['Russia', 700,80],
+      ['India',200,90],
+      ['Australia',800,80],
+      ['Pakistan',50,40],
+      ['China',900,70],
+      ['Greenland',1000,49]
       
     ]);
 
