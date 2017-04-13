@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    isShowingHelp: false,
+
     actions: {
         rewardSelection: function(arg, arg1) {
             var amount = arg;
@@ -15,6 +17,10 @@ export default Ember.Controller.extend({
 
         payment: function() {
             window.location.replace("https://www.billdesk.com/savepgi/");
+        },
+
+        showHelp: function() {
+            this.toggleProperty('isShowingHelp');
         }
     }
 });
