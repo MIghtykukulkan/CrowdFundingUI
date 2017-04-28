@@ -1,17 +1,38 @@
 {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 
 {{#if isCampAuthorize}}
+{{#modal-dialog close="dismissModal" targetAttachment="center" translucentOverlay=true}}
+<!--    Modal content-->
+<h4><span class="glyphicon glyphicon-lock"></span> Authorize Campaign</h4>
+Do you want to authorize {{campaignName}} campaign?
+<div class="modal-body">
+    <button type="button" class="btn btn-color" {{action "authorizeCampaign"}}> Yes</button>
+    <button type="button" class="btn btn-color" {{action "dismissModal"}}> No</button>
+</div>
+{{/modal-dialog}}
+  
+ <!--   
     {{#modal-dialog close="dismissModal"
                   targetAttachment="center"
                   translucentOverlay=true}}
         Campaign {{campaignName}} has been successfully authorized.
-    {{/modal-dialog}}
+    {{/modal-dialog}}-->
 {{/if}}
 
 {{#if isCampClosure}}
-    {{#modal-dialog close="dismissModal"
+
+{{#modal-dialog close="dismissModal" targetAttachment="center" translucentOverlay=true}}
+<!--    Modal content-->
+<h4><span class="glyphicon glyphicon-lock"></span> Closing Campaign</h4>
+Do you want to close {{campaignName}} campaign?
+<div class="modal-body">
+    <button type="button" class="btn btn-color" {{action "closeCampaign"}}> Yes</button>
+    <button type="button" class="btn btn-color" {{action "dismissModal"}}> No</button>
+</div>
+{{/modal-dialog}}
+   <!-- {{#modal-dialog close="dismissModal"
                   targetAttachment="center"
                   translucentOverlay=true}}
         Campaign {{campaignName}} has been successfully closed.
-    {{/modal-dialog}}
+    {{/modal-dialog}}-->
 {{/if}}

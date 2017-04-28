@@ -15,10 +15,13 @@
                <h4>No Rewards<br>&nbsp;</h4>
             </div>
             <div class="panel-body">
-               <p>Special Shoutout on our social media handles and Delivery of customised postcard</p>
+              <p>Special Shoutout on our social media <br> <br>
+              {{input type="text" value=amount placeholder='Please Amount for Contribution'}}
+              </p>
+              
             </div>
             <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button> <br>
+               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' this.amount 'Special Shoutout on our social media handles'}}> Contribute </button> <br>
             </div>
          </div>
       </div>
@@ -100,7 +103,7 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">×</button>
-            <h4><span class="glyphicon glyphicon-lock"></span> Rewards</h4>
+            <h4><span class="glyphicon glyphicon-lock"></span> Contribution</h4>
          </div>
          <div class="modal-body">
             {{message}}

@@ -27,6 +27,12 @@ export default Ember.Controller.extend({
 
     actions: {
         authorize: function(record) {
+            this.set('isCampAuthorize', true);
+            this.set('campaignName', record.campaignName);
+            this.set('message', record.campaignName + " campaign has been authorized");
+        },
+
+        /*
             if (record.regStatus) {
                 this.send('closecampaign', record);
             } else {
@@ -34,7 +40,7 @@ export default Ember.Controller.extend({
                 this.set('isCampClosure', false);
                 this.set('campaignName', record.campaignName);
             }
-        },
+        },*/
 
         dismissModal: function() {
             this.set('isCampAuthorize', false);
@@ -42,11 +48,25 @@ export default Ember.Controller.extend({
         },
 
         closecampaign: function(record) {
-            
+            this.set('isCampClosure', true);
+            this.set('campaignName', record.campaignName);
+            this.set('message1', record.campaignName + " campaign has been closed");
+            /*
             this.toggleProperty('isCampClosure');
             this.set('isCampAuthorize', false);
             this.set('campaignName', record.campaignName);
-        }
+            */
+        },
+
+        authorizeCampaign: function() {
+            alert(this.get('message'));
+        },
+
+        closeCampaign: function() {
+            alert(this.get('message1'));
+        },
+
+
+
     }
 });
-
