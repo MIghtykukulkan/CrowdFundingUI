@@ -1,0 +1,16 @@
+{{paper-input
+  textarea=textarea
+  type=type
+  label=label
+  placeholder=placeholder
+  value=value
+  focus-out=(action 'validate')
+}}
+
+<div class="input-error">
+  {{#if showError}}
+    <div class="error">
+      {{v-get model valuePath 'message'}}
+    </div>
+  {{/if}}
+</div>
