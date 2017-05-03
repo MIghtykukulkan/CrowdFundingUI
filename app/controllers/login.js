@@ -1,7 +1,23 @@
 import Ember from 'ember';
+import {
+    validator,
+    buildValidations
+}
+from 'ember-cp-validations';
+
+var Validations = buildValidations({
+    email: [
+        validator('presence', true),
+        validator('format', {
+            type: 'email'
+        })
+    ],
+
+});
 
 var showStartCampaign = false;
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(Validations,{
+    
     actions: {
         register: function() {
             this.transitionToRoute('signup');

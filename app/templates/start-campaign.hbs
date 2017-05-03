@@ -16,7 +16,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="campaigntitle" id="campaigntitle" placeholder="Campaign Title" />
+                                        {{validated-input type="text" model=this valuePath="campaigntitle" placeholder="Campaign Title"}}
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
-                                        <textarea class="form-control" rows="2" id="shortdescription" placeholder="Short Description"></textarea>
+                                        <textarea class="form-control" rows="2" valuePath="shortdescription" id="shortdescription" placeholder="Short Description"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="beneficiaryname" id="beneficiaryname" placeholder="Name of Beneficiary" />
+                                        {{validated-input type="text" model=this valuePath="beneficiaryname" placeholder="Name of Beneficiary"}}
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-triangle-right"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="goalamount" id="goalamount" placeholder="Set Goal Amount" />
+                                        {{validated-input type="text" model=this valuePath="goalamount" placeholder="Set Goal Amount"}}
                                     </div>
                                 </div>
                             </div>

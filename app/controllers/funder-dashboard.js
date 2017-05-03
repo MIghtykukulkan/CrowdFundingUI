@@ -1,6 +1,19 @@
 import Ember from 'ember';
+import {
+    validator,
+    buildValidations
+} from 'ember-cp-validations';
 
-export default Ember.Controller.extend({
+var Validations = buildValidations({
+    Ratings: [
+        validator('presence', true),
+        validator('format', {
+            type: 'name'
+        })
+    ],
+});
+
+export default Ember.Controller.extend(Validations,{
     showFeedback: false,
 
     actions: {

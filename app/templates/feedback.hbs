@@ -15,7 +15,7 @@
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-triangle-right"></span>
                             </div>
-                            <textarea class="form-control" rows="1" id="ratings" placeholder="Ratings (out of 5)"></textarea>
+                            {{validated-input type="text" model=this valuePath="Ratings" placeholder="Ratings (out of 5)"}}
                         </div>
                     
                         {{#paper-button raised=true primary=true onClick=(action "submitFeedback")}}

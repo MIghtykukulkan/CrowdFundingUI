@@ -30,7 +30,7 @@
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-user"></span>
                      </div>
-                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
+                     {{validated-input type="text"  model=this valuePath='name' placeholder="Enter your Name"}}
                   </div>
                </div>
             </div>
@@ -40,7 +40,7 @@
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
-                     <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+                     {{validated-input type="text" model=this valuePath='email' placeholder="Enter your Email"}}
                   </div>
                </div>
             </div>
@@ -50,7 +50,7 @@
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
-                     <input type="text" class="form-control" name="confirmemailid" id="confirmemailid" placeholder="Confirm your Email" />
+                     {{validated-input type="text" model=this valuePath='confirmemail' placeholder="Confirm your Email"}}
                   </div>
                </div>
             </div>
@@ -60,7 +60,7 @@
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-earphone"></span>
                      </div>
-                     <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Enter your Phone Number " />
+                     {{validated-input type="text" model=this valuePath='phonenumber' placeholder="Enter your Phone Number "}}
                   </div>
                </div>
             </div>
@@ -113,7 +113,7 @@ onStepperCompleted=(action "register") as |stepper|}}
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-hand-right"></span>
                      </div>
-                     <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter Organisation Name" />
+                     {{validated-input type="text"  model=this valuePath="Organisationname" placeholder="Enter Organisation Name"}}
                   </div>
                </div>
             </div>
@@ -123,17 +123,7 @@ onStepperCompleted=(action "register") as |stepper|}}
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
-                     <input type="text" class="form-control" name="emailid" id="emailid" placeholder="Enter Email Id" />
-                  </div>
-               </div>
-            </div>
-            <div class="form-group">
-               <div class="cols-sm-10">
-                  <div class="input-group">
-                     <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-envelope"></span>
-                     </div>
-                     <input type="text" class="form-control" name="confirmemailid" id="confirmemailid" placeholder="Confirm Email Id" />
+                     {{validated-input type="text" model=this valuePath="emailid" placeholder="Enter Email Id"}}
                   </div>
                </div>
             </div>
@@ -168,7 +158,7 @@ Back
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-user"></span>
                      </div>
-                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" />
+                     {{validated-input type="text" model=this valuePath="fullname" placeholder="Enter your name"}}
                   </div>
                </div>
             </div>
@@ -178,7 +168,7 @@ Back
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-user"></span>
                      </div>
-                     <input type="text" class="form-control" name="enterdesignation" id="enterdesignation" placeholder="Enter your Designation" />
+                     {{validated-input type="text" model=this valuePath="enterdesignation" placeholder="Enter your Designation"}}
                   </div>
                </div>
             </div>
@@ -188,7 +178,7 @@ Back
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
-                     <input type="text" class="form-control" name="emailid" id="emailid" placeholder="Enter your Email Id" />
+                     {{validated-input type="text" model=this valuePath="email2" placeholder="Enter your Email Id"}}
                   </div>
                </div>
             </div>
@@ -198,7 +188,7 @@ Back
                      <div class="input-group-addon">
                         <span class="glyphicon glyphicon-earphone"></span>
                      </div>
-                     <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Enter your Phone Number " />
+                     {{validated-input type="text" model=this valuePath="phoneno" placeholder="Enter your Phone Number "}}
                   </div>
                </div>
             </div>
