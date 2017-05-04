@@ -109,6 +109,20 @@ export default Ember.Controller.extend(Validations,{
 
         register: function() {
             console.log("Test");
+        },
+        nextStep: function() {
+            var chosen = this.get('selectedtype');
+            console.log(chosen);
+
+            var mycontroller = this;
+            if (chosen === null || chosen === undefined) {
+                this.set('errorMessage', "Please Select Test");
+                return false;
+            } else {
+                this.set('errorMessage', "");
+                this.set('chosenTest', chosen);
+                //this.transitionToRoute('signup');
+    }
         }
     }
 });
