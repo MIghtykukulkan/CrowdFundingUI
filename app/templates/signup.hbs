@@ -31,6 +31,7 @@
                         <span class="glyphicon glyphicon-user"></span>
                      </div>
                      {{validated-input type="text"  model=this valuePath='name' placeholder="Enter your Name"}}
+                     {{error}}
                   </div>
                </div>
             </div>
@@ -41,6 +42,7 @@
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath='email' placeholder="Enter your Email"}}
+                     {{errorm}}
                   </div>
                </div>
             </div>
@@ -51,6 +53,7 @@
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath='confirmemail' placeholder="Confirm your Email"}}
+                     {{errormess}}
                   </div>
                </div>
             </div>
@@ -61,6 +64,7 @@
                         <span class="glyphicon glyphicon-earphone"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath='phonenumber' placeholder="Enter your Phone Number "}}
+                     {{errormessage}}
                   </div>
                </div>
             </div>
@@ -103,7 +107,7 @@ onStepperCompleted=(action "register") as |stepper|}}
                      </div>
                      <div class="organisationdropdown">
                         {{select-component dropdowntype="Organisation Type" listitem=organisationtype selecteditemlist=selectedtype}}
-                        <span class="errmsg">{{errorMessage}}</span>
+                        {{errormessage1}}
                      </div>
                   </div>
                </div>
@@ -115,6 +119,7 @@ onStepperCompleted=(action "register") as |stepper|}}
                         <span class="glyphicon glyphicon-hand-right"></span>
                      </div>
                      {{validated-input type="text"  model=this valuePath="Organisationname" placeholder="Enter Organisation Name"}}
+                     {{errormessage2}}
                   </div>
                </div>
             </div>
@@ -125,6 +130,7 @@ onStepperCompleted=(action "register") as |stepper|}}
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath="emailid" placeholder="Enter Email Id"}}
+                     {{errormessage3}}
                   </div>
                </div>
             </div>
@@ -160,6 +166,7 @@ Back
                         <span class="glyphicon glyphicon-user"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath="fullname" placeholder="Enter your name"}}
+                     {{errormessage4}}
                   </div>
                </div>
             </div>
@@ -170,6 +177,7 @@ Back
                         <span class="glyphicon glyphicon-user"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath="enterdesignation" placeholder="Enter your Designation"}}
+                     {{errormessage5}}
                   </div>
                </div>
             </div>
@@ -180,6 +188,7 @@ Back
                         <span class="glyphicon glyphicon-envelope"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath="email2" placeholder="Enter your Email Id"}}
+                     {{errormessage6}}
                   </div>
                </div>
             </div>
@@ -190,6 +199,7 @@ Back
                         <span class="glyphicon glyphicon-earphone"></span>
                      </div>
                      {{validated-input type="text" model=this valuePath="phoneno" placeholder="Enter your Phone Number "}}
+                     {{errormessage7}}
                   </div>
                </div>
             </div>
@@ -206,7 +216,7 @@ Back
 Register
 {{/paper-button}}
 {{#if isShowingModal}}
-{{#modal-dialog close="toggleModal"
+{{#modal-dialog close="toggleModal1"
 targetAttachment="center"
 translucentOverlay=true}}
 <p>User account created.Please verify email address </p>

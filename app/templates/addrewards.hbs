@@ -8,6 +8,7 @@
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
                     {{validated-input type="text" model=this valuePath="rewardtitle" placeholder="Reward Title"}}
+                    {{rewardtitleerrormessage}}
                 </div>
                 <br/>
                 <div class="input-group">
@@ -15,6 +16,7 @@
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
                     {{validated-input type="text" model=this valuePath="rewardamount" placeholder="Minimum Donation amount required to obtain this reward (Rs.)"}}
+                    {{rewardamounterrormessage}}
                 </div>
                 <br/>
                 <div class="input-group">
@@ -22,14 +24,17 @@
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
                     {{validated-input type="text" model=this valuePath="rewarddescription" placeholder="Reward Description"}}
+                    {{rewarddescriptionerrormessage}}
                 </div>
                 <br/>
                 <div class="input-group">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
-                    {{pikaday-input class="form-control" value=deliveryDate onSelection=(action (mut deliveryDate)) 
+                   
+                    {{pikaday-input class="form-control" value=deliveryDate valuePath="deliveryDate"  onSelection=(action (mut deliveryDate)) 
                                     placeholder="Delivery Date" readonly=true format="DD/MMM/YYYY"}}
+                                    {{dateerrormessage}}
                 </div>
                 <br/><br/>
                 <div class="form-group ">
