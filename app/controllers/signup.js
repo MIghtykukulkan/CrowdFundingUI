@@ -92,7 +92,7 @@ export default Ember.Controller.extend(Validations, {
 
         },
 
-        registerorganisation: function(record) {
+        registerorganisation: function(record){
             this.set('isOrganisationAuthorize', true);
             this.set('isIndividualAuthorize', false);
         },
@@ -120,12 +120,18 @@ export default Ember.Controller.extend(Validations, {
 
 
         toggleModal1: function() {
+            //var chosen = this.get('selectedtype');
+            //console.log(chosen);
             var Organisationname = this.get('Organisationname');
             var emailid = this.get('emailid');
             var fullname = this.get('fullname');
             var enterdesignation = this.get('enterdesignation');
             var email2 = this.get('email2');
             var phoneno = this.get('phoneno');
+            /*if (chosen === null || chosen === undefined) {
+                this.set('errorMessage1', "Please Select Oragnisation");
+                return;
+            }*/
             if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
                 this.set('errormessage2', "field cannot be empty")
                 return;
@@ -151,13 +157,13 @@ export default Ember.Controller.extend(Validations, {
         register: function() {
             console.log("Test");
         },
-        /*toggleModal1: function() {
+       /* toggleModal1: function() {
             var chosen = this.get('selectedtype');
             console.log(chosen);
 
             var mycontroller = this;
             if (chosen === null || chosen === undefined) {
-                this.set('errorMessage1', "Please Select Test");
+                this.set('errorMessage1', "Please Select Oragnisation");
                 return false;
             } else {
                 this.set('errorMessage1', "");

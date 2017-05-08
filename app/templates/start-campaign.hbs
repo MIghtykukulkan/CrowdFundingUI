@@ -17,6 +17,7 @@
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
                                         {{validated-input type="text" model=this valuePath="campaigntitle" placeholder="Campaign Title"}}
+                                        {{errormessage1}}
                                     </div>
                                 </div>
                             </div>
@@ -27,6 +28,7 @@
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
                                         <textarea class="form-control" rows="2" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char"></textarea>
+                                        {{errormessage2}}
                                     </div>
                                 </div>
                             </div>
@@ -37,6 +39,7 @@
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
                                         {{validated-input type="text" model=this valuePath="beneficiaryname" placeholder="Name of Beneficiary"}}
+                                        {{errormessage3}}
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +49,8 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
-                                        <textarea class="form-control" rows="5" maxlength="500" id="campaignstory" placeholder="(Campaign Story) Should not be allowed more than 500 char"></textarea>
+                                        <textarea class="form-control" rows="5" maxlength="500" valuePath="campaignstory" placeholder="(Campaign Story) Should not be allowed more than 500 char"></textarea>
+                                        {{errormessage4}}
                                     </div>
                                 </div>
                             </div>
@@ -78,6 +82,7 @@
                                             <span class="glyphicon glyphicon-triangle-right"></span>
                                         </div>
                                         {{validated-input type="text" model=this valuePath="goalamount" placeholder="Set Goal Amount"}}
+                                        {{errormessage5}}
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +92,8 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-triangle-right"></span>
                                         </div>
-                                        <textarea class="form-control" rows="2" id="firstgoal" placeholder="(Campaign Goal/Conditions 1) Should not be blank"></textarea>
+                                        <textarea class="form-control" rows="2" valuePath="firstgoal" placeholder="(Campaign Goal/Conditions 1) Should not be blank"></textarea>
+                                        {{errormessage6}}
                                     </div>
                                 </div>
                             </div>

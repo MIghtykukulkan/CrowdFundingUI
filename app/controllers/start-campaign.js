@@ -81,6 +81,36 @@ export default Ember.Controller.extend(Validations,{
         },
 
         createCampaign: function() {
+            var goalamount = this.get('goalamount');
+            var shortdescription = this.get('shortdescription');
+            var beneficiaryname = this.get('beneficiaryname');
+            var campaignstory = this.get('campaignstory');
+            var goalamount = this.get('goalamount');
+            var firstgoal = this.get('firstgoal');
+            if (goalamount === null || goalamount === undefined || goalamount === "") {
+                this.set('errormessage1', "field cannot be empty")
+                return;
+            }
+            else if (shortdescription === null || shortdescription === undefined || shortdescription === "") {
+                this.set('errormessage2', "field cannot be empty")
+                return;
+            }
+            else if (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") {
+                this.set('errormessage3', "field cannot be empty")
+                return;
+            }
+            else if (campaignstory === null || campaignstory === undefined || campaignstory === "") {
+                this.set('errormessage4', "field cannot be empty")
+                return;
+            }
+            else if (goalamount === null || goalamount === undefined || goalamount === "") {
+                this.set('errormessage5', "field cannot be empty")
+                return;
+            }
+            else if (firstgoal === null || firstgoal === undefined || firstgoal === "") {
+                this.set('errormessage6', "field cannot be empty")
+                return;
+            }
 
         },
 

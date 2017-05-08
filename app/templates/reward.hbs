@@ -108,19 +108,9 @@
          <div class="modal-body">
             {{message}}
             <br/><br/>
-            <button type="submit" class="btn btn-block" {{action 'toggleModal'}}> Pay
+            <button type="submit" class="btn btn-block" {{action 'payment'}}> Pay
                 <span class="glyphicon glyphicon-ok"></span>
             </button>
-            {{#if isShowingModal}}
-               {{#modal-dialog close="toggleModal"
-               targetAttachment="center"
-               translucentOverlay=true}}
-               <p>Do not Refresh the page....</p>
-                <div class="modal-header">
-                <button type="button" class="close" {{action "payment"}}>ok</button>
-            </div>
-               {{/modal-dialog}}
-               {{/if}}
          </div>
 
          <div class="modal-footer">

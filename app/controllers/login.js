@@ -27,20 +27,20 @@ export default Ember.Controller.extend(Validations,{
             var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
             var emailId = this.get('email');
 
-            if (emailId === 'admin' || emailId === 'Admin' || emailId === 'ADMIN') {
+            if (emailId === 'admin@a.com' || emailId === 'Admin@a.com' || emailId === 'ADMIN@A.COM') {
                 sessionStorage.setItem('userType', "Admin");
                 sessionStorage.setItem('showAdminHeaderModules', false);
-            } else if (emailId === 'fundraiser' || emailId === 'Fundraiser' || emailId === 'FUNDRAISER') {
+            } else if (emailId === 'fundraiser@f.com' || emailId === 'Fundraiser@f.com' || emailId === 'FUNDRAISER@F.COM') {
                 showStartCampaign = true;
                 sessionStorage.setItem('userType', "Fundraiser");
                 sessionStorage.setItem('showAdminHeaderModules', true);
                 sessionStorage.setItem('showStartCampaign', true);                
-            } else if (emailId === 'funder' || emailId === 'Funder' || emailId === 'FUNDER') {
+            } else if (emailId === 'funder@f.com' || emailId === 'Funder@f.com' || emailId === 'FUNDER@F.COM') {
                 sessionStorage.setItem('userType', "Funder");
                 sessionStorage.setItem('showAdminHeaderModules', true);
                 sessionStorage.setItem('showFunderModules', true);
                 sessionStorage.setItem('showStartCampaign', false);
-            } else if (emailId === 'customer' || emailId === 'Customer' || emailId === 'CUSTOMER') {
+            } else if (emailId === 'customer@c.com' || emailId === 'Customer@c.com' || emailId === 'CUSTOMER@C.COM') {
                 sessionStorage.setItem('userType', "Customer");
                 sessionStorage.setItem('showAdminHeaderModules', false);
             } 
