@@ -113,10 +113,18 @@
                     <h7 align="left">Leave a Comment:</h7>
                     <form role="form">
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" required></textarea>
+                            {{textarea class="form-control" rows="3" value=content}}
+                            {{errormessage}}
                         </div>
                          <div class="btngroup">
-                        <button type="submit" class="btn btn-color" align="left" disabled={{v-get this 'isInvalid'}}>Submit</button>
+                        <button type="submit" class="btn btn-color" align="left"{{action "toggleModal"}}>Submit</button>
+                        {{#if isShowingModal}}
+                        {{#modal-dialog close="toggleModal"
+                        targetAttachment="center"
+                        translucentOverlay=true}}
+                        <p>Comment Successfully submitted</p>
+                        {{/modal-dialog}}
+                        {{/if}}
                         </div>
                     </form>
                     <br>

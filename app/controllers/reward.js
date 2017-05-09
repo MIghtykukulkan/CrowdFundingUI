@@ -5,11 +5,13 @@ export default Ember.Controller.extend({
     isShowingModal: false,
 
     actions: {
-        noRewardSelection: function(arg, arg1) {
+        norewardSelection: function(arg, arg1) {
             var amount = arg;
             var reward = arg1;
-            this.set('message', "You have not selected any rewards and you want to contribute Rs "+amount+"?");
-           },
+            console.log(amount);
+            this.set('message', "You have not selected any rewards and you want to contribute Rs "+ amount +" and You will get "+ reward +" reward. Do you want to continue?");
+           
+        },
 
         rewardSelection: function(arg, arg1) {
             var amount = arg;

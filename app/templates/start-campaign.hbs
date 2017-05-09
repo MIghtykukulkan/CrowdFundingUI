@@ -27,7 +27,8 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
-                                        <textarea class="form-control" rows="2" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char"></textarea>
+                                        
+                                        {{textarea class="form-control" rows="2" value=content shortdescription="shortdescription" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char"}}
                                         {{errormessage2}}
                                     </div>
                                 </div>
@@ -49,7 +50,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
-                                        <textarea class="form-control" rows="5" maxlength="500" valuePath="campaignstory" placeholder="(Campaign Story) Should not be allowed more than 500 char"></textarea>
+                                        {{textarea class="form-control" rows="5" maxlength="500" value=contents valuePath="campaignstory" placeholder="(Campaign Story) Should not be allowed more than 500 char"}}
                                         {{errormessage4}}
                                     </div>
                                 </div>
@@ -92,7 +93,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-triangle-right"></span>
                                         </div>
-                                        <textarea class="form-control" rows="2" valuePath="firstgoal" placeholder="(Campaign Goal/Conditions 1) Should not be blank"></textarea>
+                                        {{textarea class="form-control" rows="2" value=contentss valuePath="firstgoal" placeholder="(Campaign Goal/Conditions)"}}
                                         {{errormessage6}}
                                     </div>
                                 </div>
@@ -153,9 +154,16 @@
                 </div>         
             {{/step.body}}
             {{#step.actions as |nextStep previousStep|}}
-                {{#paper-button primary=true raised=true onClick=(action nextStep)}}
+                {{#paper-button primary=true raised=true onClick=(action "toggleModal1")}}
                     Continue
                 {{/paper-button}}
+                {{#if isShowingModal}}
+{{#modal-dialog close="toggleModal1"
+targetAttachment="center"
+translucentOverlay=true}}
+<p>Successfully Registered</p>
+{{/modal-dialog}}
+{{/if}}
                 {{#paper-button onClick=(action previousStep)}}
                     Back
                 {{/paper-button}}
