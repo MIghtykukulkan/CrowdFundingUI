@@ -1,3 +1,17 @@
+<script>
+    // Enable navigation prompt
+    //window.onbeforeunload = function() {
+    //    return true;
+    //};
+    // Remove navigation prompt
+    //window.onbeforeunload = null;
+    $(window).bind('beforeunload', function() {
+        if($('input').val() !== '') {
+            return "It looks like you have input you haven't submitted."
+        }
+    });
+</script>
+
 <div class="row text-center">
 
     <div class="col-sm-8">
@@ -113,7 +127,7 @@
                     <h7 align="left">Leave a Comment:</h7>
                     <form role="form">
                         <div class="form-group">
-                            {{textarea class="form-control" rows="3" value=content }}
+                            {{textarea class="form-control" rows="3" value=content id="comments"}}
                             {{errormessage}}
                         </div>
                          <div class="btngroup">

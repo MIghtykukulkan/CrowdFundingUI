@@ -52,7 +52,6 @@ var Validations = buildValidations({
     rewarddescription: [
         validator('presence', true),
         validator('length', {
-         min: 160,
          max: 160,
     
         })
@@ -98,17 +97,17 @@ export default Ember.Controller.extend(Validations,{
                 return;
             }
 
-             if (rewardamount === null || rewardamount === undefined || rewardamount === "") {
+            else if (rewardamount === null || rewardamount === undefined || rewardamount === "") {
                 this.set('rewardamounterrormessage', "field cannot be empty")
                 return;
             }
 
-             if (rewarddescription === null || rewarddescription === undefined || rewarddescription === "") {
+            else if (rewarddescription === null || rewarddescription === undefined || rewarddescription === "") {
                 this.set('rewarddescriptionerrormessage', "field cannot be empty")
                 return;
             }
 
-            if (deliveryDate === null || deliveryDate === undefined || deliveryDate === "") {
+            else if (deliveryDate === null || deliveryDate === undefined || deliveryDate === "") {
                 this.set('dateerrormessage', "Date field cannot be empty")
                 return;
             }
