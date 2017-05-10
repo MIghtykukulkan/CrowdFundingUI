@@ -165,6 +165,17 @@ translucentOverlay=true}}
 <p>fill those Fields..!!!!</p>
 {{/modal-dialog}}
 {{/if}}
+
+{{#if isShowingModalss}}
+{{#modal-dialog close="toggleModal1"
+targetAttachment="center"
+translucentOverlay=true}}
+<p>Campaign created...!!!!</p>
+<div class="modal-header">
+<button type="button" class="close" {{action "home"}}>ok</button>
+</div>
+{{/modal-dialog}}
+{{/if}}
                 {{#paper-button onClick=(action previousStep)}}
                     Back
                 {{/paper-button}}

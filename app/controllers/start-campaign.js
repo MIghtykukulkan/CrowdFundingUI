@@ -152,8 +152,12 @@ export default Ember.Controller.extend(Validations,{
                 this.toggleProperty('isShowingModal');
                 return;
             }
-           this.transitionToRoute('home');
-     }
+           this.toggleProperty('isShowingModalss');
+         },
+
+         home:function(){
+             this.transitionToRoute('home');
+         }
     }
     
      /*deliveryDate: Ember.computed(function () {
