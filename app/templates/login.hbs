@@ -38,11 +38,12 @@
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-lock"></span>
                             </div>
-                            {{validated-input type="password" model=this valuePath='password' placeholder='Password'}}
+                            {{validated-input type="password" value='password'  model=this valuePath='password' placeholder='Password'}}
                         </div>
                     </div>
                     <br>
                     </div>
+                    {{errormessage}}
                     <div class="btngroup">
                     <button type="button" class="btn btn-color" {{action 'login'}} disabled={{v-get this 'isInvalid'}}> Sign In</button>
                     <button type="button" class="btn btn-color" {{action 'register'}}> Sign Up</button>

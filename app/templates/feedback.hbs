@@ -16,6 +16,7 @@
                                 <span class="glyphicon glyphicon-triangle-right"></span>
                             </div>
                             {{validated-input type="text" model=this valuePath="Ratings" placeholder="Ratings (out of 5)"}}
+                            {{Ratingserrormessage}}
                         </div>
                     
                         {{#paper-button raised=true primary=true onClick=(action "submitFeedback")}}

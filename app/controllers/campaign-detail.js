@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     actions :
     {
-        callReward : function()
+        callRewards : function()
         {
             this.transitionToRoute('reward');
         },
@@ -16,6 +16,7 @@ export default Ember.Controller.extend({
                 return;
             }
             this.toggleProperty('isShowingModal');
+            window.location.reload(true);
         }
     }
 });

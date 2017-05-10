@@ -25,20 +25,25 @@ export default Ember.Controller.extend({
     actions: {
 
         authorize: function(record) {
-            this.set('isFunderAuthorize', true);
+            this.toggleProperty('isFunderAuthorize');
+            //this.set('isFunderAuthorize', true);
             this.set('fundername', record.fundername);
             this.set('campaignname', record.campaignname);
             this.set('message', record.fundername + "'s bid for " + record.campaignname + "has been successfully approved.");
         },
 
         dismissModal: function(record) {
-            this.set('isFunderAuthorize', false);
+            this.toggleProperty('isFunderAuthorize');
+            //this.set('isFunderAuthorize', false);
             this.set('message', this.get('fundername') + "'s bid for " + this.get('campaignname') + "has been rejected.");
             alert(this.get('message'));
         },
         approvebids: function() {
             alert(this.get('message'));
+            this.toggleProperty('isFunderAuthorize');
         },
-
+       toggleModal: function() {
+           this.toggleProperty('isFunderAuthorize');
+       } 
     }
 });

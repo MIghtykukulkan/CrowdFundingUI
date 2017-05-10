@@ -215,6 +215,15 @@ Back
 {{#paper-button primary=true raised=true onClick=(action "toggleModal1")}}
 Register
 {{/paper-button}}
+{{#if isShowingModals}}
+{{#modal-dialog close="toggleModal1"
+targetAttachment="center"
+translucentOverlay=true}}
+<p>Some Fields are Invalied and Empty.Please</p>
+<p>fill those Fields..!!!!</p>
+{{/modal-dialog}}
+{{/if}}
+
 {{#if isShowingModal}}
 {{#modal-dialog close="toggleModal1"
 targetAttachment="center"

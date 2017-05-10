@@ -9,7 +9,9 @@
     {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 </div>
 {{#if isFunderAuthorize}}
-{{#modal-dialog close="toggleModal" targetAttachment="center" translucentOverlay=true}}
+{{#modal-dialog close="toggleModal"
+targetAttachment="center"
+translucentOverlay=true}}
 <!--    Modal content-->
 <h4><span class="glyphicon glyphicon-lock"></span> Bids Approval</h4>
 Do you want to Approve Bid?

@@ -20,7 +20,7 @@
     <div class="col-sm-4">
         <div class="thumbnail">
             <br>
-            <button class="btn btn-color" data-toggle="modal" {{action 'callReward'}}><strong>Contribute Now </strong>
+            <button class="btn btn-color" data-toggle="modal" {{action 'callRewards'}}><strong>Contribute Now </strong>
             </button>
             <br>
             <br>
@@ -113,7 +113,7 @@
                     <h7 align="left">Leave a Comment:</h7>
                     <form role="form">
                         <div class="form-group">
-                            {{textarea class="form-control" rows="3" value=content}}
+                            {{textarea class="form-control" rows="3" value=content }}
                             {{errormessage}}
                         </div>
                          <div class="btngroup">
@@ -122,7 +122,7 @@
                         {{#modal-dialog close="toggleModal"
                         targetAttachment="center"
                         translucentOverlay=true}}
-                        <p>Comment Successfully submitted</p>
+                        <p>Comment Successfully Submitted</p>
                         {{/modal-dialog}}
                         {{/if}}
                         </div>

@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
 
     actions: {
         norewardSelection: function(arg, arg1) {
+            var amount = this.get('amount');
+            if (amount === null || amount === undefined || amount === "") {
+                this.set('amounterrormessage', "field cannot be empty")
+                return;
+            }
             var amount = arg;
             var reward = arg1;
             console.log(amount);

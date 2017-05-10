@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
     model() {
+
         var message = sessionStorage.getItem('imgURL');
         console.log("message" + message);
         var message1 = sessionStorage.getItem('desc');

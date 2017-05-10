@@ -120,35 +120,42 @@ export default Ember.Controller.extend(Validations, {
 
 
         toggleModal1: function() {
-            //var chosen = this.get('selectedtype');
-            //console.log(chosen);
+            var chosen = this.get('selectedtype');
+            console.log(chosen);
             var Organisationname = this.get('Organisationname');
             var emailid = this.get('emailid');
             var fullname = this.get('fullname');
             var enterdesignation = this.get('enterdesignation');
             var email2 = this.get('email2');
             var phoneno = this.get('phoneno');
-            /*if (chosen === null || chosen === undefined) {
-                this.set('errorMessage1', "Please Select Oragnisation");
+            if (chosen === null || chosen === undefined) {
+                this.set('errormessage1', "Please Select Oragnisation");
+                this.toggleProperty('isShowingModals');
                 return;
-            }*/
-            if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
+            }
+            else if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
                 this.set('errormessage2', "field cannot be empty")
+                this.toggleProperty('isShowingModals');
                 return;
             } else if (emailid === null || emailid === undefined || emailid === "") {
                 this.set('errormessage3', "field cannot be empty")
+                this.toggleProperty('isShowingModals');
                 return;
             } else if (fullname === null || fullname === undefined || fullname === "") {
                 this.set('errormessage4', "field cannot be empty")
+                this.toggleProperty('isShowingModals');
                 return;
             } else if (enterdesignation === null || enterdesignation === undefined || enterdesignation === "") {
                 this.set('errormessage5', "field cannot be empty")
+                this.toggleProperty('isShowingModals');
                 return;
             } else if (email2 === null || email2 === undefined || email2 === "") {
                 this.set('errormessage6', "field cannot be empty")
+                this.toggleProperty('isShowingModals');
                 return;
             } else if (phoneno === null || phoneno === undefined || phoneno === "") {
                 this.set('errormessage7', "field cannot be empty")
+                this.toggleProperty('isShowingModals');
                 return;
             }
             this.toggleProperty('isShowingModal');

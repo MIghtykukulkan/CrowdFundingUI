@@ -124,29 +124,35 @@ export default Ember.Controller.extend(Validations,{
             var contentss = this.get('contentss');
             if (campaigntitle === null || campaigntitle === undefined || campaigntitle === "") {
                 this.set('errormessage1', "field cannot be empty")
+                this.toggleProperty('isShowingModal');
                 return;
             }
             else if (content === null || content === undefined || content === "") {
                 this.set('errormessage2', "field cannot be empty")
+                this.toggleProperty('isShowingModal');
                 return;
             }
             else if (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") {
                 this.set('errormessage3', "field cannot be empty")
+                this.toggleProperty('isShowingModal');
                 return;
             }
             else if (contents === null || contents === undefined || contents === "") {
                 this.set('errormessage4', "field cannot be empty")
+                this.toggleProperty('isShowingModal');
                 return;
             }
             else if (goalamount === null || goalamount === undefined || goalamount === "") {
                 this.set('errormessage5', "field cannot be empty")
+                this.toggleProperty('isShowingModal');
                 return;
             }
             else if (contentss === null || contentss === undefined || contentss === "") {
                 this.set('errormessage6', "field cannot be empty")
+                this.toggleProperty('isShowingModal');
                 return;
             }
-            this.toggleProperty('isShowingModal');
+           this.transitionToRoute('home');
      }
     }
     

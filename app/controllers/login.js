@@ -12,6 +12,14 @@ var Validations = buildValidations({
             type: 'email'
         })
     ],
+    password: {
+    description: 'Password',
+    validators: [
+      validator('presence', true),
+      validator('length', {
+      })
+    ],
+    }
 
 });
 
@@ -44,6 +52,10 @@ export default Ember.Controller.extend(Validations,{
                 sessionStorage.setItem('userType', "Customer");
                 sessionStorage.setItem('showAdminHeaderModules', false);
             } 
+            else {
+                       this.set('errormessage', "Invalid EmailId");
+                       return;
+                    }
             
             if (goToStartCampaign) {
                 if (showStartCampaign)
@@ -52,7 +64,7 @@ export default Ember.Controller.extend(Validations,{
                     sessionStorage.clear();
                     this.set('showValidation', true);
 
-            } else {
+            }else {
                 window.location.reload(true);
             }
         },

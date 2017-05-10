@@ -8,7 +8,8 @@ var Validations = buildValidations({
     Ratings: [
         validator('presence', true),
         validator('format', {
-            type: 'name'
+             regex:/[0-1-2-3-4-5-6-7-8-9]/,
+            type: 'number'
         })
     ],
 });
@@ -22,6 +23,11 @@ export default Ember.Controller.extend(Validations,{
         },
 
         submitFeedback: function() {
+             var Ratings = this.get('Ratings');
+            if (Ratings === null || Ratings === undefined || Ratings === "") {
+                this.set('Ratingserrormessage', "field cannot be empty")
+                return;
+            }
             this.toggleProperty('showFeedback');
         }
     }
