@@ -22,7 +22,7 @@ var Validations = buildValidations({
     confirmemail: [
         validator('confirmation', {
             on: 'email',
-            message: 'email do not match'
+            message: 'Email IDs do not match'
         })
     ],
 
@@ -32,11 +32,14 @@ var Validations = buildValidations({
             regex: /^(\+\d{1,3}[- ]?)?\d{10}$/,
         })
     ],
+});
 
+var ValidationsOrg = buildValidations({
     Organisationname: [
         validator('presence', true),
         validator('format', {
-            regex: /^[A-Za-z-1-9-0/-/. ]+$/
+            regex: /^[A-Za-z-1-9-0/-/. ]+$/,
+            message: ''
         })
     ],
 
@@ -50,14 +53,16 @@ var Validations = buildValidations({
     fullname: [
         validator('presence', true),
         validator('format', {
-            regex: /^[A-Za-z/./_/ ]+$/
+            regex: /^[A-Za-z/./_/ ]+$/,
+            message: ''
         })
     ],
 
     enterdesignation: [
         validator('presence', true),
         validator('format', {
-            regex: /^[A-Za-z/./_/ ]+$/
+            regex: /^[A-Za-z/./_/ ]+$/,
+            message: ''
         })
     ],
 
@@ -71,37 +76,38 @@ var Validations = buildValidations({
     phoneno: [
         validator('presence', true),
         validator('format', {
-            regex: /^(\+\d{1,3}[- ]?)?\d{10}$/,
+            regex: /^(\+\d{1,3}[- ]?)?\d{10}$/
         })
     ],
-
 });
 
-export default Ember.Controller.extend(Validations, {
+export default Ember.Controller.extend(Validations, ValidationsOrg, {
     isIndividualAuthorize: false,
     isOrganisationAuthorize: false,
     isShowingModal: false,
     organisationtype: ['NGO / Nonprofit', 'Social Enterprise', 'Community Organization', 'Corporate', 'Startup', 'Others', ],
 
     actions: {
-
         registerindividual: function(record) {
-
             this.set('isIndividualAuthorize', true);
             this.set('isOrganisationAuthorize', false);
-
         },
 
         registerorganisation: function(record){
             this.set('isOrganisationAuthorize', true);
             this.set('isIndividualAuthorize', false);
         },
+
         toggleModal: function() {
-            var name = this.get('name');
+            /*var name = this.get('name');
             var email = this.get('email');
             var confirmemail = this.get('confirmemail');
             var phonenumber = this.get('phonenumber');
-            if (name === null || name === undefined || name === "") {
+
+            if ((name === null || name === undefined || name === "") && 
+                (email === null || email === undefined || email === "") && 
+                (confirmemail === null || confirmemail === undefined || confirmemail === "") && 
+                (phonenumber === null || phonenumber === undefined || phonenumber === "")) {
                 this.set('error', "field cannot be empty")
                 return;
             } else if (email === null || email === undefined || email === "") {
@@ -113,8 +119,8 @@ export default Ember.Controller.extend(Validations, {
             } else if (phonenumber === null || phonenumber === undefined || phonenumber === "") {
                 this.set('errormessage', "field cannot be empty")
                 return;
-            }
-
+            }*/
+ 
             this.toggleProperty('isShowingModal');
         },
 
@@ -128,12 +134,18 @@ export default Ember.Controller.extend(Validations, {
             var enterdesignation = this.get('enterdesignation');
             var email2 = this.get('email2');
             var phoneno = this.get('phoneno');
-            if (chosen === null || chosen === undefined) {
-                this.set('errormessage1', "Please Select Oragnisation");
+
+            if ((chosen === null || chosen === undefined) || 
+                (Organisationname === null || Organisationname === undefined || Organisationname === "") || 
+                (emailid === null || emailid === undefined || emailid === "") ||
+                (fullname === null || fullname === undefined || fullname === "") ||
+                (enterdesignation === null || enterdesignation === undefined || enterdesignation === "") ||
+                (email2 === null || email2 === undefined || email2 === "") ||
+                (phoneno === null || phoneno === undefined || phoneno === "")) {
+                this.set('errormessage1', "This field cannot be blank");
                 this.toggleProperty('isShowingModals');
                 return;
-            }
-            else if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
+            }/* else if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
                 this.set('errormessage2', "field cannot be empty")
                 this.toggleProperty('isShowingModals');
                 return;
@@ -157,13 +169,19 @@ export default Ember.Controller.extend(Validations, {
                 this.set('errormessage7', "field cannot be empty")
                 this.toggleProperty('isShowingModals');
                 return;
-            }
+            }*/
             this.toggleProperty('isShowingModal');
         },
 
         register: function() {
             console.log("Test");
         },
+
+        focusOutInput: function() {
+            alert("Hello");
+            this.set('errormessage1', '');
+        }
+
        /* toggleModal1: function() {
             var chosen = this.get('selectedtype');
             console.log(chosen);
