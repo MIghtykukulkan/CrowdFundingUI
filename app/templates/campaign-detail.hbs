@@ -131,7 +131,7 @@
                             {{errormessage}}
                         </div>
                          <div class="btngroup">
-                        <button type="submit" class="btn btn-color" align="left"{{action "toggleModal"}}>Submit</button>
+                        <button type="submit" class="btn btn-color"  disabled={{disabled}} align="left"{{action "toggleModal"}}>Submit</button>
                         {{#if isShowingModal}}
                         {{#modal-dialog close="toggleModal"
                         targetAttachment="center"

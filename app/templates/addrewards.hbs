@@ -7,7 +7,7 @@
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
-                    {{validated-input type="text" model=this valuePath="rewardtitle" placeholder="Reward Title"}}
+                    {{validated-input2 type="text" model=this valuePath="rewardtitle" placeholder="Reward Title" errormessage1=rewardtitleerrormessage}}
                     {{rewardtitleerrormessage}}
                 </div>
                 <br/>
@@ -15,7 +15,7 @@
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
-                    {{validated-input type="text" model=this valuePath="rewardamount" placeholder="Minimum Donation amount required to obtain this reward (Rs.)"}}
+                    {{validated-input2 type="text" model=this valuePath="rewardamount" placeholder="Minimum Donation amount required to obtain this reward (Rs.)" errormessage1=rewardamounterrormessage}}
                     {{rewardamounterrormessage}}
                 </div>
                 <br/>
@@ -23,7 +23,7 @@
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
-                    {{validated-input type="text" model=this valuePath="rewarddescription" placeholder="Reward Description"}}
+                    {{validated-input2 type="text" model=this valuePath="rewarddescription" placeholder="Reward Description" errormessage1=rewarddescriptionerrormessage}}
                     {{rewarddescriptionerrormessage}}
                 </div>
                 <br/>

@@ -135,7 +135,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var email2 = this.get('email2');
             var phoneno = this.get('phoneno');
 
-            if ((chosen === null || chosen === undefined) || 
+           /* if ((chosen === null || chosen === undefined) || 
                 (Organisationname === null || Organisationname === undefined || Organisationname === "") || 
                 (emailid === null || emailid === undefined || emailid === "") ||
                 (fullname === null || fullname === undefined || fullname === "") ||
@@ -151,32 +151,50 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 this.set('errormessage7', "This field cannot be blank");
                 this.toggleProperty('isShowingModals');
                 return;
-                } /* if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
+            }*/ 
+            if (chosen === null || chosen === undefined){
+                this.set('errormessage1', "Please Select Organisation");
+                //this.toggleProperty('isShowingModals');
+                //return;
+            }
+             if (Organisationname === null || Organisationname === undefined || Organisationname === "") {
                 this.set('errormessage2', "This field cannot be blank")
-                this.toggleProperty('isShowingModals');
+                //this.toggleProperty('isShowingModals');
                 //return;
             }  if (emailid === null || emailid === undefined || emailid === "") {
                 this.set('errormessage3', "This field cannot be blank")
-                this.toggleProperty('isShowingModals');
+                //this.toggleProperty('isShowingModals');
                 //return;
             }  if (fullname === null || fullname === undefined || fullname === "") {
                 this.set('errormessage4', "This field cannot be blank")
-                this.toggleProperty('isShowingModals');
+                //this.toggleProperty('isShowingModals');
                 //return;
             }  if (enterdesignation === null || enterdesignation === undefined || enterdesignation === "") {
                 this.set('errormessage5', "This field cannot be blank")
-                this.toggleProperty('isShowingModals');
+                //this.toggleProperty('isShowingModals');
                 //return;
             }  if (email2 === null || email2 === undefined || email2 === "") {
                 this.set('errormessage6', "This field cannot be blank")
-                this.toggleProperty('isShowingModals');
+                //this.toggleProperty('isShowingModals');
                 //return;
             }  if (phoneno === null || phoneno === undefined || phoneno === "") {
                 this.set('errormessage7', "This field cannot be blank")
-                this.toggleProperty('isShowingModals');
-                return;
-            }*/
+                //this.toggleProperty('isShowingModals');
+                //return;
+            }
+            if ((chosen === null || chosen === undefined) || 
+                (Organisationname === null || Organisationname === undefined || Organisationname === "") || 
+                (emailid === null || emailid === undefined || emailid === "") ||
+                (fullname === null || fullname === undefined || fullname === "") ||
+                (enterdesignation === null || enterdesignation === undefined || enterdesignation === "") ||
+                (email2 === null || email2 === undefined || email2 === "") ||
+                (phoneno === null || phoneno === undefined || phoneno === ""))
+                {
+                  this.toggleProperty('isShowingModals');  
+                }
+                else{
             this.toggleProperty('isShowingModal');
+                }
         },
 
         register: function() {

@@ -16,7 +16,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
-                                        {{validated-input type="text" model=this valuePath="campaigntitle" placeholder="Campaign Title"}}
+                                        {{validated-input2 type="text" model=this valuePath="campaigntitle" placeholder="Campaign Title" errormessage1=errormessage1}}
                                         {{errormessage1}}
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
                                         
-                                        {{textarea class="form-control" rows="2" value=content shortdescription="shortdescription" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char"}}
+                                        {{textarea class="form-control" rows="2" value=content shortdescription="shortdescription" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char" errormessage1=errormessage2}}
                                         {{errormessage2}}
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
-                                        {{validated-input type="text" model=this valuePath="beneficiaryname" placeholder="Name of Beneficiary"}}
+                                        {{validated-input2 type="text" model=this valuePath="beneficiaryname" placeholder="Name of Beneficiary" errormessage1=errormessage3}}
                                         {{errormessage3}}
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
-                                        {{textarea class="form-control" rows="5" maxlength="500" value=contents valuePath="campaignstory" placeholder="(Campaign Story) Should not be allowed more than 500 char"}}
+                                        {{textarea class="form-control" rows="5" maxlength="500" value=contents valuePath="campaignstory" placeholder="(Campaign Story) Should not be allowed more than 500 char" errormessage1=errormessage4}}
                                         {{errormessage4}}
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-triangle-right"></span>
                                         </div>
-                                        {{validated-input type="text" model=this valuePath="goalamount" placeholder="Set Goal Amount"}}
+                                        {{validated-input2 type="text" model=this valuePath="goalamount" placeholder="Set Goal Amount" errormessage1=errormessage5}}
                                         {{errormessage5}}
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-triangle-right"></span>
                                         </div>
-                                        {{textarea class="form-control" rows="2" value=contentss valuePath="firstgoal" placeholder="(Campaign Goal/Conditions)"}}
+                                        {{textarea class="form-control" rows="2" value=contentss valuePath="firstgoal" placeholder="(Campaign Goal/Conditions)" errormessage1=errormessage6}}
                                         {{errormessage6}}
                                     </div>
                                 </div>

@@ -1,8 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+disabled: true,
 
     model() {
+       if( sessionStorage.getItem('userType'))
+     {
+       this.controllerFor('campaign-detail').set('disabled', false);
+       
+     } else {
+       this.controllerFor('campaign-detail').set('disabled', true);
+     }
+        
 
         var message = sessionStorage.getItem('imgURL');
         console.log("message" + message);

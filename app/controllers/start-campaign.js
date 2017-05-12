@@ -94,20 +94,20 @@ export default Ember.Controller.extend(Validations,{
             
             if (rewardtitle === null || rewardtitle === undefined || rewardtitle === "") {
                 this.set('rewardtitleerrormessage', "field cannot be empty")
-                return;
+                //return;
             }
 
-            else if (rewardamount === null || rewardamount === undefined || rewardamount === "") {
+            if (rewardamount === null || rewardamount === undefined || rewardamount === "") {
                 this.set('rewardamounterrormessage', "field cannot be empty")
-                return;
+                //return;
             }
 
-            else if (rewarddescription === null || rewarddescription === undefined || rewarddescription === "") {
+            if (rewarddescription === null || rewarddescription === undefined || rewarddescription === "") {
                 this.set('rewarddescriptionerrormessage', "field cannot be empty")
-                return;
+                //return;
             }
 
-            else if (deliveryDate === null || deliveryDate === undefined || deliveryDate === "") {
+            if (deliveryDate === null || deliveryDate === undefined || deliveryDate === "") {
                 this.set('dateerrormessage', "Date field cannot be empty")
                 return;
             }
@@ -123,35 +123,45 @@ export default Ember.Controller.extend(Validations,{
             var contentss = this.get('contentss');
             if (campaigntitle === null || campaigntitle === undefined || campaigntitle === "") {
                 this.set('errormessage1', "field cannot be empty")
-                this.toggleProperty('isShowingModal');
-                return;
+                //this.toggleProperty('isShowingModal');
+               // return;
             }
-            else if (content === null || content === undefined || content === "") {
+             if (content === null || content === undefined || content === "") {
                 this.set('errormessage2', "field cannot be empty")
-                this.toggleProperty('isShowingModal');
-                return;
+                //this.toggleProperty('isShowingModal');
+               // return;
             }
-            else if (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") {
+            if (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") {
                 this.set('errormessage3', "field cannot be empty")
-                this.toggleProperty('isShowingModal');
-                return;
+                //this.toggleProperty('isShowingModal');
+                //return;
             }
-            else if (contents === null || contents === undefined || contents === "") {
+            if (contents === null || contents === undefined || contents === "") {
                 this.set('errormessage4', "field cannot be empty")
-                this.toggleProperty('isShowingModal');
-                return;
+                //this.toggleProperty('isShowingModal');
+                //return;
             }
-            else if (goalamount === null || goalamount === undefined || goalamount === "") {
+            if (goalamount === null || goalamount === undefined || goalamount === "") {
                 this.set('errormessage5', "field cannot be empty")
-                this.toggleProperty('isShowingModal');
-                return;
+                //this.toggleProperty('isShowingModal');
+                //return;
             }
-            else if (contentss === null || contentss === undefined || contentss === "") {
+            if (contentss === null || contentss === undefined || contentss === "") {
                 this.set('errormessage6', "field cannot be empty")
-                this.toggleProperty('isShowingModal');
-                return;
+                //this.toggleProperty('isShowingModal');
+                //return;
             }
-           this.toggleProperty('isShowingModalss');
+            if((campaigntitle === null || campaigntitle === undefined || campaigntitle === "") || 
+                (content === null || content === undefined || content === "") ||
+                (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") ||
+                (contents === null || contents === undefined || contents === "")  ||
+                (goalamount === null || goalamount === undefined || goalamount === "") ||
+                (contentss === null || contentss === undefined || contentss === "")){
+                    this.toggleProperty('isShowingModal');
+                }
+            else{
+                    this.toggleProperty('isShowingModalss');
+                }
          },
 
          home:function(){
