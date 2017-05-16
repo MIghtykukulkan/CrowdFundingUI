@@ -60,13 +60,20 @@ export default Ember.Controller.extend({
 
         authorizeCampaign: function() {
             alert(this.get('message'));
+             this.toggleProperty('isCampAuthorize');
         },
 
         closeCampaign: function() {
             alert(this.get('message1'));
         },
 
-
+         toggleModal: function() {
+           this.toggleProperty('isCampAuthorize');
+       } ,
+         toggleModal: function() {
+           this.toggleProperty('isCampClosure');
+       } 
+       
 
     }
 });

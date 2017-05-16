@@ -2,7 +2,9 @@
 
 {{#if isPartAuthorize}}
 
-{{#modal-dialog close="dismissModal" targetAttachment="center" translucentOverlay=true}}
+{{#modal-dialog close="toggleModal"
+targetAttachment="center"
+translucentOverlay=true}}
 <!--    Modal content-->
 <h4><span class="glyphicon glyphicon-lock"></span> Authorize Participants</h4>
 Do you want to authorize {{participantName}}?

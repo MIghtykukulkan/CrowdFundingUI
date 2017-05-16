@@ -15,7 +15,8 @@ var Validations = buildValidations({
     email: [
         validator('presence', true),
         validator('format', {
-            type: 'email'
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
         })
     ],
 
@@ -46,7 +47,8 @@ var ValidationsOrg = buildValidations({
     emailid: [
         validator('presence', true),
         validator('format', {
-            type: 'email'
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
         })
     ],
 
@@ -69,7 +71,8 @@ var ValidationsOrg = buildValidations({
     email2: [
         validator('presence', true),
         validator('format', {
-            type: 'email'
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
         })
     ],
 

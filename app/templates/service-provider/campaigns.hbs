@@ -1,7 +1,9 @@
 {{models-table data=model columns=columns useNumericPagination=true currentPageNumber=8 filteringIgnoreCase=true action='authorize'}}
 
 {{#if isCampAuthorize}}
-{{#modal-dialog close="dismissModal" targetAttachment="center" translucentOverlay=true}}
+{{#modal-dialog close="toggleModal"
+targetAttachment="center"
+translucentOverlay=true}}
 <!--    Modal content-->
 <h4><span class="glyphicon glyphicon-lock"></span> Authorize Campaign</h4>
 Do you want to authorize {{campaignName}} campaign?
@@ -21,7 +23,9 @@ Do you want to authorize {{campaignName}} campaign?
 
 {{#if isCampClosure}}
 
-{{#modal-dialog close="dismissModal" targetAttachment="center" translucentOverlay=true}}
+{{#modal-dialog close="toggleModal"
+targetAttachment="center"
+translucentOverlay=true}}
 <!--    Modal content-->
 <h4><span class="glyphicon glyphicon-lock"></span> Closing Campaign</h4>
 Do you want to close {{campaignName}} campaign?

@@ -37,7 +37,12 @@ export default Ember.Controller.extend({
         },
         authorizeParticipants : function(){
              alert(this.get('message'));
-        }
+             this.toggleProperty('isPartAuthorize');
+        },
+
+         toggleModal: function() {
+           this.toggleProperty('isPartAuthorize');
+       } ,
 
     }
 });
