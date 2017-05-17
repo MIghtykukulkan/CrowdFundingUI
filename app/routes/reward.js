@@ -7,6 +7,7 @@ export default Ember.Route.extend({
         var showReward = sessionStorage.getItem('showReward');
 
         if (userType === undefined || userType === null) {
+            alert("Please Login");
             sessionStorage.setItem('showcallRewards', true);
             this.transitionTo('login');
         } else if (userType === "Funder") {

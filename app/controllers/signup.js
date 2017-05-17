@@ -207,6 +207,10 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
         focusOutInput: function() {
             alert("Hello");
             this.set('errormessage1', '');
+        },
+
+        login: function(){
+               this.transitionToRoute('login');
         }
 
        /* toggleModal1: function() {

@@ -113,7 +113,8 @@ export default Ember.Controller.extend(Validations,{
             }
             this.set('isAddReward', false);
             this.toggleProperty('isSaveReward');
-        },
+           
+            },
             toggleModal1: function() {
             var campaigntitle = this.get('campaigntitle');
             var content = this.get('content');
@@ -166,6 +167,9 @@ export default Ember.Controller.extend(Validations,{
 
          home:function(){
              this.transitionToRoute('home');
+         },
+          home2:function(){
+              window.location.reload(true);
          }
     }
     

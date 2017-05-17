@@ -7,6 +7,7 @@ export default Ember.Route.extend({
         var showStartCampaign = sessionStorage.getItem('showStartCampaign');
 
         if (userType === undefined || userType === null) {
+            alert("Please Login");
             sessionStorage.setItem('goToStartCampaign', true);
             this.transitionTo('login');
         } else if (userType === "Funder") {

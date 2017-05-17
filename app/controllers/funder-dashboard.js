@@ -8,8 +8,10 @@ var Validations = buildValidations({
     Ratings: [
         validator('presence', true),
         validator('format', {
-             regex:/[0-1-2-3-4-5-6-7-8-9]/,
-            type: 'number'
+             regex:/^[0-5][1-5]*$/,
+        }),
+        validator('length',{
+            max : 1,
         })
     ],
 });
