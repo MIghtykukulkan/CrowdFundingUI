@@ -16,7 +16,10 @@ export default Ember.Controller.extend({
                 return;
             }
             this.toggleProperty('isShowingModal');
-            window.location.reload(true);
+            
+        },
+        submit:function(){
+           window.location.reload(true); 
         }
     }
 });
