@@ -210,7 +210,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
         },
 
         login: function(){
-               this.transitionToRoute('login');
+               window.location.reload(true);
         }
 
        /* toggleModal1: function() {
