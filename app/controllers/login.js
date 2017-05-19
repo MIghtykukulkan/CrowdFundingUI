@@ -72,6 +72,9 @@ export default Ember.Controller.extend(Validations,{
 
         dismissModal: function() {
             this.set('showValidation', false);
+        },
+        reset:function(){
+            alert("hello");
         }
     }
 });

@@ -250,7 +250,17 @@ select {
     text-overflow: ellipsis;
 }
 
+.errors{
+     position: absolute;
+     left: 88px; 
+}
 
+.resetpassword{
+     position: absolute;
+     left: 110px;
+}
 
-
-
+.helppassword{
+    position: absolute;
+    left: 310px;
+}

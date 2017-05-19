@@ -42,7 +42,9 @@
                         </div>
                     </div>
                     <br>
+                    {{#link-to 'confirmemail'}}forgot password{{/link-to}}
                     </div>
+                    <br>
                     {{errormessage}}
                     <div class="btngroup">
                     <button type="button" class="btn btn-color" {{action 'login'}} disabled={{v-get this 'isInvalid'}}> Sign In</button>

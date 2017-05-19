@@ -61,6 +61,8 @@ Router.map(function() {
   this.route('help');
   this.route('funder_dashboard');
   this.route('addrewards');
+  this.route('confirmemail');
+  this.route('reset-password');
 });
 
 export default Router;
