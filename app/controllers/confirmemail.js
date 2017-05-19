@@ -28,12 +28,6 @@ export default Ember.Controller.extend(Validations,{
               this.toggleProperty('isShowingModal');
         },
         resetpassword:function(){
-            var otp = this.get('otp');
-            if (otp === null || otp === undefined || otp === "") {
-                this.set('otperrormessage', "Please enter OTP")
-                return;
-            }
-            
               this.transitionToRoute('reset-password');
         }
     }
