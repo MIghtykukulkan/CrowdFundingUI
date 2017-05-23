@@ -64,6 +64,46 @@ export default Ember.Controller.extend(Validations,{
     isSaveReward: false,
 
     actions: {
+
+        upload: function(event) {
+    const reader = new FileReader();
+    const file = event.target.files[0];
+    let imageData;
+    let videoData;
+
+    // Note: reading file is async
+    reader.onload = () => {
+      imageData = reader.result;
+      this.set('data.image', imageData);
+      videoData = reader.result;
+      this.set('data.video', videoData)
+
+      // additional logics as you wish
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  },
+
+  videoupload: function(event) {
+    const reader = new FileReader();
+    const file = event.target.files[0];
+    let videoData;
+
+    // Note: reading file is async
+    reader.onload = () => {
+      videoData = reader.result;
+      this.set('data.video', videoData)
+
+      // additional logics as you wish
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  },
+
         start: function(){
             this.set('showStartResponse', true);    
         },

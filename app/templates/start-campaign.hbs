@@ -25,11 +25,10 @@
                                 <div class="cols-sm-10">
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            <span class="glyphicon glyphicon-user"></span>
                                         </div>
-                                        
-                                        {{textarea class="form-control" rows="2" value=content shortdescription="shortdescription" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char" errormessage1=errormessage2}}
-                                        {{errormessage2}}
+                                        {{validated-input2 type="text" model=this valuePath="beneficiaryname" placeholder="Campaign Category" errormessage1=errormessage3}}
+                                        {{errormessage3}}
                                     </div>
                                 </div>
                             </div>
@@ -37,10 +36,10 @@
                                 <div class="cols-sm-10">
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-user"></span>
+                                            <span class="glyphicon glyphicon-pencil"></span>
                                         </div>
-                                        {{validated-input2 type="text" model=this valuePath="beneficiaryname" placeholder="Name of Beneficiary" errormessage1=errormessage3}}
-                                        {{errormessage3}}
+                                        {{textarea class="form-control" rows="2" value=content shortdescription="shortdescription" maxlength="160" valuePath="shortdescription" id="shortdescription" placeholder="(Short Description) Should not be allowed more than 160 char" errormessage1=errormessage2}}
+                                        {{errormessage2}}
                                     </div>
                                 </div>
                             </div>
@@ -54,6 +53,23 @@
                                         {{errormessage4}}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="imageupload">
+                            <div>    <label class="image">Image Uplaod</label></div>
+                            <input
+                                multiple="true"
+                                onchange={{action "upload"}}
+                                accept="image/png,image/jpeg"
+                                type="file"/>
+                            </div>
+
+                            <div class="videoupload">
+                            <div>    <label class="video">Video Uplaod</label></div>
+                                <input
+                                multiple="true"
+                                onchange={{action "videoupload"}}
+                                accept="video/mp4,video/AVI"
+                                type="file"/>
                             </div>
                         </form>
                     </div>
