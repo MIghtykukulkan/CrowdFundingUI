@@ -19,7 +19,7 @@ var Validations = buildValidations({
         })
     ],
 
-    beneficiaryname: [
+    campaigncategory: [
         validator('presence', true),
         validator('format', {
             type: 'name'
@@ -29,7 +29,15 @@ var Validations = buildValidations({
     goalamount: [
         validator('presence', true),
         validator('format', {
-            regex:/[0-1-2-3-4-5-6-7-8-9-.]/,
+            regex:/^[0-9.]+$/,
+            type: 'number'
+        })
+    ],
+
+    startproject: [
+        validator('presence', true),
+        validator('format', {
+            regex:/^[0-9/.]+$/,
             type: 'number'
         })
     ],
@@ -44,7 +52,7 @@ var Validations = buildValidations({
     rewardamount: [
         validator('presence', true),
         validator('format', {
-            regex:/[0-1-2-3-4-5-6-7-8-9-.]/,
+            regex:/^[0-9.]+$/,
             type: 'number'
         })
     ],
@@ -62,22 +70,18 @@ export default Ember.Controller.extend(Validations,{
     showStartResponse: false,
     isAddReward: false,
     isSaveReward: false,
-
+    CampaignCategory: ['Education', 'Children', 'Animal Welfare','Environment','Film','Dance',],
     actions: {
 
         upload: function(event) {
     const reader = new FileReader();
     const file = event.target.files[0];
     let imageData;
-    let videoData;
 
     // Note: reading file is async
     reader.onload = () => {
       imageData = reader.result;
       this.set('data.image', imageData);
-      videoData = reader.result;
-      this.set('data.video', videoData)
-
       // additional logics as you wish
     };
 
@@ -157,26 +161,30 @@ export default Ember.Controller.extend(Validations,{
             },
             toggleModal1: function() {
             var campaigntitle = this.get('campaigntitle');
+            var campaigncategory = this.get('campaigncategory');
             var content = this.get('content');
-            var beneficiaryname = this.get('beneficiaryname');
             var contents = this.get('contents');
             var goalamount = this.get('goalamount');
-            var contentss = this.get('contentss');
+            var startdeliverydate = this.get('startdeliverydate');
+            var startproject = this.get('startproject');
+            var enddeliverydate = this.get('enddeliverydate');
             if (campaigntitle === null || campaigntitle === undefined || campaigntitle === "") {
                 this.set('errormessage1', "field cannot be empty")
                 //this.toggleProperty('isShowingModal');
                // return;
             }
-             if (content === null || content === undefined || content === "") {
-                this.set('errormessage2', "field cannot be empty")
-                //this.toggleProperty('isShowingModal');
-               // return;
-            }
-            if (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") {
+            if (campaigncategory === null || campaigncategory === undefined || campaigncategory === "") {
                 this.set('errormessage3', "field cannot be empty")
                 //this.toggleProperty('isShowingModal');
                 //return;
             }
+
+            if (content === null || content === undefined || content === "") {
+                this.set('errormessage2', "field cannot be empty")
+                //this.toggleProperty('isShowingModal');
+               // return;
+            }
+            
             if (contents === null || contents === undefined || contents === "") {
                 this.set('errormessage4', "field cannot be empty")
                 //this.toggleProperty('isShowingModal');
@@ -187,17 +195,27 @@ export default Ember.Controller.extend(Validations,{
                 //this.toggleProperty('isShowingModal');
                 //return;
             }
-            if (contentss === null || contentss === undefined || contentss === "") {
-                this.set('errormessage6', "field cannot be empty")
-                //this.toggleProperty('isShowingModal');
+            if (startdeliverydate === null || startdeliverydate === undefined || startdeliverydate === "") {
+                this.set('startdateerrormessage', "Date field cannot be empty")
+                //return;
+            }
+            if (startproject === null || startproject === undefined || startproject === "") {
+                this.set('startprojecterror', "field cannot be empty")
+                //return;
+            }
+            if (enddeliverydate === null || enddeliverydate === undefined || enddeliverydate === "") {
+                this.set('enddateerrormessage', "Date field cannot be empty")
                 //return;
             }
             if((campaigntitle === null || campaigntitle === undefined || campaigntitle === "") || 
+                
+                (campaigncategory === null || campaigncategory === undefined || campaigncategory === "") ||
                 (content === null || content === undefined || content === "") ||
-                (beneficiaryname === null || beneficiaryname === undefined || beneficiaryname === "") ||
                 (contents === null || contents === undefined || contents === "")  ||
                 (goalamount === null || goalamount === undefined || goalamount === "") ||
-                (contentss === null || contentss === undefined || contentss === "")){
+                (startdeliverydate === null || startdeliverydate === undefined || startdeliverydate === "") ||
+                (startproject === null || startproject === undefined || startproject === "") ||
+                (enddeliverydate === null || enddeliverydate === undefined || enddeliverydate === "")){
                     this.toggleProperty('isShowingModal');
                 }
             else{
@@ -207,10 +225,11 @@ export default Ember.Controller.extend(Validations,{
 
          home:function(){
              this.transitionToRoute('home');
+             window.location.reload(true);
          },
-          home2:function(){
+         /* home2:function(){
               window.location.reload(true);
-         }
+         }*/
     }
     
      /*deliveryDate: Ember.computed(function () {
