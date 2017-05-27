@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    isShowingHelp: false,
+      isShowingHelp: false,
     isShowingModal: false,
 
     actions: {
@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
             var amount = arg;
             var reward = arg1;
             this.set('message', "You have selected Rs. " + amount + " and You will get " + reward + " reward. Do you want to continue?");
-            console.log("display")
+            console.log('rahul')
         },
         
         

@@ -63,6 +63,7 @@ Router.map(function() {
   this.route('addrewards');
   this.route('confirmemail');
   this.route('reset-password');
+  this.route('agreement');
 });
 
 export default Router;

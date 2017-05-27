@@ -21,8 +21,8 @@
               </p>
               
             </div>
-            <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'norewardSelection' this.amount 'Special Shoutout on our social media handles'}}> Contribute </button> <br>
+             <div class="panel-footer">
+               <button type="button" class="btn btn-color" {{action 'agreement'}}> select </button> <br>
             </div>
          </div>
       </div>
@@ -32,10 +32,10 @@
                <h4>Rs.1000/-<br>Horse Power</h4>
             </div>
             <div class="panel-body">
-               <p>Special Shoutout on our social media handles and Delivery of customised postcard</p>
+               <p>Special Shoutout on our social media handles and Delivery of customised postcard</p> 
             </div>
-            <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button> <br>
+             <div class="panel-footer">
+               <button type="button" class="btn btn-color" {{action 'agreement'}}> select </button> <br>
             </div>
          </div>
       </div>
@@ -47,8 +47,8 @@
             <div class="panel-body">
                <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
             </div>
-            <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '5000' 'shoutout on social media & customised postcard'}}> Contribute </button> <br>
+             <div class="panel-footer">
+               <button type="button" class="btn btn-color" {{action 'agreement'}}> select </button> <br>
             </div>
          </div>
       </div>
@@ -65,7 +65,7 @@
                <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
             </div>
             <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '10000' 'shoutout on social media & customised postcard'}}> Contribute </button> <br>
+               <button type="button" class="btn btn-color" {{action 'agreement'}}> select </button> <br>
             </div>
          </div>
       </div>
@@ -77,8 +77,8 @@
             <div class="panel-body">
                <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
             </div>
-            <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '25000' 'shoutout on social media & customised postcard'}}> Contribute </button> <br>
+             <div class="panel-footer">
+               <button type="button" class="btn btn-color" {{action 'agreement'}}> select </button> <br>
             </div>
          </div>
       </div>
@@ -90,18 +90,18 @@
             <div class="panel-body">
                <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
             </div>
-            <div class="panel-footer">
-               <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Contribute </button> <br>
+             <div class="panel-footer">
+               <button type="button" class="btn btn-color" {{action 'agreement'}}> select </button> <br>
             </div>
          </div>
       </div>
    </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<<!--<div class="modal fade" id="myModal" role="dialog">
    <div class="modal-dialog">
       <!-- Modal content-->
-      <div class="modal-content">
+     <<!-- <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">×</button>
             <h4><span class="glyphicon glyphicon-lock"></span> Contribution</h4>
@@ -122,7 +122,7 @@
          </div>
       </div>
    </div>
-</div>
+</div>-->
 
 {{#if isShowingHelp}}
     {{#modal-dialog close="showHelp"
