@@ -65,6 +65,8 @@ Router.map(function() {
   this.route('reset-password');
   this.route('about-fundraiser');
   this.route('AboutFundraiser');
+  this.route('agreement');
+
 });
 
 export default Router;
