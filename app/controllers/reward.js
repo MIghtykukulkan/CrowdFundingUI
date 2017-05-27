@@ -5,6 +5,32 @@ export default Ember.Controller.extend({
     isShowingModal: false,
 
     actions: {
+
+         toggleModal: function() {
+
+             this.toggleProperty('isShowingModal'); 
+         },
+
+         toggleModal1: function() {
+
+             this.toggleProperty('isShowingModals'); 
+         },
+         toggleModal2: function() {
+
+             this.toggleProperty('isShowingModalss'); 
+         },
+          toggleModal3: function() {
+
+             this.toggleProperty('isShowingModalsss'); 
+         },
+          toggleModal4: function() {
+
+             this.toggleProperty('isShowingModalssss'); 
+         },
+          toggleModal5: function() {
+
+             this.toggleProperty('isShowingModalsssss'); 
+         },
         agreement: function() {
             this.transitionToRoute('agreement');
         },
