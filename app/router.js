@@ -63,7 +63,10 @@ Router.map(function() {
   this.route('addrewards');
   this.route('confirmemail');
   this.route('reset-password');
+  this.route('about-fundraiser');
+  this.route('AboutFundraiser');
   this.route('agreement');
+
 });
 
 export default Router;
