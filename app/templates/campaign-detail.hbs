@@ -75,10 +75,19 @@
         </div>
     </div>
     
-    <div class="col-sm-4">
+    <div class="col-sm-2">
         <div>
             <div align="center">
                 <button class="btn btn-color">Likes <span class="badge"> 25</span>
+                </button>
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-sm-2">
+        <div>
+            <div align="center">
+                <button class="btn btn-color">Spam <span class="badge"> 2</span>
                 </button>
             </div>
         </div>
@@ -107,7 +116,10 @@
 
                 <div class="panel-footer">
                     <h4> About Fundraiser </h4>
-                    <p align="justify"> Dear All, I am home-maker and full-time mother from Vadodara (Gujarat) having 4-year-old Aryaman born with Down’s Syndrome (DS). A child with DS can have multiple defects starting from heart disease, hearing loss, vision problems, dental problems to multiple physical & mental disabilities and risks of developing major diseases such as leukaemia, Alzheimer’s disease etc. as they grow-up.</p>
+                    {{#link-to "about-fundraiser"}} About Fundraiser
+                    {{/link-to}}
+                 <!--   <button class="btn btn-color" data-toggle="modal" {{action 'aboutfundraiser'}}><strong>About Fundraiser </strong></button>   -->
+                 <!--   <p align="justify"> Dear All, I am home-maker and full-time mother from Vadodara (Gujarat) having 4-year-old Aryaman born with Down’s Syndrome (DS). A child with DS can have multiple defects starting from heart disease, hearing loss, vision problems, dental problems to multiple physical & mental disabilities and risks of developing major diseases such as leukaemia, Alzheimer’s disease etc. as they grow-up.</p>-->
                 </div>
             </div>
         </div>
@@ -131,7 +143,7 @@
                             {{errormessage}}
                         </div>
                          <div class="btngroup">
-                        <button type="submit" class="btn btn-color"  disabled={{disabled}} align="left"{{action "toggleModal"}}>Submit</button>
+                        <button type="submit" class="btn btn-color"  disabled={{disabled}} align="left"{{action "facebook"}}>Submit</button>
                         {{#if isShowingModal}}
                         {{#modal-dialog close="toggleModal"
                         targetAttachment="center"
@@ -184,8 +196,16 @@
                 <div class="panel-footer">
                     View Older Comments
                 </div>
-
             </div>
+            
+        </div>
+        <div>
+                   <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <a href="#" target="_self" class="fa fa-facebook" {{action 'facebook'}}></a>
+                    <a href="#" target="_blank" class="fa fa-twitter"   {{action 'twitter'}}></a>
+                    <a href="#" target="_blank" class="fa fa-linkedin"   {{action 'linkedin'}}></a>
+
         </div>
     </div>
 </div>

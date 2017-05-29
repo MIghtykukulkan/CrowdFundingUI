@@ -1,36 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    isShowingHelp: false,
+      isShowingHelp: false,
     isShowingModal: false,
 
     actions: {
-
-         toggleModal: function() {
-
-             this.toggleProperty('isShowingModal'); 
-         },
-
-         toggleModal1: function() {
-
-             this.toggleProperty('isShowingModals'); 
-         },
-         toggleModal2: function() {
-
-             this.toggleProperty('isShowingModalss'); 
-         },
-          toggleModal3: function() {
-
-             this.toggleProperty('isShowingModalsss'); 
-         },
-          toggleModal4: function() {
-
-             this.toggleProperty('isShowingModalssss'); 
-         },
-          toggleModal5: function() {
-
-             this.toggleProperty('isShowingModalsssss'); 
-         },
         agreement: function() {
             this.transitionToRoute('agreement');
         },
@@ -51,7 +25,7 @@ export default Ember.Controller.extend({
             var amount = arg;
             var reward = arg1;
             this.set('message', "You have selected Rs. " + amount + " and You will get " + reward + " reward. Do you want to continue?");
-            console.log("display")
+            console.log('rahul')
         },
         
         

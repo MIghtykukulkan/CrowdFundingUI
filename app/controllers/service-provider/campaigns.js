@@ -26,6 +26,7 @@ export default Ember.Controller.extend({
     ],
 
     actions: {
+        
         authorize: function(record) {
             this.set('isCampAuthorize', true);
             this.set('campaignName', record.campaignName);

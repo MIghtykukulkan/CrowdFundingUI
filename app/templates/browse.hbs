@@ -66,9 +66,11 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
+   <div class="panel-footer">
+                <button {{action 'education'}}>education</button> <br>
+            </div>
     <!--Education-->
-    {{#if education}} {{partial 'education'}} {{/if}}
+    {{partial 'education'}}
     <!--Children-->
     {{partial 'children'}}
     <!--Animal Welfare-->
