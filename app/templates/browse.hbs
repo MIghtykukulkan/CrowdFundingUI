@@ -66,19 +66,40 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-   <div class="panel-footer">
-                <button {{action 'education'}}>education</button> <br>
-            </div>
+              <button type="button" class="btn btn-color" {{action "registereducation"}}>Education</button>
+              <button type="button" class="btn btn-color" {{action 'registerchildren'}}>Children</button>
+              <button type="button" class="btn btn-color" {{action 'registeranimalwelfare'}}>Animal-welfare</button>
+              <button type="button" class="btn btn-color" {{action 'registerenvironment'}}>Environment</button>
+              <button type="button" class="btn btn-color" {{action 'registerflim'}}>Flim</button>
+              <button type="button" class="btn btn-color" {{action 'registerdance'}}>Dance</button>
+   
     <!--Education-->
+    {{#if isEducationAuthorize}}
     {{partial 'education'}}
+    {{/if}}
     <!--Children-->
+    {{#if isChildrenAuthorize}}
     {{partial 'children'}}
+    {{/if}}
     <!--Animal Welfare-->
+    {{#if isAnimalwelfareAuthorize}}
     {{partial 'animal-welfare'}}
+    {{/if}}
     <!--Enviorment-->
+    {{#if isEnvironmentAuthorize}}
     {{partial 'environment'}}
+    {{/if}}
     <!--Film-->
+    {{#if isFlimAuthorize}}
     {{partial 'film'}}
+    {{/if}}
     <!--Dance-->
+    {{#if isDanceAuthorize}}
     {{partial 'dance'}}
+    {{/if}}
 </div>
+<script type="text/x-handlebars">
+    {{outlet}}
+  </script>
+
+

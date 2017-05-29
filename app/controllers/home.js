@@ -5,6 +5,65 @@ export default Ember.Controller.extend({
         
 actions: {
 
+    registereducation: function() {
+            //alert("Called");
+            this.set('isEducationAuthorize', true);
+            this.set('isChildrenAuthorize', false);
+            this.set('isAnimalwelfareAuthorize', false);
+            this.set('isEnvironmentAuthorize', false);
+            this.set('isFlimAuthorize', false);
+            this.set('isDanceAuthorize', false);
+            console.log('1');
+        },
+
+     registerchildren: function(){
+            this.set('isEducationAuthorize', false);
+            this.set('isChildrenAuthorize', true);
+            this.set('isAnimalwelfareAuthorize', false);
+            this.set('isEnvironmentAuthorize', false);
+            this.set('isFlimAuthorize', false);
+            this.set('isDanceAuthorize', false);
+           console.log('2');
+        },  
+
+          registeranimalwelfare: function(){
+            this.set('isEducationAuthorize', false);
+            this.set('isChildrenAuthorize', false);
+            this.set('isAnimalwelfareAuthorize', true);
+            this.set('isEnvironmentAuthorize', false);
+            this.set('isFlimAuthorize', false);
+            this.set('isDanceAuthorize', false);
+           console.log('3');
+    },
+          registerenvironment: function(){
+            this.set('isEducationAuthorize', false);
+            this.set('isChildrenAuthorize', false);
+            this.set('isAnimalwelfareAuthorize', false);
+            this.set('isEnvironmentAuthorize', true);
+            this.set('isFlimAuthorize', false);
+            this.set('isDanceAuthorize', false);
+            console.log('4');
+          },
+            registerflim: function(){
+            this.set('isEducationAuthorize', false);
+            this.set('isChildrenAuthorize', false);
+            this.set('isAnimalwelfareAuthorize', false);
+            this.set('isEnvironmentAuthorize', false);
+            this.set('isFlimAuthorize', true);
+            this.set('isDanceAuthorize', false);
+            console.log('5');
+        },
+          registerdance: function(){
+            this.set('isEducationAuthorize', false);
+            this.set('isChildrenAuthorize', false);
+            this.set('isAnimalwelfareAuthorize', false);
+            this.set('isEnvironmentAuthorize', false);
+            this.set('isFlimAuthorize', false);
+            this.set('isDanceAuthorize', true);
+            console.log('6');
+          },
+    },
+
             campaignDetails: function(arg, arg1, arg2, arg3) {
             var imgURL = arg;
             var desc = arg1;
@@ -42,5 +101,5 @@ actions: {
             return ret;
             },
 
-}
+
 });
