@@ -24,16 +24,20 @@
                     </p>
                 </div>
                 <div class="form-group ">
-                    <button type="button" class="btn btn-color" {{action "toggleModal"}}>Register</button>
+                    <button type="button" class="btn btn-color" {{action "toggleModal"}}>Contribute</button>
                     {{#if isShowingModal}} {{#modal-dialog close="toggleModal" targetAttachment="center" translucentOverlay=true}}
                     <p>User account created. Please verify email address </p>
                     <p>to login and start using the website. Please check </p>
                     <p>the spam folder if you don’t find the message in</p>
                     <p>your inbox.</p>
-                    <div class="modal-header">
-                        <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'norewardSelection' this.amount 'Special Shoutout on our social media handles'}}> Submit </button>
-                        <br>
-                    </div>
+                   {{input type="checkbox" id="Inputcheckbox" checked=selectedvalue}}
+                     I agree with terms and conditions<br> <br>
+                      {{#if selectedvalue}} 
+                <div class="modal-header">
+                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Submit </button>
+                    <br>
+                </div>
+                  {{/if}}
                     {{/modal-dialog}} {{/if}}
                 </div>
             </div>
@@ -54,10 +58,14 @@
                     <p>to login and start using the website. Please check </p>
                     <p>the spam folder if you don’t find the message in</p>
                     <p>your inbox.</p>
-                    <div class="modal-header">
-                        <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button>
-                        <br>
-                    </div>
+                  {{input type="checkbox" id="Inputcheckbox" checked=selectedvalue}}
+                     I agree with terms and conditions<br> <br>
+                      {{#if selectedvalue}} 
+                <div class="modal-header">
+                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Submit </button>
+                    <br>
+                </div>
+                  {{/if}}
                     {{/modal-dialog}} {{/if}}
                 </div>
             </div>
@@ -70,6 +78,7 @@
                 <div class="panel-body">
                     <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
                 </div>
+
                 <div class="form-group ">
                     <button type="button" class="btn btn-color" {{action "toggleModal2"}}>Contribute</button>
                     {{#if isShowingModalss}} {{#modal-dialog close="toggleModal2" targetAttachment="center" translucentOverlay=true}}
@@ -77,10 +86,14 @@
                     <p>to login and start using the website. Please check </p>
                     <p>the spam folder if you don’t find the message in</p>
                     <p>your inbox.</p>
-                    <div class="modal-header">
-                        <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button>
-                        <br>
-                    </div>
+                     {{input type="checkbox" id="Inputcheckbox" checked=selectedvalue}}
+                     I agree with terms and conditions<br> <br>
+                      {{#if selectedvalue}} 
+                <div class="modal-header">
+                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Select </button>
+                    <br>
+                </div>
+                  {{/if}}
                     {{/modal-dialog}} {{/if}}
                 </div>
             </div>
@@ -91,6 +104,9 @@
             <div class="panel-heading">
                 <h4>Rs.10000/-<br> &nbsp;</h4>
             </div>
+             <div class="panel-body">
+                    <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
+                </div>
             <div class="form-group ">
                 <button type="button" class="btn btn-color" {{action "toggleModal3"}}>Contribute</button>
                 {{#if isShowingModalsss}} {{#modal-dialog close="toggleModal3" targetAttachment="center" translucentOverlay=true}}
@@ -98,10 +114,14 @@
                 <p>to login and start using the website. Please check </p>
                 <p>the spam folder if you don’t find the message in</p>
                 <p>your inbox.</p>
+                 {{input type="checkbox" id="Inputcheckbox" checked=selectedvalue}}
+                     I agree with terms and conditions<br> <br>
+                      {{#if selectedvalue}} 
                 <div class="modal-header">
-                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button>
+                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Select </button>
                     <br>
                 </div>
+                  {{/if}}
                 {{/modal-dialog}} {{/if}}
             </div>
         </div>
@@ -111,6 +131,9 @@
             <div class="panel-heading">
                 <h4>Rs.25000/-<br>Lightspeed</h4>
             </div>
+             <div class="panel-body">
+                    <p>Customized next tech lab swag(T-shirt + Postcard) + shoutout on our social media handles</p>
+                </div>
             <div class="form-group ">
                 <button type="button" class="btn btn-color" {{action "toggleModal4"}}>Contribute</button>
                 {{#if isShowingModalssss}} {{#modal-dialog close="toggleModal4" targetAttachment="center" translucentOverlay=true}}
@@ -118,10 +141,14 @@
                 <p>to login and start using the website. Please check </p>
                 <p>the spam folder if you don’t find the message in</p>
                 <p>your inbox.</p>
+                 {{input type="checkbox" id="Inputcheckbox" checked=selectedvalue}}
+                     I agree with terms and conditions<br> <br>
+                      {{#if selectedvalue}} 
                 <div class="modal-header">
-                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button>
+                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Select </button>
                     <br>
                 </div>
+                  {{/if}}
                 {{/modal-dialog}} {{/if}}
             </div>
         </div>
@@ -141,10 +168,14 @@
                 <p>to login and start using the website. Please check </p>
                 <p>the spam folder if you don’t find the message in</p>
                 <p>your inbox.</p>
+                   {{input type="checkbox" id="Inputcheckbox" checked=selectedvalue}}
+                     I agree with terms and conditions<br> <br>
+                      {{#if selectedvalue}} 
                 <div class="modal-header">
-                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '1000' 'shoutout on social media & customised postcard'}}> Contribute </button>
+                    <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModal" {{action 'rewardSelection' '50000' 'shoutout on social media & customised postcard'}}> Select </button>
                     <br>
                 </div>
+                  {{/if}}
                 {{/modal-dialog}} {{/if}}
             </div>
         </div>
