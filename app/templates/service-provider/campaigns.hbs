@@ -8,8 +8,9 @@ translucentOverlay=true}}
 <h4><span class="glyphicon glyphicon-lock"></span> Authorize Campaign</h4>
 Do you want to authorize {{campaignName}} campaign?
 <div class="modal-body">
-    <button type="button" class="btn btn-color" {{action "authorizeCampaign"}}> Yes</button>
-    <button type="button" class="btn btn-color" {{action "dismissModal"}}> No</button>
+    <button type="button" class="btn btn-color" {{action "authorizeCampaign"}}>Block</button>
+    <button type="button" class="btn btn-color" {{action "dismissModal"}}>Unblock</button>
+    {{input type="text" model=this valuePath="Remarks1" placeholder="Remarks"}}
 </div>
 {{/modal-dialog}}
   
@@ -23,15 +24,16 @@ Do you want to authorize {{campaignName}} campaign?
 
 {{#if isCampClosure}}
 
-{{#modal-dialog close="toggleModal"
+{{#modal-dialog close="toggleModal1"
 targetAttachment="center"
 translucentOverlay=true}}
 <!--    Modal content-->
 <h4><span class="glyphicon glyphicon-lock"></span> Closing Campaign</h4>
 Do you want to close {{campaignName}} campaign?
 <div class="modal-body">
-    <button type="button" class="btn btn-color" {{action "closeCampaign"}}> Yes</button>
-    <button type="button" class="btn btn-color" {{action "dismissModal"}}> No</button>
+    <button type="button" class="btn btn-color" {{action "closeCampaign"}}>Block</button>
+    <button type="button" class="btn btn-color" {{action "dismissModal"}}>Unblock</button>
+    {{input type="text" model=this valuePath="Remarks2" placeholder="Remarks"}}
 </div>
 {{/modal-dialog}}
    <!-- {{#modal-dialog close="dismissModal"

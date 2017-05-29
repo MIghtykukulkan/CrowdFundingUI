@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
             this.toggleProperty('isPartAuthorize');
             this.set('isPartAuthorize', true);
             this.set('participantName', record.participantName);
-            this.set('message', record.participantName + " has been authorized");
+            this.set('message', record.participantName + " has been Block");
         },
 
         dismissModal: function() {

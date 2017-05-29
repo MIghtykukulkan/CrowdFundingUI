@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
         authorize: function(record) {
             this.set('isCampAuthorize', true);
             this.set('campaignName', record.campaignName);
-            this.set('message', record.campaignName + " campaign has been authorized");
+            this.set('message', record.campaignName + " campaign has been Block");
         },
 
         /*
@@ -65,12 +65,13 @@ export default Ember.Controller.extend({
 
         closeCampaign: function() {
             alert(this.get('message1'));
+            this.toggleProperty('isCampClosure');
         },
 
          toggleModal: function() {
            this.toggleProperty('isCampAuthorize');
        } ,
-         toggleModal: function() {
+         toggleModal1: function() {
            this.toggleProperty('isCampClosure');
        } 
        

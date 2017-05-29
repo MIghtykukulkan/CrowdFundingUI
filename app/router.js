@@ -26,7 +26,10 @@ Router.map(function() {
       });
       this.route('report', {
           path: '/report'
-      });        
+      }); 
+      this.route('transaction-history',{
+          path: '/transaction-history'
+      });      
   });
   this.route('campaign-detail');
   this.route('fund-raiser', function() {
