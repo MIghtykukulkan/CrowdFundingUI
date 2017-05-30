@@ -4,6 +4,8 @@ var showAdmin, showFund, showFunder, showCustomer = false;
 export default Ember.Route.extend({
 
     model() {
+            this.controllerFor('home').set('isAll',true);
+
         var userType = sessionStorage.getItem('userType');
 
         if (userType === "Admin") {

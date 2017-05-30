@@ -19,7 +19,7 @@ actions: {
 
     registereducation: function() {
             //alert("Called");
-          //  this.set('isAll',false);
+            this.set('isAll',false);
             this.set('isEducationAuthorize', true);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
@@ -31,7 +31,7 @@ actions: {
         },
 
      registerchildren: function(){
-         //this.set('isAll',false);
+         this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', true);
             this.set('isAnimalwelfareAuthorize', false);
@@ -43,7 +43,7 @@ actions: {
         },  
 
           registeranimalwelfare: function(){
-           //   this.set('isAll',false);
+              this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', true);
@@ -54,7 +54,7 @@ actions: {
            console.log('3');
     },
           registerenvironment: function(){
-             // this.set('isAll',false);
+             this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
@@ -64,7 +64,7 @@ actions: {
             console.log('4');
           },
             registerflim: function(){
-               // this.set('isAll',false);
+             this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
@@ -74,7 +74,7 @@ actions: {
             console.log('5');
         },
           registerdance: function(){
-              //this.set('isAll',false);
+            this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
