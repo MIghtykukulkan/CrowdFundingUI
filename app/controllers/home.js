@@ -4,38 +4,57 @@ export default Ember.Controller.extend({
         education : true, 
         
 actions: {
+    all:function(){
+       this.set('isAll',true);{
+         this.set('isEducationAuthorize', true);
+            this.set('isChildrenAuthorize', true);
+            this.set('isAnimalwelfareAuthorize', true);
+            this.set('isEnvironmentAuthorize', true);
+            this.set('isFlimAuthorize', true);
+            this.set('isDanceAuthorize', true);
+            console.log('0');
+       }
+        
+    },
 
     registereducation: function() {
             //alert("Called");
+          //  this.set('isAll',false);
             this.set('isEducationAuthorize', true);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
             this.set('isEnvironmentAuthorize', false);
             this.set('isFlimAuthorize', false);
             this.set('isDanceAuthorize', false);
+            this.set('isAll',false);
             console.log('1');
         },
 
      registerchildren: function(){
+         //this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', true);
             this.set('isAnimalwelfareAuthorize', false);
             this.set('isEnvironmentAuthorize', false);
             this.set('isFlimAuthorize', false);
             this.set('isDanceAuthorize', false);
+            this.set('isAll',false);
            console.log('2');
         },  
 
           registeranimalwelfare: function(){
+           //   this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', true);
             this.set('isEnvironmentAuthorize', false);
             this.set('isFlimAuthorize', false);
             this.set('isDanceAuthorize', false);
+            this.set('isNull',false)
            console.log('3');
     },
           registerenvironment: function(){
+             // this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
@@ -45,6 +64,7 @@ actions: {
             console.log('4');
           },
             registerflim: function(){
+               // this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
@@ -54,6 +74,7 @@ actions: {
             console.log('5');
         },
           registerdance: function(){
+              //this.set('isAll',false);
             this.set('isEducationAuthorize', false);
             this.set('isChildrenAuthorize', false);
             this.set('isAnimalwelfareAuthorize', false);
@@ -62,7 +83,7 @@ actions: {
             this.set('isDanceAuthorize', true);
             console.log('6');
           },
-    },
+    
 
             campaignDetails: function(arg, arg1, arg2, arg3) {
             var imgURL = arg;
@@ -99,7 +120,8 @@ actions: {
             ret = (ret.substr(0,maxLength)) + "...";
             }
             return ret;
-            },
+        },
+},
 
 
 });
