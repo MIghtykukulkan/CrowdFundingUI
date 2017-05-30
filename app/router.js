@@ -29,6 +29,9 @@ Router.map(function() {
       }); 
       this.route('transaction-history',{
           path: '/transaction-history'
+      });
+      this.route('froala-editor',{
+          path: '/froala-editor'
       });      
   });
   this.route('campaign-detail');
@@ -69,7 +72,6 @@ Router.map(function() {
   this.route('about-fundraiser');
   this.route('AboutFundraiser');
   this.route('agreement');
-
 });
 
 export default Router;
