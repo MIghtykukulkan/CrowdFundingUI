@@ -8,11 +8,11 @@ module.exports = function(defaults) {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': false,
-      'ember-froala-editor': {
-    plugins  : true,
-    languages: ['es','fr','de'],
-    themes   : 'royal'
-  },
+     'ember-froala-editor': {
+      languages : true,
+      plugins   : ['align','link','lists','paragraph_format','url'],
+      themes    : 'red'
+    }
     }
   });
 
