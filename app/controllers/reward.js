@@ -61,8 +61,10 @@ export default Ember.Controller.extend({
             console.log(total);
             var jsonvariable =Ember.$.getJSON("reward.json");
             console.log(jsonvariable);
-                 console.log(JSON.stringify(jsonvariable));
+                // console.log(JSON.stringify(jsonvariable));
         this.toggleProperty('isShowingModals'); 
+        //var str =JSON.parse(jsonvariable);
+        // console.log(str);
             },
         
         payment: function() {

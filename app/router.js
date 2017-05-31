@@ -72,6 +72,7 @@ Router.map(function() {
   this.route('about-fundraiser');
   this.route('AboutFundraiser');
   this.route('agreement');
+  this.route('FAQs');
 });
 
 export default Router;

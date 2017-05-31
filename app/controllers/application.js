@@ -27,6 +27,19 @@ export default Ember.Controller.extend({
 
         toggleModel: function() {
             this.toggleProperty('isShowingModel');
+        },
+
+        gotofaqs:function(){
+            this.transitionToRoute('FAQs');
+        },
+        facebook: function() {
+             window.location.replace("https://en-gb.facebook.com/login/");
+        },
+        twitter: function() {
+             window.location.replace("https://twitter.com/login");
+        },
+        linkedin: function() {
+             window.location.replace("https://in.linkedin.com/");
         }
     }
 });
