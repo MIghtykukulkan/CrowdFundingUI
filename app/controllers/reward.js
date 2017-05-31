@@ -1,5 +1,5 @@
 import Ember from 'ember';
-
+var total = 0;
 export default Ember.Controller.extend({
     isShowingHelp: false,
     isShowingModal: false,
@@ -51,9 +51,19 @@ export default Ember.Controller.extend({
             var amount = arg;
             var reward = arg1;
             this.set('message', "You have selected Rs. " + amount + " and You will get " + reward + " reward. Do you want to continue?");
-            console.log("display")
+            console.log("display");
+
         },
-        
+        addtocart : function(){
+            var quantity = this.get("quantity");
+            var amt = 1000* quantity;
+            total =total + amt;
+            console.log(total);
+            var jsonvariable =Ember.$.getJSON("reward.json");
+            console.log(jsonvariable);
+                 console.log(JSON.stringify(jsonvariable));
+        this.toggleProperty('isShowingModals'); 
+            },
         
         payment: function() {
              alert("Do not Refresh the page....");

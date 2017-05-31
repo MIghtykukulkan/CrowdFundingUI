@@ -50,11 +50,12 @@
                 </div>
                 <div class="panel-body">
                     <p>Special Shoutout on our social media handles and Delivery of customised postcard</p>
+                        {{input type="text" value=quantity placeholder='Add quantity'}}
                 </div>
 
                 <div class="form-group ">
-                    <button type="button" class="btn btn-color" {{action "toggleModal1"}}>Contribute</button>
-                    {{#if isShowingModals}} {{#modal-dialog close="toggleModal1" targetAttachment="center" translucentOverlay=true}}
+                    <button type="button" class="btn btn-color" {{action "addtocart"}}>Add to cart</button>
+                    {{#if isShowingModals}} {{#modal-dialog close="addtocart" targetAttachment="center" translucentOverlay=true}}
                     <h2>Terms and Condation</h2>
                     <p>User account created. Please verify email address </p>
                     <p>to login and start using the website. Please check </p>
