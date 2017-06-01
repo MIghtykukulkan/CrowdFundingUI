@@ -31,7 +31,7 @@
                   </div>
                   <br/>                  
 				  <div class="input-group-btn">
-                      <button type="button" class="btn btn-color" {{action "saveRewards"}}>Save</button> 
+                    <button type="button" class="btn btn-color" {{action "saveRewards"}}>Save</button> 
                     <button class="btn btn-color add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
 				  </div>
                 </div>
@@ -42,7 +42,7 @@
 
         <!-- Copy Fields-These are the fields which we get through jquery and then add after the above input,-->
         <div class="copy-fields hide">
-			<div class="control-group input-group" style="margin-top:10px">
+			<div class="control-group input-group" style="margin-top:20px">
 
 				<div class="cols-sm-10">
                     <div class="input-group">
@@ -79,6 +79,16 @@
 	</div>
 </div>
 </div>
+{{#if isSaveReward}}
+    {{#modal-dialog close="saveRewards"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+        Reward successfully created.
+        <div class="modal-header">
+<button type="button" class="close" {{action "home2"}}>ok</button>
+</div>
+    {{/modal-dialog}}
+{{/if}}
 
 <script type="text/javascript">
 

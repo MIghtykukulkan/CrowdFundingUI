@@ -66,14 +66,14 @@ var Validations = buildValidations({
     ],
 
 
-    rewardtitles: [
+    rewardtitle: [
          validator('presence', true),
         validator('format', {
             regex: /^[A-Za-z/-/-_/ ]+$/
         })
     ],
 
-    rewardamounts: [
+    rewardamount: [
         validator('presence', true),
         validator('format', {
             regex:/^[0-9.]+$/,
@@ -81,7 +81,7 @@ var Validations = buildValidations({
         })
     ],
 
-    rewarddescriptions: [
+    rewarddescription: [
         validator('presence', true),
         validator('length', {
          max: 160,
@@ -151,7 +151,7 @@ export default Ember.Controller.extend(Validations,{
         },
 
         addRewards: function() {
-            this.toggleProperty('isAddReward');
+           this.transitionToRoute('addrewards');
         },
 
         saveRewards: function() {
@@ -185,7 +185,7 @@ export default Ember.Controller.extend(Validations,{
             },
             toggleModal1: function() {
             var campaigntitle = this.get('campaigntitle');
-            var campaigncategory = this.get('campaigncategory');
+            var chosen = this.get('selectedtypes');
             var content = this.get('content');
             var contents = this.get('contents');
             var goalamount = this.get('goalamount');
@@ -197,7 +197,7 @@ export default Ember.Controller.extend(Validations,{
                 //this.toggleProperty('isShowingModal');
                // return;
             }
-            if (campaigncategory === null || campaigncategory === undefined || campaigncategory === "") {
+            if (chosen === null || chosen === undefined) {
                 this.set('errormessage3', "field cannot be empty")
                 //this.toggleProperty('isShowingModal');
                 //return;
@@ -231,9 +231,8 @@ export default Ember.Controller.extend(Validations,{
                 this.set('enddateerrormessage', "Date field cannot be empty")
                 //return;
             }
-            if((campaigntitle === null || campaigntitle === undefined || campaigntitle === "") || 
-                
-                (campaigncategory === null || campaigncategory === undefined || campaigncategory === "") ||
+            if ((campaigntitle === null || campaigntitle === undefined || campaigntitle === "") ||                 
+                (chosen === null || chosen === undefined) ||
                 (content === null || content === undefined || content === "") ||
                 (contents === null || contents === undefined || contents === "")  ||
                 (goalamount === null || goalamount === undefined || goalamount === "") ||

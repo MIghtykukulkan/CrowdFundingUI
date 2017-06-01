@@ -27,8 +27,10 @@
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </div>
-                                        {{validated-input2 type="text" model=this valuePath="campaigncategory" placeholder="Campaign Category" errormessage1=errormessage3}}
-                                        {{errormessage3}}
+                                        <div class="documentdropdown">
+                                            {{select-component dropdowntype="Campaign Category" listitem=CampaignCategory selecteditemlist=selectedtypes}}
+                                            {{errormessage3}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
