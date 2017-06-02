@@ -27,8 +27,19 @@ export default Ember.Controller.extend({
         "propertyName": "status",
         "title": "Status",
         "filterPlaceholder": "Status"
-    }, ],
+    }, {
+        "propertyName": "submit",
+        "title": "Check Status",
+         "filterPlaceholder": "Check Status",
+        "template": "submit1-button"
+    }],
     actions: {
+
+        click: function(record) {
+            console.log(record.campaignname);
+            this.set('campaignname',record.campaignname);
+              this.transitionToRoute('fund-raiser.dashboard');
+        },
         authorize: function(record) {
             if (record.regStatus) {
                 this.send('complete', record);

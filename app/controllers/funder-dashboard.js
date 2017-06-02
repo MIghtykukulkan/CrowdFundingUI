@@ -20,6 +20,9 @@ export default Ember.Controller.extend(Validations,{
     showFeedback: false,
 
     actions: {
+         
+
+
         provideFeedback: function() {
             this.toggleProperty('showFeedback');
         },
