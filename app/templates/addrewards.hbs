@@ -10,24 +10,30 @@
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
+                    <div class="inputs">
 				    {{validated-input2 type="text" model=this valuePath="rewardtitle" name="addmore[]" placeholder="Reward Title" errormessage1=rewardtitleerrormessage}}
                     {{rewardtitleerrormessage}}
+                    </div>
                   </div>
                   <br/>
                    <div class="input-group">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
+                    <div class="inputs">
                     {{validated-input2 type="text" model=this valuePath="rewardamount" name="addmore[]" placeholder="Minimum Donation amount required to obtain this reward (Rs.)" errormessage1=rewardamounterrormessage}}
                     {{rewardamounterrormessage}}
+                    </div>
                   </div>
                   <br/>
                    <div class="input-group">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
+                    <div class="inputs">
                     {{validated-input2 type="text" model=this valuePath="rewarddescription" name="addmore[]" placeholder="Reward Description" errormessage1=rewarddescriptionerrormessage}}
                     {{rewarddescriptionerrormessage}}
+                    </div>
                   </div>
                   <br/>                  
 				  <div class="input-group-btn">
@@ -49,24 +55,31 @@
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
-				    {{validated-input2 type="text" model=this valuePath="rewardtitles" name="addmore[]" placeholder="Reward Title" errormessage1=rewardtitleerrormessage}}
+                    <div class="inputs">
+                        {{return1}}
+				    {{validated-input2 type="text" model=this valuePath="rewardtitles" id="return1" name="addmore[]" placeholder="Reward Title" errormessage1=rewardtitleerrormessage}}
                     {{rewardtitleerrormessage}}
+                    </div>
                   </div>
                   <br/>
                   <div class="input-group">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
+                    <div class="inputs">
                     {{validated-input2 type="text" model=this valuePath="rewardamounts" name="addmore[]" placeholder="Minimum Donation amount required to obtain this reward (Rs.)" errormessage1=rewardamounterrormessage}}
                     {{rewardamounterrormessage}}
+                  </div>
                   </div>
                   <br/>
                    <div class="input-group">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-triangle-right"></span>
                     </div>
+                    <div class="inputs">
                     {{validated-input2 type="text" model=this valuePath="rewarddescriptions" name="addmore[]" placeholder="Reward Description" errormessage1=rewarddescriptionerrormessage}}
                     {{rewarddescriptionerrormessage}}
+                    </div>
                   </div>
                   <br/>               
 				<div class="input-group-btn"> 
