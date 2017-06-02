@@ -1,12 +1,17 @@
 {
-    "reward1":{
-        "rewardtitle":"myreward1",
-        "rewardamount":"5000",
-        "rewarddescription":"This is rewards1"
-    },
-    "reward2":{
-        "rewardtitle":"myreward2",
-        "rewardamount":"6000",
-        "rewarddescription":"This is rewards2"
-    }
+		"reward1":{
+			"rewardtitle": "Gift-Your be our team owner",
+			"rewardamount": "5000",
+			"rewarddescription": "gvhgfdgf"
+		},
+		"reward2":{
+			"rewardtitle": "def",
+			"rewardamount": "10000",
+			"rewarddescription": "gdsgjchj"
+		},
+        "reward3":{
+			"rewardtitle": "abcz",
+			"rewardamount": "5000",
+			"rewarddescription": "gvhgfggfdgf"
+		}
 }

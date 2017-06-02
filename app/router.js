@@ -73,6 +73,7 @@ Router.map(function() {
   this.route('AboutFundraiser');
   this.route('agreement');
   this.route('FAQs');
+  this.route('introvideo');
 });
 
 export default Router;
