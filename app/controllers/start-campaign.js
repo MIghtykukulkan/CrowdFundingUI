@@ -97,7 +97,7 @@ export default Ember.Controller.extend(Validations,{
     CampaignCategory: ['Education', 'Children', 'Animal Welfare','Environment','Film','Dance',],
     actions: {
 
-        upload: function(event) {
+    upload: function(event) {
     const reader = new FileReader();
     const file = event.target.files[0];
     let imageData;
@@ -147,7 +147,6 @@ export default Ember.Controller.extend(Validations,{
         },
 
         createCampaign: function() {
-            
         },
 
         addRewards: function() {
@@ -174,6 +173,15 @@ export default Ember.Controller.extend(Validations,{
                 this.set('rewarddescriptionerrormessage', "field cannot be empty")
                 return;
             }
+           /*  let {
+               rewardtitle,
+               rewardamount,
+               rewarddescription,
+               
+             } = this.getProperties('rewardtitle','rewardamount','rewarddescription');*/
+            
+            
+                
 
             /*if (deliveryDate === null || deliveryDate === undefined || deliveryDate === "") {
                 this.set('dateerrormessage', "Date field cannot be empty")
@@ -192,6 +200,9 @@ export default Ember.Controller.extend(Validations,{
             var startdeliverydate = this.get('startdeliverydate');
             var startproject = this.get('startproject');
             var enddeliverydate = this.get('enddeliverydate');
+
+            
+        
             if (campaigntitle === null || campaigntitle === undefined || campaigntitle === "") {
                 this.set('errormessage1', "field cannot be empty")
                 //this.toggleProperty('isShowingModal');
@@ -242,7 +253,74 @@ export default Ember.Controller.extend(Validations,{
                     this.toggleProperty('isShowingModal');
                 }
             else{
-                    this.toggleProperty('isShowingModalss');
+
+                    let {
+               campaigntitle,
+               selectedtypes,
+               content,
+               contents,
+               goalamount,
+               startdeliverydate,
+               startproject,
+               enddeliverydate,
+               rewardtitle,
+               rewardamount,
+               rewarddescription
+             } = this.getProperties('campaigntitle','selectedtypes','content','contents','goalamount','startdeliverydate','startproject','enddeliverydate','rewardtitle','rewardamount','rewarddescription');
+            
+             var datastring={
+                
+                 "campaigntitle": campaigntitle,
+                 "camapigncategory":selectedtypes,
+                 "camapigndescription":content,
+                 "camapignstory":contents,
+                 "goalamount":goalamount,
+                 "startcampaigndate":startdeliverydate,
+                 "startprojectamount":startproject,
+                 "endcampaigndate":enddeliverydate,
+                 "reward":[
+                     {
+                        "reward1": 
+                    {
+                        "rewardtitle":rewardtitle,
+                        "rewardamount":rewardamount,
+                        "rewarddescription":rewarddescription
+                    }
+                }
+                 ]  
+             };
+
+           
+                // console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+            //this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            var mydata ;
+            //console.log(mydata);
+            return $.ajax({
+            url: 'http://192.168.0.20:8081/crowdfunding/createcampaign',
+
+            type: 'POST',
+            accepts: 'application/json',
+            data: datastring,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   message=response.message.message;
+                     console.log(response.message);
+                   //mycontroller.set('uid',uid);
+                  // mycontroller.set('message',message);
+                   //mycontroller.toggleProperty('showRegResponse');
+                   mycontroller.toggleProperty('isShowingModalss');
+                  // mycontroller.set('loading_image_visibility', "hide");
+            },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+                   //console.log('');
+            }
+           });
                 }
          },
 
