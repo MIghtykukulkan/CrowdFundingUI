@@ -20,11 +20,37 @@ export default Ember.Controller.extend(Validations,{
     actions: {
 
         toggleModal:function(){
-            var email = this.get('email');
-            if (email === null || email === undefined || email === "") {
+            var emailId = this.get('email');
+            if (emailId === null || emailId === undefined || emailId === "") {
                 this.set('errormessage', "Please fill in at least one field")
                 return;
             }
+          /*  let {
+                email,
+                
+            } = this.getProperties('email');
+               
+               var dataString = {
+                "email": email,
+            };
+               
+            return $.ajax({
+                url:'http://192.168.0.20:8000',
+                type: 'POST',
+                data: JSON.stringify(dataString),
+                success: function(response) {
+                    var message = response.message;
+                    var status = response.status;
+                    if (status === "success") {
+                        console.log(JSON.stringify(response));
+                    }
+                },    
+                    error: function(result) {
+                    console.log('DEBUG: GET Enquiries Failed');
+                }
+                });*/
+
+            
               this.toggleProperty('isShowingModal');
         },
         resetpassword:function(){

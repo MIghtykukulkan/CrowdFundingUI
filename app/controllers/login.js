@@ -35,7 +35,50 @@ export default Ember.Controller.extend(Validations,{
         login: function() {
             var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
             var emailId = this.get('email');
+            var Password = this.get('password');
+            console.log(emailId);
+            let {
+                email,
+                password
+            } = this.getProperties('email', 'password');
+               console.log(email);
+               console.log(password);
+               var dataString = {
+                "email": email,
+                "password": password,
+            };
+                 var mycontroller = this;
+                console.log(email);
+                return $.ajax({
+                url:'http://192.168.0.20:8081/crowdfunding/login',
+                type: 'POST',
+                accepts: 'application/json',
+                data: dataString,
+                success: function(response) {
+                    var message = response.message;
+                    var error   = response.error;
+                    console.log(message);
+                    console.log(error);
+                    //if ( message === "login successful") {
+                      //  console.log(JSON.stringify(message));
+                   // }
+                        
+                     mycontroller.transitionToRoute('home')
+                        
+                 
+                  
 
+                },       
+                  
+                  
+                    error: function(response) {
+                   console.log('DEBUG: GET Enquiries Failed');
+                   console.log("Error Message: ", response.message);
+                   
+            }
+                
+                });
+                
             if (emailId === 'admin@a.com' || emailId === 'Admin@a.com' || emailId === 'ADMIN@A.COM') {
                 sessionStorage.setItem('userType', "Admin");
                 sessionStorage.setItem('showAdminHeaderModules', false);
@@ -44,7 +87,7 @@ export default Ember.Controller.extend(Validations,{
                 sessionStorage.setItem('userType', "Fundraiser");
                 sessionStorage.setItem('showAdminHeaderModules', true);
                 sessionStorage.setItem('showStartCampaign', true);                
-            } else if (emailId === 'funder@f.com' || emailId === 'Funder@f.com' || emailId === 'FUNDER@F.COM') {
+            } else if (emailId === 'funder@f.com' || emailId === 'Funder@f.com' || emailId === 'FUNDER@F.COM' || emailId === 'xyz@c.com') {
                 sessionStorage.setItem('userType', "Funder");
                 sessionStorage.setItem('showAdminHeaderModules', true);
                 sessionStorage.setItem('showFunderModules', true);
@@ -76,5 +119,5 @@ export default Ember.Controller.extend(Validations,{
         reset:function(){
             alert("hello");
         }
-    }
+    },
 });
