@@ -209,7 +209,66 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                   this.toggleProperty('isShowingModals');  
                 }
                 else{
-            this.toggleProperty('isShowingModal');
+                     let {
+                name,
+                email,
+                phonenumber,
+                password,
+                selectedtypes,
+                documentdetail,
+                facebook,
+                blog,
+                websiteurl,
+                youtube
+            } = this.getProperties('name', 'email', 'phonenumber', 'password','selectedtypes','documentdetail','facebook','blog','websiteurl','youtube');
+
+            var dataString = {
+                "userType":"Individual",
+                "name": name,
+                "email": email,
+                "phoneno": phonenumber,
+                "password": password,
+                "document":{"documenttype": selectedtypes,"documentvalue": documentdetail},
+                "facebook":facebook,
+                "blog":blog,
+                "websiteurl":websiteurl,
+                "youtube":youtube,
+                "organisationname":"",
+                "organisationemail":"",
+                "organisationphoneno":"",
+                "organisationtype":"",
+                "designation":""
+            };
+            //console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+           // this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            console.log("Registration Input: " + JSON.stringify(dataString));
+            return $.ajax({
+            url: 'http://192.168.0.20:8081/crowdfunding/register',
+            type: 'POST',
+            accepts: 'application/json',
+            data: dataString,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   message=response.message.message;
+                     console.log(response.message);
+                     mycontroller.set('uid',uid);
+                    // mycontroller.set('message',message);
+                  // mycontroller.toggleProperty('showRegResponse');
+                     mycontroller.toggleProperty('isShowingModalsss');
+                  // mycontroller.set('loading_image_visibility', "hide");
+                 //  mycontroller.transitionToRoute('home');              
+                  
+            },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+            }
+           });
+    
                 }
         },
 
@@ -306,7 +365,69 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                   this.toggleProperty('isShowingModals');  
                 }
                 else{
-            this.toggleProperty('isShowingModal');
+                        let {
+                selectedtype,
+                Organisationname,
+                emailid,
+                phonenumbers,
+                panno,
+                passwords,
+                facebook,
+                blog,
+                websiteurl,
+                youtube,
+                fullname,
+                enterdesignation,
+                email2,
+                phoneno
+            } = this.getProperties('selectedtype', 'Organisationname', 'emailid', 'phonenumbers','panno','passwords','facebook','blog','websiteurl','youtube','fullname','enterdesignation','email2','phoneno');
+                
+            var dataString = {
+                "userType":"Organisation",
+                "organisation": {"organisationtype": selectedtype, "organisationvalue": Organisationname},
+                "organisationemail": emailid,
+                "organisationphoneno": phonenumbers,
+                "documenttype":{"panno": panno},
+                "password":passwords,
+                "facebook":facebook,
+                "blog":blog,
+                "websiteurl":websiteurl,
+                "youtube":youtube,
+                "name":fullname,
+                "designation":enterdesignation,
+                "email":email2,
+                "phoneno":phoneno,
+            };
+            //console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+            //this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            console.log("Registration Input: " + JSON.stringify(dataString));
+            return $.ajax({
+            url: 'http://192.168.0.20:8081/crowdfunding/register',
+            type: 'POST',
+            accepts: 'application/json',
+            data: dataString,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   message=response.message.message;
+                     console.log(response.message);
+                   //mycontroller.set('uid',uid);
+                   //mycontroller.set('message',message);
+                   //mycontroller.toggleProperty('showRegResponse');
+                   mycontroller.toggleProperty('isShowingModalss');
+                   //mycontroller.set('loading_image_visibility', "hide");
+                   //mycontroller.transitionToRoute('home');              
+                  
+            },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+            }
+           });
+
                 }
         },
 
