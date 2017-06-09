@@ -395,7 +395,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 "youtube":youtube,
                 "name":fullname,
                 "designation":enterdesignation,
-                "email":email2,
+                "email2":email2,
                 "phoneno":phoneno,
             };
             //console.log(CONFIG.GOURL);
