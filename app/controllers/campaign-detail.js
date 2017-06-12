@@ -1,7 +1,7 @@
 import Ember from 'ember';
-
+var likecount =0;
 export default Ember.Controller.extend({
-    
+   // likecount:0,
     actions: {
         callRewards : function()
         {
@@ -38,16 +38,32 @@ export default Ember.Controller.extend({
         },
         likebutton:function(){
                 console.log("in func");
-            if(typeof(Storage) !== "undefined") {
-                         console.log("in if condn");
-                 if (localStorage.clickcount) {
-                    localStorage.clickcount = Number(localStorage.clickcount)+1;
-                       console.log("increment:"+localStorage.clickcount);
-                     } else {
-                        localStorage.clickcount = 1;
-                        console.log(localStorage.clickcount);
+                if(typeof(Storage) !== "undefined") {
+                    console.log("in if condn");
+                    if (localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount)+1;
+                        console.log("increment:"+localStorage.clickcount);
+                        } else {
+                             localStorage.clickcount = 1;
+                             console.log(localStorage.clickcount);
+                             }
                          }
-        }
+                 },
+        spambutton:function(){
+                console.log("in func");
+                if(typeof(Storage) !== "undefined") {
+                        console.log("in if condn");
+                         if (localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount)+1;
+                        console.log("increment:"+localStorage.clickcount);
+                        } else {
+                             localStorage.clickcount = 1;
+                             console.log(localStorage.clickcount);
+                             }
+                    }
+       // this.set("likecount",localStorage.clickcount);
+       likecount=localStorage.clickcount;
+        console.log('likecount'+likecount);
         }
     }
 });

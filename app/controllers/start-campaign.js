@@ -271,9 +271,9 @@ export default Ember.Controller.extend(Validations,{
              var datastring={
                 
                  "campaigntitle": campaigntitle,
-                 "camapigncategory":selectedtypes,
-                 "camapigndescription":content,
-                 "camapignstory":contents,
+                 "campaigncategory":selectedtypes,
+                 "campaigndescription":content,
+                 "campaignstory":contents,
                  "goalamount":goalamount,
                  "startcampaigndate":startdeliverydate,
                  "startprojectamount":startproject,
@@ -301,7 +301,7 @@ export default Ember.Controller.extend(Validations,{
             var mydata ;
             //console.log(mydata);
             return $.ajax({
-            url: 'http://192.168.0.20:8081/crowdfunding/createcampaign',
+            url: 'http://localhost:8082/crowdfunding/createcampaign',
 
             type: 'POST',
             accepts: 'application/json',

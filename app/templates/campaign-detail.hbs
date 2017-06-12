@@ -1,3 +1,4 @@
+<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 <script>
     // Enable navigation prompt
     //window.onbeforeunload = function() {
@@ -10,6 +11,17 @@
             return "It looks like you have input you haven't submitted."
         }
     });
+
+   
+
+$(document).ready(function(){
+                $('#sharebutton').click( function() {
+                    var counter = $('#share').val();
+                    counter++ ;
+                    console.log(counter);
+                    $('#share').val(counter);
+                });
+            });
 </script>
 
 <div class="row text-center">
@@ -69,8 +81,28 @@
     <div class="col-sm-4">
         <div>
             <div align="center">
-                <button class="btn btn-color">Shares <span class="badge"> 7</span> 
-                </button>
+                <div class="span4 collapse-group"> 
+                <a class="btn" data-toggle="collapse" data-target="#myid"><button class="btn btn-color" id="sharebutton" value="0">Shares <!--<span class="badge" id="share" value="+" > </span>--></button></a> 
+               
+                <div class="collapse" id="myid">
+                    <div class="span4 collapse-group">
+                        <!-- <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                             <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                            <a class="a2a_button_facebook"></a>
+                            <a class="a2a_button_twitter"></a>
+                            <a class="a2a_button_google_plus"></a>
+                            <a class="a2a_button_email"></a>    
+                            <a class="a2a_button_linkedin"></a>
+                            <a class="a2a_button_whatsapp"></a>
+                        </div>-->
+                        <a class="a2a_dd" href="https://www.addtoany.com/share"><img src="https://static.addtoany.com/buttons/share_save_256_24.png" width="256" height="24" border="0" alt="Share"/></a>
+                            <script async src="https://static.addtoany.com/menu/page.js"></script>
+                    </div> 
+                </div>   
+                </div>  
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+          
             </div><br/><br/>
         </div>
     </div>
@@ -78,7 +110,7 @@
     <div class="col-sm-2">
         <div>
             <div align="center">
-                <button class="btn btn-color">Likes <span class="badge"> 25</span>
+                <button class="btn btn-color" {{action "likebutton"}}>Likes <span class="badge"> {{ localStorage.clickcount}}</span>
                 </button>
             </div>
         </div>
@@ -87,7 +119,7 @@
     <div class="col-sm-2">
         <div>
             <div align="center">
-                <button class="btn btn-color">Spam <span class="badge"> 2</span>
+                <button class="btn btn-color" {{action "spambutton"}}>Spam <span class="badge"> 2</span>
                 </button>
             </div>
         </div>
@@ -198,19 +230,19 @@
             </div>
             
         </div>
-        <div >
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
            <div class="col-sm-12" align="center">
                <div class="col-sm-4">
-            <a href="#" target="_self" class="fa fa-facebook" {{action 'facebook'}}></a>
+                    <a href="#" target="_self" class="fa fa-facebook" {{action 'facebook'}}></a>
                </div>
                 <div class="col-sm-4">
-            <a href="#" target="_blank" class="fa fa-twitter"   {{action 'twitter'}}></a>
-           </div>
-           <div class="col-sm-4">
-            <a href="#" target="_blank" class="fa fa-linkedin"   {{action 'linkedin'}}></a>
-           </div>
+                    <a href="#" target="_blank" class="fa fa-twitter"   {{action 'twitter'}}></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" target="_blank" class="fa fa-linkedin"   {{action 'linkedin'}}></a>
+                </div>
            </div>
         </div>
     </div>

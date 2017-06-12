@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
+        browsetype:"";
         var userType = sessionStorage.getItem('userType');
         var adminHeader = sessionStorage.getItem('showAdminHeaderModules');
         var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
@@ -45,8 +46,12 @@ export default Ember.Route.extend({
         this.controllerFor('application').set('listItem', listItem);
         this.controllerFor('reward').set('listItem', listItem);
 
+
+       
         if (!goToStartCampaign) {
            this.transitionTo('home');
         }
+         
+        
     }
 });
