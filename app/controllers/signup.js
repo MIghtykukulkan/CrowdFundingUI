@@ -248,7 +248,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://192.168.0.20:8081/crowdfunding/register',
+            url: 'http://localhost:8082/crowdfunding/register',
             type: 'POST',
             accepts: 'application/json',
             data: dataString,

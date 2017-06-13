@@ -1,13 +1,16 @@
-{{froala-editor
-  options=(hash
-    theme="royal"
-    charCounterCount=false
-    heightMin=300
-  )
-}}
 
-{{#froala-content}}
-  {{someFroalaContent}}
-{{/froala-content}}
+
+{{froala-editor myProperty (action (mut myProperty)) (hash heightMin=300)}}
+
 <br>
-<button type="button" class="btn btn-color" {{action 'save'}}>Save</button>
+  {{!--{{myProperty}}--}}
+<button type="button" class="btn btn-color" {{action 'toggleModal'}}>Save</button>
+{{#if isShowingModal}}
+        {{#modal-dialog close="toggleModal" targetAttachment="center" translucentOverlay=true}}
+                  <p>Your story get Submitted </p>
+                      
+                  <div class="modal-header">
+                      <button type="button" class="close" {{action "submit"}}>ok</button>
+                  </div>
+          {{/modal-dialog}}
+{{/if}}

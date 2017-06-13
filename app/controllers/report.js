@@ -30,9 +30,36 @@ export default Ember.Controller.extend({
       actions: {
 
         click: function(record) {
+            
             console.log(record.campaignname);
             this.set('campaignname',record.campaignname);
-              this.transitionToRoute('funder_dashboard');
+              
+
+               var data;
+         $.ajax({
+         url:"http://localhost:8082/funder_dashboard",
+         type: 'GET',
+         contentType: 'application/json;charset=utf-8',
+            //Authorization: token,
+         
+         success: function(data) {
+                //alert("success"+JSON.stringify(data))
+                   
+                console.log("data"+JSON.stringify(data));
+                   // alert("data"+JSON.stringify(data));
+                return data,
+                    console.log('DEBUG: GET Enquiries OK');
+            },
+         error: function(err) {
+             console.log("rest call failed..!!")
+                console.log(data);
+                console.log("Error : " + JSON.stringify(err));
+                console.log('DEBUG: GET Enquiries Failed');
+            }
+        });
+
+        this.transitionToRoute('funder_dashboard');
+
         },
       }
 
