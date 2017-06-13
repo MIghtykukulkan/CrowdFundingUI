@@ -174,7 +174,7 @@ $(document).ready(function(){
                             {{errormessage}}
                         </div>
                          <div class="btngroup">
-                        <button type="submit" class="btn btn-color"  disabled={{disabled}} align="left"{{action "facebook"}}>Submit</button>
+                        <button type="submit" class="btn btn-color"  disabled={{disabled}} align="left"{{action "toggleModal"}}>Submit</button>
                         {{#if isShowingModal}}
                         {{#modal-dialog close="toggleModal"
                         targetAttachment="center"

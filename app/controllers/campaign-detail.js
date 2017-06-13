@@ -15,8 +15,45 @@ export default Ember.Controller.extend({
                 this.set('errormessage', "you must have to enter some comments!!!!");
                 return;
             }
-            this.toggleProperty('isShowingModal');
-            
+            else{
+                let {
+                content
+            } = this.getProperties('content');
+                
+            var dataString = {
+                "content": content,
+            };
+            //console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+            //this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            console.log("Registration Input: " + JSON.stringify(dataString));
+            return $.ajax({
+            url: 'http://localhost:8082/campaign-detail',
+            type: 'POST',
+            accepts: 'application/json',
+            data: dataString,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   //message=response.message.message;
+                   console.log(response.message);
+                   //mycontroller.set('uid',uid);
+                   //mycontroller.set('message',message);
+                   //mycontroller.toggleProperty('showRegResponse');
+                   mycontroller.toggleProperty('isShowingModal');
+                   //mycontroller.set('loading_image_visibility', "hide");
+                   //mycontroller.transitionToRoute('home');              
+                  
+            },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+            }
+           });
+            }
+             
         },
 
         submit:function(){

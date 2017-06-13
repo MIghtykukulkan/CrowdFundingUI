@@ -24,6 +24,28 @@ export default Ember.Route.extend({
                 "campStatus": true
             }
         ];
+        var datasting;
+           //var token = sessionStorage.getItem('token');
+           //console.log(token);
+            $.ajax({
+                    url: 'http://localhost:8082/service-provider/campaigns/',
+                    type: 'GET',
+                    accepts: 'application/json',
+                    //Authorization: token,
+                    
+                    success: function(datasting) {
+                        //alert("success"+JSON.stringify(data))
+                        console.log(JSON.stringify(datasting)) 
+                       
+                        return datasting,
+                        console.log('DEBUG: GET Enquiries OK');
+                    },
+                    error: function(err) {
+                        console.log(datasting)
+                        console.log('err')
+                        console.log('DEBUG: GET Enquiries Failed');
+                    }
+                });
 
         return data;
     }
