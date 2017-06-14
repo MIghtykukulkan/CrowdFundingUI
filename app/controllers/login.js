@@ -37,7 +37,7 @@ export default Ember.Controller.extend(Validations,{
             var emailId = this.get('email');
             var Password = this.get('password');
             console.log(emailId);
-           /* let {
+            let {
                 email,
                 password
             } = this.getProperties('email', 'password');
@@ -50,7 +50,7 @@ export default Ember.Controller.extend(Validations,{
                  var mycontroller = this;
                 console.log(email);
                 return $.ajax({
-                url:'http://192.168.0.20:8081/crowdfunding/login',
+                url:'http://localhost:8082/crowdfunding/login',
                 type: 'POST',
                 accepts: 'application/json',
                 data: dataString,
@@ -77,7 +77,7 @@ export default Ember.Controller.extend(Validations,{
                    
             }
                 
-                });*/
+                });
                 
             if (emailId === 'admin@a.com' || emailId === 'Admin@a.com' || emailId === 'ADMIN@A.COM') {
                 sessionStorage.setItem('userType', "Admin");

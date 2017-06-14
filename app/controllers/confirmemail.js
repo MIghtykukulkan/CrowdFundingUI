@@ -17,44 +17,93 @@ var Validations = buildValidations({
 
 export default Ember.Controller.extend(Validations,{
 
-    actions: {
+   actions: {
 
-        toggleModal:function(){
+       toggleModal:function(){
             var emailId = this.get('email');
             if (emailId === null || emailId === undefined || emailId === "") {
                 this.set('errormessage', "Please fill in at least one field")
                 return;
             }
-          /*  let {
-                email,
+         let {
+                content
+            } = this.getProperties('content');
                 
-            } = this.getProperties('email');
-               
-               var dataString = {
-                "email": email,
+           var dataString = {
+                "content": content,
             };
-               
+            //console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+            //this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-                url:'http://192.168.0.20:8000',
-                type: 'POST',
-                data: JSON.stringify(dataString),
-                success: function(response) {
-                    var message = response.message;
-                    var status = response.status;
-                    if (status === "success") {
-                        console.log(JSON.stringify(response));
-                    }
-                },    
-                    error: function(result) {
-                    console.log('DEBUG: GET Enquiries Failed');
-                }
-                });*/
-
-            
-              this.toggleProperty('isShowingModal');
+            url: 'http://localhost:8082/confirmemail/mail',
+            type: 'POST',
+            accepts: 'application/json',
+            data: dataString,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   //message=response.message.message;
+                   console.log(response.message);
+                   //mycontroller.set('uid',uid);
+                   //mycontroller.set('message',message);
+                   //mycontroller.toggleProperty('showRegResponse');
+                   mycontroller.toggleProperty('isShowingModal');
+                   //mycontroller.set('loading_image_visibility', "hide");
+                   //mycontroller.transitionToRoute('home');              
+                 
+           },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+            }
+           });
+           
+             this.toggleProperty('isShowingModal');
         },
         resetpassword:function(){
-              this.transitionToRoute('reset-password');
+             let {
+                content
+            } = this.getProperties('content');
+                
+           var dataString = {
+                "content": content,
+            };
+            //console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+            //this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            console.log("Registration Input: " + JSON.stringify(dataString));
+            return $.ajax({
+            url: 'http://localhost:8082/confirmemail/otp',
+            type: 'POST',
+            accepts: 'application/json',
+            data: dataString,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   //message=response.message.message;
+                   console.log(response.message);
+                   //mycontroller.set('uid',uid);
+                   //mycontroller.set('message',message);
+                   //mycontroller.toggleProperty('showRegResponse');
+                   mycontroller.toggleProperty('isShowingModal');
+                   //mycontroller.set('loading_image_visibility', "hide");
+                   //mycontroller.transitionToRoute('home');     
+                    mycontroller.transitionToRoute('reset-password');         
+                 
+           },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+            }
+             
+           });
+             
         }
     }
 });
