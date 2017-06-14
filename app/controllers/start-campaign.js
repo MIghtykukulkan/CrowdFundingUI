@@ -96,9 +96,9 @@ export default Ember.Controller.extend(Validations,{
     isSaveReward: false,
     CampaignCategory: ['Education', 'Children', 'Animal Welfare','Environment','Film','Dance',],
     actions: {
-
-    upload: function(event) {
-    const reader = new FileReader();
+    type: 'file',
+    upload: function(e) {
+    /*const reader = new FileReader();
     const file = event.target.files[0];
     let imageData;
 
@@ -111,11 +111,29 @@ export default Ember.Controller.extend(Validations,{
 
     if (file) {
       reader.readAsDataURL(file);
-    }
+    }*/
+    var inputFiles = e.target.files;
+    var imgFile = inputFiles[0];
+    var formData = new FormData();
+    formData.append('photo', imgFile);
+    Ember.$.ajax({
+      type: 'POST',
+      url: 'http://localhost:8082/start-campaign/img',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(err) {
+        console.error(err)
+      }
+    })
   },
 
-  videoupload: function(event) {
-    const reader = new FileReader();
+  videoupload: function(e) {
+   /* const reader = new FileReader();
     const file = event.target.files[0];
     let videoData;
 
@@ -129,7 +147,25 @@ export default Ember.Controller.extend(Validations,{
 
     if (file) {
       reader.readAsDataURL(file);
-    }
+    }*/
+    var inputFiles = e.target.files;
+    var videoFile = inputFiles[1];
+    var formData = new FormData();
+    formData.append('video', videoFile);
+    Ember.$.ajax({
+      type: 'POST',
+      url: 'http://localhost:8082/start-campaign/video',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(err) {
+        console.error(err)
+      }
+    })
   },
 
         start: function(){
