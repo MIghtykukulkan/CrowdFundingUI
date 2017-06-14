@@ -1,7 +1,7 @@
 import Ember from 'ember';
-var likecount =0;
+//var likecount =0;
 export default Ember.Controller.extend({
-   // likecount:0,
+   likecount:0,
     actions: {
         callRewards : function()
         {
@@ -62,9 +62,32 @@ export default Ember.Controller.extend({
 
         aboutfundraiser : function(){
             this.transitionToRoute('home');
+
+            var datastring;
+            $.ajax({
+                url:"http://localhost:8082/crowdfunding/browsecampaign?"+arg,
+                type: 'GET',
+                contentType: 'application/json;charset=utf-8',
+            //Authorization: token,
+        
+                success: function(datastring) {
+                    //alert("success"+JSON.stringify(data))
+                            console.log("1233");
+                    console.log("data"+JSON.stringify(datastring));
+                        // alert("data"+JSON.stringify(data));
+                    return data,
+                        console.log('DEBUG: GET Enquiries OK');
+                 },
+                 error: function(err) {
+                    console.log(datastring);
+                    console.log("Error : " + JSON.stringify(err));
+                    console.log('DEBUG: GET Enquiries Failed');
+                }
+        });
+
         },
     
-         facebook: function() {
+        /* facebook: function() {
              window.location.replace("https://en-gb.facebook.com/login/");
         },
         twitter: function() {
@@ -72,7 +95,7 @@ export default Ember.Controller.extend({
         },
         linkedin: function() {
              window.location.replace("https://in.linkedin.com/");
-        },
+        },*/
         likebutton:function(){
                 console.log("in func");
                 if(typeof(Storage) !== "undefined") {

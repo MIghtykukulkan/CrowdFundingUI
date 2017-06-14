@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
         },
         
         goTo: function(arg) {
-            //this.set('browsecampaign',arg);
+        
             browse=arg;
              console.log('browecampaign:'+browse);
             
@@ -45,18 +45,18 @@ export default Ember.Controller.extend({
 
         console.log("data"+data);
 
-            if (arg === "education")
-                this.transitionToRoute('education');
-            else if (arg === 'children')
-                this.transitionToRoute('children');
-            else if (arg === 'animal-welfare')
-                this.transitionToRoute('animal-welfare');
-            else if (arg === 'environment')
-                this.transitionToRoute('environment');
-            else if (arg === 'film')
-                this.transitionToRoute('film');
-            else if (arg === 'dance')
-                this.transitionToRoute('dance');
+        if (arg === "education")
+            this.transitionToRoute('education');
+        else if (arg === 'children')
+            this.transitionToRoute('children');
+        else if (arg === 'animal-welfare')
+            this.transitionToRoute('animal-welfare');
+        else if (arg === 'environment')
+            this.transitionToRoute('environment');
+        else if (arg === 'film')
+            this.transitionToRoute('film');
+        else if (arg === 'dance')
+            this.transitionToRoute('dance');
         },
 
         toggleModel: function() {

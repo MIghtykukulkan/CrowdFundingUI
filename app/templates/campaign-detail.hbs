@@ -110,8 +110,9 @@ $(document).ready(function(){
     <div class="col-sm-2">
         <div>
             <div align="center">
-                <button class="btn btn-color" {{action "likebutton"}}>Likes <span class="badge"> {{ localStorage.clickcount}}</span>
+                <button class="btn btn-color" {{action "likebutton"}}>Likes <span class="badge"> {{ likecount}}</span>
                 </button>
+            
             </div>
         </div>
     </div>
@@ -147,9 +148,7 @@ $(document).ready(function(){
                 </div>
 
                 <div class="panel-footer">
-                    <h4> About Fundraiser </h4>
-                    
-                 <!--   <button class="btn btn-color" data-toggle="modal" {{action 'aboutfundraiser'}}><strong>About Fundraiser </strong></button>   -->
+                   <button class="btn btn-color" data-toggle="modal" {{action 'aboutfundraiser'}}><strong>About Fundraiser </strong></button>   
                  <!--   <p align="justify"> Dear All, I am home-maker and full-time mother from Vadodara (Gujarat) having 4-year-old Aryaman born with Down’s Syndrome (DS). A child with DS can have multiple defects starting from heart disease, hearing loss, vision problems, dental problems to multiple physical & mental disabilities and risks of developing major diseases such as leukaemia, Alzheimer’s disease etc. as they grow-up.</p>-->
                 </div>
             </div>
@@ -230,20 +229,6 @@ $(document).ready(function(){
             </div>
             
         </div>
-<!--<div>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-           <div class="col-sm-12" align="center">
-               <div class="col-sm-4">
-                    <a href="#" target="_self" class="fa fa-facebook" {{action 'facebook'}}></a>
-               </div>
-                <div class="col-sm-4">
-                    <a href="#" target="_blank" class="fa fa-twitter"   {{action 'twitter'}}></a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="#" target="_blank" class="fa fa-linkedin"   {{action 'linkedin'}}></a>
-                </div>
-           </div>
-        </div>-->
+
     </div>
 </div>
