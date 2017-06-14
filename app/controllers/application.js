@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
         
         goTo: function(arg) {
         
-            browse=arg;
+           /*browse=arg;
              console.log('browecampaign:'+browse);
             
             // ajax call
@@ -41,21 +41,21 @@ export default Ember.Controller.extend({
                 console.log("Error : " + JSON.stringify(err));
                 console.log('DEBUG: GET Enquiries Failed');
             }
-        });
+        });*/
 
-        console.log("data"+data);
+        //console.log("data"+data);
 
-        if (arg === "education")
+        if (arg === "Education")
             this.transitionToRoute('education');
-        else if (arg === 'children')
+        else if (arg === 'Children')
             this.transitionToRoute('children');
-        else if (arg === 'animal-welfare')
+        else if (arg === 'Animal-welfare')
             this.transitionToRoute('animal-welfare');
-        else if (arg === 'environment')
+        else if (arg === 'Environment')
             this.transitionToRoute('environment');
-        else if (arg === 'film')
+        else if (arg === 'Film')
             this.transitionToRoute('film');
-        else if (arg === 'dance')
+        else if (arg === 'Dance')
             this.transitionToRoute('dance');
         },
 
