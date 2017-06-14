@@ -1,7 +1,8 @@
 import Ember from 'ember';
-//var likecount =0;
+var likecount =0;
+var spamcount =0;
 export default Ember.Controller.extend({
-   likecount:0,
+  // likecount:0,
     actions: {
         callRewards : function()
         {
@@ -61,11 +62,11 @@ export default Ember.Controller.extend({
         },
 
         aboutfundraiser : function(){
-            this.transitionToRoute('home');
+         //   this.transitionToRoute('home');
 
             var datastring;
             $.ajax({
-                url:"http://localhost:8082/crowdfunding/browsecampaign?"+arg,
+                url:"http://localhost:8082/campaign-detail/aboutfunder",
                 type: 'GET',
                 contentType: 'application/json;charset=utf-8',
             //Authorization: token,
@@ -75,15 +76,15 @@ export default Ember.Controller.extend({
                             console.log("1233");
                     console.log("data"+JSON.stringify(datastring));
                         // alert("data"+JSON.stringify(data));
-                    return data,
+                    return datastring,
                         console.log('DEBUG: GET Enquiries OK');
                  },
                  error: function(err) {
                     console.log(datastring);
                     console.log("Error : " + JSON.stringify(err));
                     console.log('DEBUG: GET Enquiries Failed');
-                }
-        });
+                    }
+                 });
 
         },
     
@@ -97,33 +98,36 @@ export default Ember.Controller.extend({
              window.location.replace("https://in.linkedin.com/");
         },*/
         likebutton:function(){
-                console.log("in func");
-                if(typeof(Storage) !== "undefined") {
-                    console.log("in if condn");
-                    if (localStorage.clickcount) {
-                        localStorage.clickcount = Number(localStorage.clickcount)+1;
-                        console.log("increment:"+localStorage.clickcount);
-                        } else {
-                             localStorage.clickcount = 1;
-                             console.log(localStorage.clickcount);
-                             }
-                         }
-                 },
+             console.log("in func");
+             if(typeof(Storage) !== "undefined") {
+             console.log("in if condn");
+             if (localStorage.clickcount) {
+             localStorage.clickcount = Number(localStorage.clickcount)+1;
+             console.log("increment:"+localStorage.clickcount);
+             } else {
+             localStorage.clickcount = 1;
+             console.log(localStorage.clickcount);
+                    }
+             }
+                this.set("likecount",localStorage.clickcount);
+                likecount=localStorage.clickcount;
+                console.log('likecount'+likecount);
+             },
         spambutton:function(){
                 console.log("in func");
                 if(typeof(Storage) !== "undefined") {
                         console.log("in if condn");
-                         if (localStorage.clickcount) {
-                        localStorage.clickcount = Number(localStorage.clickcount)+1;
-                        console.log("increment:"+localStorage.clickcount);
+                         if (localStorage.click) {
+                        localStorage.click = Number(localStorage.click)+1;
+                        console.log("increment:"+localStorage.click);
                         } else {
-                             localStorage.clickcount = 1;
-                             console.log(localStorage.clickcount);
+                             localStorage.click = 1;
+                             console.log(localStorage.click);
                              }
                     }
-       // this.set("likecount",localStorage.clickcount);
-       likecount=localStorage.clickcount;
-        console.log('likecount'+likecount);
+                this.set("spamcount",localStorage.click);
+                spamcount=localStorage.click;
+                console.log('spamcount'+spamcount);
         }
     }
 });
