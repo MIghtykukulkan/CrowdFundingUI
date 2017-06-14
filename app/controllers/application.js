@@ -13,37 +13,12 @@ export default Ember.Controller.extend({
         
         goTo: function(arg) {
         
-           /*browse=arg;
+           browse=arg;
              console.log('browecampaign:'+browse);
             
             // ajax call
             // create property to store response
             // goto individual routes and fetch this property there
-
-            var data;
-         $.ajax({
-         url:"http://localhost:8082/crowdfunding/browsecampaign?"+arg,
-         type: 'GET',
-         contentType: 'application/json;charset=utf-8',
-            //Authorization: token,
-        
-         success: function(data) {
-                //alert("success"+JSON.stringify(data))
-                     console.log("1233");
-                console.log("data"+JSON.stringify(data));
-                   // alert("data"+JSON.stringify(data));
-                return data,
-                    console.log('DEBUG: GET Enquiries OK');
-            },
-         error: function(err) {
-                console.log("rest call failed..!!");
-                console.log(data);
-                console.log("Error : " + JSON.stringify(err));
-                console.log('DEBUG: GET Enquiries Failed');
-            }
-        });*/
-
-        //console.log("data"+data);
 
         if (arg === "Education")
             this.transitionToRoute('education');
@@ -57,6 +32,32 @@ export default Ember.Controller.extend({
             this.transitionToRoute('film');
         else if (arg === 'Dance')
             this.transitionToRoute('dance');
+
+
+         var data;
+         return   $.ajax({
+         url:"http://localhost:8082/crowdfunding/browsecampaign/"+arg,
+         type: 'GET',
+         contentType: 'application/json;charset=utf-8',
+            //Authorization: token,
+        
+         success: function(data) {
+                //alert("success"+JSON.stringify(data))
+                     //console.log("1233");
+                console.log("data"+JSON.stringify(data));
+                   // alert("data"+JSON.stringify(data));
+                return data,
+                    console.log('DEBUG: GET Enquiries OK');
+            },
+         error: function(err) {
+                console.log("rest call failed..!!");
+                console.log(data);
+                console.log("Error : " + JSON.stringify(err));
+                console.log('DEBUG: GET Enquiries Failed');
+            }
+        });
+
+
         },
 
         toggleModel: function() {
