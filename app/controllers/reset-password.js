@@ -7,7 +7,7 @@ import {
 
 var Validations = buildValidations({
 
-     password: [
+     newpassword: [
       validator('presence', true),
       validator('length', {
         min: 6,
@@ -33,7 +33,43 @@ export default Ember.Controller.extend(Validations,{
         },
 
         toggleModal1:function(){
-              this.toggleProperty('isShowingModals');
+             let {
+                newpassword
+            } = this.getProperties('newpassword');
+                
+            var dataString = {
+                "newpassword": newpassword,
+            };
+            //console.log(CONFIG.GOURL);
+            //alert('YOU ARE SUCCESSFULLY REGISTERED');
+            //this.toggleProperty('isShowingModal');
+            //this.set('loading_image_visibility', "show");
+            var mycontroller = this;
+            var uid;
+            var message;
+            console.log("Registration Input: " + JSON.stringify(dataString));
+            return $.ajax({
+            url: 'http://localhost:8082/reset-password',
+            type: 'POST',
+            accepts: 'application/json',
+            data: dataString,
+            success: function(response) {
+                   console.log(JSON.stringify(response));
+                   //message=response.message.message;
+                   console.log(response.message);
+                   //mycontroller.set('uid',uid);
+                   //mycontroller.set('message',message);
+                   //mycontroller.toggleProperty('showRegResponse');
+                   mycontroller.toggleProperty('isShowingModals');
+                   //mycontroller.set('loading_image_visibility', "hide");
+                   //mycontroller.transitionToRoute('home');              
+                  
+            },
+            error: function(result) {
+                   console.log('DEBUG: GET Enquiries Failed');
+            }
+           });
+              //this.toggleProperty('isShowingModals');
               
         },
         reset:function(){
