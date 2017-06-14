@@ -39,7 +39,7 @@ export default Ember.Controller.extend(Validations,{
             var mycontroller = this;
             var uid;
             var message;
-            console.log("Registration Input: " + JSON.stringify(dataString));
+            //console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
             url: 'http://localhost:8082/confirmemail/mail',
             type: 'POST',

@@ -34,6 +34,7 @@ export default Ember.Controller.extend(Validations,{
 
         toggleModal1:function(){
               this.toggleProperty('isShowingModals');
+              
         },
         reset:function(){
             window.location.reload(true);
