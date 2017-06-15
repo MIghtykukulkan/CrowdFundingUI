@@ -32,12 +32,36 @@ export default Ember.Controller.extend(Validations,{
             this.transitionToRoute('signup');
         },
 
-        login: function() {
+     login: function() {
             var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
             var emailId = this.get('email');
             var Password = this.get('password');
             console.log(emailId);
-            /*let {
+           
+                
+                
+            if (emailId === 'admin@a.com' || emailId === 'Admin@a.com' || emailId === 'ADMIN@A.COM') {
+                sessionStorage.setItem('userType', "Admin");
+                sessionStorage.setItem('showAdminHeaderModules', false);
+            } else if (emailId === 'fundraiser@f.com' || emailId === 'Fundraiser@f.com' || emailId === 'FUNDRAISER@F.COM') {
+                showStartCampaign = true;
+                sessionStorage.setItem('userType', "Fundraiser");
+                sessionStorage.setItem('showAdminHeaderModules', true);
+                sessionStorage.setItem('showStartCampaign', true);                
+            } else if (emailId === 'funder@f.com' || emailId === 'Funder@f.com' || emailId === 'FUNDER@F.COM' || emailId === 'xyz@c.com') {
+                sessionStorage.setItem('userType', "Funder");
+                sessionStorage.setItem('showAdminHeaderModules', true);
+                sessionStorage.setItem('showFunderModules', true);
+                sessionStorage.setItem('showStartCampaign', false);
+            } else if (emailId === 'customer@c.com' || emailId === 'Customer@c.com' || emailId === 'CUSTOMER@C.COM') {
+                sessionStorage.setItem('userType', "Customer");
+                sessionStorage.setItem('showAdminHeaderModules', false);
+            } 
+            else {
+                       this.set('errormessage', "Invalid EmailId");
+                       return;
+                    }
+                     let {
                 email,
                 password
             } = this.getProperties('email', 'password');
@@ -64,8 +88,9 @@ export default Ember.Controller.extend(Validations,{
                    // }
                         
                      mycontroller.transitionToRoute('home')
+                    
                         
-                 
+                 window.location.reload(true);
                   
 
                 },       
@@ -74,32 +99,12 @@ export default Ember.Controller.extend(Validations,{
                     error: function(response) {
                    console.log('DEBUG: GET Enquiries Failed');
                    console.log("Error Message: ", response.message);
+                     
                    
             }
-                
-                });*/
-                
-            if (emailId === 'admin@a.com' || emailId === 'Admin@a.com' || emailId === 'ADMIN@A.COM') {
-                sessionStorage.setItem('userType', "Admin");
-                sessionStorage.setItem('showAdminHeaderModules', false);
-            } else if (emailId === 'fundraiser@f.com' || emailId === 'Fundraiser@f.com' || emailId === 'FUNDRAISER@F.COM') {
-                showStartCampaign = true;
-                sessionStorage.setItem('userType', "Fundraiser");
-                sessionStorage.setItem('showAdminHeaderModules', true);
-                sessionStorage.setItem('showStartCampaign', true);                
-            } else if (emailId === 'funder@f.com' || emailId === 'Funder@f.com' || emailId === 'FUNDER@F.COM' || emailId === 'xyz@c.com') {
-                sessionStorage.setItem('userType', "Funder");
-                sessionStorage.setItem('showAdminHeaderModules', true);
-                sessionStorage.setItem('showFunderModules', true);
-                sessionStorage.setItem('showStartCampaign', false);
-            } else if (emailId === 'customer@c.com' || emailId === 'Customer@c.com' || emailId === 'CUSTOMER@C.COM') {
-                sessionStorage.setItem('userType', "Customer");
-                sessionStorage.setItem('showAdminHeaderModules', false);
-            } 
-            else {
-                       this.set('errormessage', "Invalid EmailId");
-                       return;
-                    }
+            
+                });  
+                 
             
             if (goToStartCampaign) {
                 if (showStartCampaign)
