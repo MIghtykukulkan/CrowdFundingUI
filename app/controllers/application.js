@@ -74,6 +74,29 @@ export default Ember.Controller.extend({
         },
         linkedin: function() {
              window.location.replace("https://in.linkedin.com/");
+        },
+         report: function() {
+             var data1;
+           return $.ajax({
+                    url: 'http://localhost:8082/report',
+                    type: 'GET',
+                    accepts: 'application/json',
+                    //Authorization: token,
+                    
+                   success: function(data) {
+                        //alert("success"+JSON.stringify(data))
+                       // console.log(JSON.stringify(data));
+//                     this.set('dislpay', data);
+                        console.log('display :'+JSON.stringify(data));
+                        return data;
+                      //console.log("datastring :"+datastring);
+                       },
+                    error: function(err) {
+                        console.log(data);
+                        console.log('err')
+                        console.log('DEBUG: GET Enquiries Failed');
+                    }
+                });
         }
     }
 });

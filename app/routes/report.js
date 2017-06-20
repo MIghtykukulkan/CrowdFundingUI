@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
+var display ="";
+
 export default Ember.Route.extend({
+   
       model() {
-        var data=[ {
+        /*var data=[{
             "campaignname": "Seed Funding",  "pledgeamount": "10000/-", "receivedamount": "10000/-","fundsreceived": "100%", "status": "Received",
         }
         , {
@@ -11,32 +14,35 @@ export default Ember.Route.extend({
         , {
             "campaignname": "Plant Tree",  "pledgeamount": "20000/-", "receivedamount": "20000/-","fundsreceived": "70%","status": "Not Received"
         }
-        ];
+        ];*/
        
-        var datastring;
+        var data;
+        
            //var token = sessionStorage.getItem('token');
            //console.log("token"+token);
-            $.ajax({
+           return $.ajax({
                     url: 'http://localhost:8082/report',
                     type: 'GET',
                     accepts: 'application/json',
                     //Authorization: token,
                     
-                   success: function(datastring) {
+                   success: function(data) {
                         //alert("success"+JSON.stringify(data))
-                        console.log(JSON.stringify(datastring))
-                      
-                        return datastring,
-                        console.log('DEBUG: GET Enquiries OK');
+                       // console.log(JSON.data = data;
+                      console.log("datastring :"+JSON.stringify(data));
+                        return data;
+                       
                     },
                     error: function(err) {
-                        console.log(datastring);
+                        console.log(data);
                         console.log('err')
                         console.log('DEBUG: GET Enquiries Failed');
                     }
                 });
-
- return data;
+                //this.set("display",data);
+                
+ //console.log("datastring :"+datastring);
+ //return data;
 
 
     }

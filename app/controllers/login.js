@@ -36,7 +36,7 @@ export default Ember.Controller.extend(Validations,{
             var goToStartCampaign = sessionStorage.getItem('goToStartCampaign');
             var emailId = this.get('email');
             var Password = this.get('password');
-            console.log(emailId);
+            //console.log(emailId);
             /*let {
                 email,
                 password

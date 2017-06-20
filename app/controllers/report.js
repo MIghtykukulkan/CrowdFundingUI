@@ -2,23 +2,23 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     columns: [{
-        "propertyName": "campaignname",
+        "propertyName": "CampaignName",
         "title": "Campaign Name",
         "filterPlaceholder": "Campaign Name",
     }, {
-        "propertyName": "pledgeamount",
+        "propertyName": "PledgeAmount",
         "title": "Pledge Amount",
         "filterPlaceholder": "Pledge Amount"
     }, {
-        "propertyName": "receivedamount",
+        "propertyName": "RecievedAmount",
         "title": "Received Amount",
         "filterPlaceholder": "Received Amount"
     }, {
-        "propertyName": "fundsreceived",
+        "propertyName": "FundRecieved",
         "title": "Fund Received (%)",
         "filterPlaceholder": "Fund Received (%)"
     }, {
-        "propertyName": "status",
+        "propertyName": "Status",
         "title": "Status",
         "filterPlaceholder": "Status"
     }, {
