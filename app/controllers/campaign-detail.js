@@ -20,9 +20,10 @@ export default Ember.Controller.extend({
                 let {
                 content
             } = this.getProperties('content');
-                
-            var dataString = {
+               console.log(content);
+               var dataString = {
                 "content": content,
+                
             };
             //console.log(CONFIG.GOURL);
             //alert('YOU ARE SUCCESSFULLY REGISTERED');
@@ -31,7 +32,7 @@ export default Ember.Controller.extend({
             var mycontroller = this;
             var uid;
             var message;
-            console.log("Registration Input: " + JSON.stringify(dataString));
+           // console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
             url: 'http://localhost:8082/campaign-detail',
             type: 'POST',
