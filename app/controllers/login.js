@@ -61,7 +61,7 @@ export default Ember.Controller.extend(Validations,{
                        this.set('errormessage', "Invalid EmailId");
                        return;
                     }
-                     let {
+                     /*let {
                 email,
                 password
             } = this.getProperties('email', 'password');
@@ -103,7 +103,7 @@ export default Ember.Controller.extend(Validations,{
                    
             }
             
-                });  
+                });*/  
                  
             
             if (goToStartCampaign) {

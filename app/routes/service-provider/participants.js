@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
-        var data = [{
+        /*var data = [{
                 "participantId": "1",
                 "participantType": "Funder",
                 "participantName": "Sweta Vahia",
@@ -20,26 +20,26 @@ export default Ember.Route.extend({
                 "participantName": "Shraddha Kharat",
                 "regStatus": false
             }
-        ];
+        ];*/
 
-        var datastring;
+        var data;
            //var token = sessionStorage.getItem('token');
            //console.log("token"+token);
-            $.ajax({
+           return $.ajax({
                     url: 'http://localhost:8082/service-provider/participants',
                     type: 'GET',
                     accepts: 'application/json',
                     //Authorization: token,
                     
-                   success: function(datastring) {
+                   success: function(data) {
                         //alert("success"+JSON.stringify(data))
-                        console.log(JSON.stringify(datastring));
+                        console.log(JSON.stringify(data));
                       
-                        return datastring,
+                        return data,
                         console.log('DEBUG: GET Enquiries OK');
                     },
                     error: function(err) {
-                        console.log(datastring);
+                        console.log(data);
                         console.log('err');
                         console.log('DEBUG: GET Enquiries Failed');
                     }
@@ -47,6 +47,6 @@ export default Ember.Route.extend({
 
 
 
-        return data;
+        //return data;
     }
 });

@@ -5,17 +5,17 @@ export default Ember.Controller.extend({
     isCampClosure: false,
 
     columns: [{
-            "propertyName": "campaignId",
+            "propertyName": "ID",
             "title": "ID",
             "filterPlaceholder": "Enter Id"
         },
         {
-            "propertyName": "campaignName",
+            "propertyName": "Name",
             "title": "Name",
             "filterPlaceholder": "Enter Name"
         },
         {
-            "propertyName": "campaignType",
+            "propertyName": "Type",
             "title": "Type",
             "filterPlaceholder": "Enter Type"
         },

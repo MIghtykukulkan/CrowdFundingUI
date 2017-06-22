@@ -4,17 +4,17 @@ export default Ember.Controller.extend({
     isPartAuthorize: false,
 
     columns: [{
-            "propertyName": "participantId",
+            "propertyName": "ID",
             "title": "ID",
             "filterPlaceholder": "Enter Id"
         },
         {
-            "propertyName": "participantType",
+            "propertyName": "Type",
             "title": "Type",
             "filterPlaceholder": "Enter Type"
         },
         {
-            "propertyName": "participantName",
+            "propertyName": "ParticipantName",
             "title": "Participant Name",
             "filterPlaceholder": "Enter Name"
         },

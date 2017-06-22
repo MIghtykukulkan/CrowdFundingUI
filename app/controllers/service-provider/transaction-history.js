@@ -1,37 +1,37 @@
 import Ember from 'ember';
 export default Ember.Controller.extend({
     columns: [{
-            "propertyName": "campaignname",
+            "propertyName": "CampaignName",
             "title": "Campaign Name",
             "filterPlaceholder": "Enter Name"
         },
         {
-            "propertyName": "startdate",
+            "propertyName": "Start Date",
             "title": "Start Date",
             "filterPlaceholder": "Enter Start Date"
         },
         {
-            "propertyName": "enddate",
+            "propertyName": "End Date",
             "title": "End date",
             "filterPlaceholder": "Enter End Date"
         },
         {
-            "propertyName": "goalamount",
+            "propertyName": "Goal Amount",
             "title": "Goal Amount",
             "filterPlaceholder": "Enter Goal Amount"
         },
         {
-            "propertyName": "fundername",
+            "propertyName": "Funder Name",
             "title": "Funder Name",
             "filterPlaceholder": "Enter Funder Name"
         },
         {
-            "propertyName": "fundercontribution",
+            "propertyName": "Funder Contributer",
             "title": "Funder Contribution",
             "filterPlaceholder": "Enter Funder Contribution"
         },
         {
-            "propertyName": "fundstatus",
+            "propertyName": "Fund Status",
             "title": "Fund Status. Service Provider / FundRaiser",
             "filterPlaceholder": "Enter Status"
         },       
