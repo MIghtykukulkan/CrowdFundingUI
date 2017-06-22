@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
-        var data = [{
+        /*var data = [{
             "campaignname": "Avarice - A short film",
             "fundername": "Lokesh Reddi",
             "pleageamount": "20000",
@@ -23,12 +23,12 @@ export default Ember.Route.extend({
             "receivedamount": "90%",
             "rewards": "T-shirt",
             "status": "Reward Delivered"
-        }];
+        }];*/
         
         var datasting;
            //var token = sessionStorage.getItem('token');
            //console.log(token);
-            $.ajax({
+           return $.ajax({
                     url: 'http://localhost:8082/fund-raiser/status-of-fund-transfer/',
                     type: 'GET',
                     accepts: 'application/json',
@@ -47,6 +47,6 @@ export default Ember.Route.extend({
                         console.log('DEBUG: GET Enquiries Failed');
                     }
                 });
-                return data;
+                //return data;
     }
 });

@@ -2,19 +2,19 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     isFunderAuthorize: false,
     columns: [{
-        "propertyName": "campaignname",
+        "propertyName": "CampaignName",
         "title": "Campaign Name",
         "filterPlaceholder": "Campaign Name"
     }, {
-        "propertyName": "fundername",
+        "propertyName": "FunderName",
         "title": "Funder Name",
         "filterPlaceholder": "Funder Name"
     }, {
-        "propertyName": "amountneeded",
+        "propertyName": "AmountNeeded",
         "title": "Amount Needed",
         "filterPlaceholder": "Amount Needed"
     }, {
-        "propertyName": "bid",
+        "propertyName": "Bid",
         "title": "Bid",
         "filterPlaceholder": "Bid"
     }, {

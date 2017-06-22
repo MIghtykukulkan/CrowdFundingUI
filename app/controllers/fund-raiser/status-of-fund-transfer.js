@@ -4,27 +4,27 @@ export default Ember.Controller.extend({
     isCampAuthorize: false,
     isCampClosure: false,
     columns: [{
-        "propertyName": "campaignname",
+        "propertyName": "CampaignName",
         "title": "Campaign Name",
         "filterPlaceholder": "Campaign Name"
     }, {
-        "propertyName": "fundername",
+        "propertyName": "FunderName",
         "title": "Funder Name",
         "filterPlaceholder": "Funder Name"
     }, {
-        "propertyName": "pleageamount",
+        "propertyName": "PledgeAmount",
         "title": "Pleage Amount",
         "filterPlaceholder": "Pleage Amount"
     }, {
-        "propertyName": "receivedamount",
+        "propertyName": "RecievedFund",
         "title": "Received Fund",
         "filterPlaceholder": "Received Amount"
     }, {
-        "propertyName": "rewards",
+        "propertyName": "Rewards",
         "title": "Rewards",
         "filterPlaceholder": "Rewards"
     }, {
-        "propertyName": "status",
+        "propertyName": "Status",
         "title": "Status",
         "filterPlaceholder": "Status"
     }, {
