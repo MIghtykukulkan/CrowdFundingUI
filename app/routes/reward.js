@@ -20,6 +20,13 @@ export default Ember.Route.extend({
             this.controllerFor('application').set('userType', userType);
             this.controllerFor('application').set('showUser', true);
         }
+        var rewardamount = this.controllerFor('start-campaign').get('rewardamount');
+        var rewardtitle = this.controllerFor('start-campaign').get('rewardtitle');
+        var rewarddescription = this.controllerFor('start-campaign').get('rewarddescription');
+
+        this.controllerFor('reward').set('rewardamount', rewardamount);
+        this.controllerFor('reward').set('rewardtitle', rewardtitle );
+        this.controllerFor('reward').set('rewarddescription',rewarddescription);
 
     }
 });

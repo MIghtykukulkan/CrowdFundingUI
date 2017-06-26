@@ -1,10 +1,35 @@
 import Ember from 'ember';
 
+
 export default Ember.Route.extend({
     model() {
         var userType = sessionStorage.getItem('userType');
         var showFunderModules = sessionStorage.getItem('showFunderModules');
         var showStartCampaign = sessionStorage.getItem('showStartCampaign');
+        function encodeImageFileAsURL(cb) {
+    return function(){
+        var file = this.files[0];
+        var reader  = new FileReader();
+        reader.onloadend = function () {
+            cb(reader.result);
+        }
+        reader.readAsDataURL(file);
+    }
+}
+
+$('#inputFileToLoad').change(encodeImageFileAsURL(function(base64Img){
+    $('.output')
+      .find('textarea')
+        .val(base64Img)
+        .end()
+      .find('a')
+        .attr('href', base64Img)
+        .text(base64Img)
+        .end()
+      .find('img')
+        .attr('src', base64Img);
+}));
+        
 
         if (userType === undefined || userType === null) {
             alert("Please Login");

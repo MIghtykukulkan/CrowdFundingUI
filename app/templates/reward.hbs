@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-12">
             <h3>Rewards!! </h3>
-                  {{rewardtitle}}
+                  
         </div>
     </div>
 </div>
@@ -25,6 +25,7 @@
                         <br> {{input type="text" value=amount placeholder='Please Amount for Contribution'}} {{amounterrormessage}}
                     </p>
                 </div>
+            </div>
                 <div class="form-group ">
                     <button type="button" class="btn btn-color" {{action "toggleModal"}}>Contribute</button>
                     {{#if isShowingModal}} {{#modal-dialog close="toggleModal" targetAttachment="center" translucentOverlay=true}}
@@ -54,10 +55,10 @@
         <div class="col-sm-4 bg-3">
             <div class="panel text-center">
                 <div class="panel-heading">
-                    <h4>Rs.1000/-<br>Horse Power</h4>
+                    <h4>{{rewardamount}}<br>{{rewardtitle}}</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Special Shoutout on our social media handles and Delivery of customised postcard</p>
+                    <p>{{rewarddescription}}</p>
                       {{!--   {{input type="text" value=quantity placeholder='Add quantity'}}--}}
                 </div>
 
@@ -87,7 +88,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 bg-3">
+</div>
+           <!-- <div class="col-sm-4 bg-3">
             <div class="panel text-center">
                 <div class="panel-heading">
                     <h4>Rs.5000/-<br>Unstoppable</h4>
@@ -98,7 +100,7 @@
 
                 <div class="form-group ">
                     <button type="button" class="btn btn-color" {{action "toggleModal2"}}>Contribute</button>
-                    {{#if isShowingModalss}} {{#modal-dialog close="toggleModal2" targetAttachment="center" translucentOverlay=true}}
+                    {{#if isShowingModalss}} {{#modal-dialog close="toggleModal2" targetAttachment="center" translucentOverlay=true}}-->
                      <h2>Terms and Conditions</h2>
                     <ul style="list-style-type:square">
                  <p>User should have valid accounts for payments</p>
@@ -118,13 +120,12 @@
                 </div>
                   {{/if}}
                     {{/modal-dialog}} {{/if}}
-                </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-4 bg-3">
+                </div>
+        
+    <!--     <div class="col-sm-4 bg-3">
         <div class="panel text-center">
-            <div class="panel-heading">
+         <div class="panel-heading">
                 <h4>Rs.10000/-<br> &nbsp;</h4>
             </div>
              <div class="panel-body">
@@ -132,7 +133,7 @@
                 </div>
             <div class="form-group ">
                 <button type="button" class="btn btn-color" {{action "toggleModal3"}}>Contribute</button>
-                {{#if isShowingModalsss}} {{#modal-dialog close="toggleModal3" targetAttachment="center" translucentOverlay=true}}
+                {{#if isShowingModalsss}} {{#modal-dialog close="toggleModal3" targetAttachment="center" translucentOverlay=true}}-->
                 <h2>Terms and Conditions</h2>
                     <ul style="list-style-type:square">
                 <p>User should have valid accounts for payments.</p>
@@ -155,7 +156,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4 bg-3">
+       <!-- <div class="col-sm-4 bg-3">
         <div class="panel text-center">
             <div class="panel-heading">
                 <h4>Rs.25000/-<br>Lightspeed</h4>
@@ -165,7 +166,7 @@
                 </div>
             <div class="form-group ">
                 <button type="button" class="btn btn-color" {{action "toggleModal4"}}>Contribute</button>
-                {{#if isShowingModalssss}} {{#modal-dialog close="toggleModal4" targetAttachment="center" translucentOverlay=true}}
+                {{#if isShowingModalssss}} {{#modal-dialog close="toggleModal4" targetAttachment="center" translucentOverlay=true}}-->
                <h2>Terms and Conditions</h2>
                     <ul style="list-style-type:square">
                  <p>User should have valid accounts for payments.</p>
@@ -188,7 +189,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4 bg-3">
+        <!-- <div class="col-sm-4 bg-3">
         <div class="panel text-center">
             <div class="panel-heading">
                 <h4>Rs.50000/-<br>Lift-Off</h4>
@@ -198,7 +199,7 @@
             </div>
             <div class="form-group ">
                 <button type="button" class="btn btn-color" {{action "toggleModal5"}}>Contribute</button>
-                {{#if isShowingModalsssss}} {{#modal-dialog close="toggleModal5" targetAttachment="center" translucentOverlay=true}}
+                {{#if isShowingModalsssss}} {{#modal-dialog close="toggleModal5" targetAttachment="center" translucentOverlay=true}}-->
                  <h2>Terms and Conditions</h2>
                     <ul style="list-style-type:square">
                  <p>User should have valid accounts for payments.</p>

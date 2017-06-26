@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
             } = this.getProperties('content');
                console.log(content);
                var dataString = {
-                "content": content,
+                "content": "content",
                 
             };
             //console.log(CONFIG.GOURL);

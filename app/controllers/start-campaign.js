@@ -295,6 +295,7 @@ export default Ember.Controller.extend(Validations,{
                selectedtypes,
                content,
                contents,
+               img,
                goalamount,
                startdeliverydate,
                startproject,
@@ -310,9 +311,10 @@ export default Ember.Controller.extend(Validations,{
                  "campaigncategory":selectedtypes,
                  "campaigndescription":content,
                  "campaignstory":contents,
+                 "image" :img,
                  "goalamount":goalamount,
                  "startcampaigndate":startdeliverydate,
-                 "startprojectamount":startproject,
+                 c:startproject,
                  "endcampaigndate":enddeliverydate,
                  "reward":[
                      {
@@ -324,8 +326,10 @@ export default Ember.Controller.extend(Validations,{
                     }
                 }
                  ]  
+                
              };
-
+                  
+                    
            
                 // console.log(CONFIG.GOURL);
             //alert('YOU ARE SUCCESSFULLY REGISTERED');

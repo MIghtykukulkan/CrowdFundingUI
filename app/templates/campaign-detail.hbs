@@ -34,7 +34,7 @@ $(document).ready(function(){
             </p>
             <div class="row">
                 <div class="col-sm-6">
-                    <p align="left">Friday 27 November 2015</p>
+                    <p align="left">{{startdeliverydate}}</p>
                 </div>
                 <div class="col-sm-6">
                     <p align="right"> {{createdby}} </p>
@@ -56,8 +56,8 @@ $(document).ready(function(){
     <div class="col-sm-4">
         <div class="thumbnail">
             <br>
-            <h3> &#x20B9; 7,210 </h3>
-            <h4> raised of &#x20B9; 25,000</h4>
+            <h3> &#x20B9; Rs 0 </h3>
+            <h4> raised of Rs {{goalamount}}</h4>
             <br>
         </div>
     </div>
@@ -141,10 +141,10 @@ $(document).ready(function(){
                 <div class="panel-body">
                     <p align="center"> <img src={{imgURL}} class="img-rounded" height="200" width="300"></p>
                     <p align="center"><b><i> “We become the stories we absorb” <br> Stories travel. Stories bridge. Stories connect. </i> </b></p>
-                    <p align="justify"> Not long ago, these were the same stories that we filled up our vacations with- summer, winter and the others in between. Stories which led us to believe that endings are also a new kind of beginning. Stories, depicted via the medium of films, which influenced us in more ways than one. But today, in a digitally hyper connected world, these stories have disappeared for our Children.</p>
+                    <p align="justify"></p>
                     <p align="center"> <img src="assets/image/s_1.jpg" class="img-rounded" height="200" width="300"></p>
-                    <p align="justify"> In life, many of us hold on to just so many of things… We hold on to insults, grudges, traumas, fights, criticisms and what not. While it is necessary to think things through and have a problem solving approach, is it really necessary to keep it alive and kicking all the time by consistently focusing on it? Is it helpful to hold on to all your pain? Taking your attention and your energy off your problems can be immensely therapeutic. While it helps you de-stress and relax your tired frantic mind, the process of incubation can also lead to significant new insights actually enabling you to solve the problem in a better way than before.</p>
-                    <p align="center"> <img src="assets/image/s_2.jpg" class="img-rounded" height="200" width="300"></p>
+                    <p align="justify"> {{contents}}</p>
+                   <!-- <p align="center"> <img src="assets/image/s_2.jpg" class="img-rounded" height="200" width="300"></p>-->
                 </div>
 
                 <div class="panel-footer">

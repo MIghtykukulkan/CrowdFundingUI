@@ -25,6 +25,16 @@ disabled: true,
         this.controllerFor('campaign-detail').set('desc', message1);
         this.controllerFor('campaign-detail').set('c_title', message2);
         this.controllerFor('campaign-detail').set('createdby', message3);
-    }
+        
+        var contents = this.controllerFor('start-campaign').get('contents');
+        this.controllerFor('campaign-detail').set('contents', contents);
+        var startdeliverydate = this.controllerFor('start-campaign').get('startdeliverydate');
+        this.controllerFor('campaign-detail').set('startdeliverydate', startdeliverydate);
+        var goalamount = this.controllerFor('start-campaign').get('goalamount');
+        this.controllerFor('campaign-detail').set('goalamount', goalamount);
+        var goalamount = this.controllerFor('start-campaign').get('contents');
+        this.controllerFor('campaign-detail').set('contents', contents);
+        
+  }
 
 });
