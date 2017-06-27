@@ -172,7 +172,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var email = this.get('email');
             var phonenumber = this.get('phonenumber');
             var password = this.get('password');
-            var confirmpassword = this.get('confirmpassword');
+            var repassword = this.get('repassword');
             var chosen = this.get('selectedtypes');
             var documentdetail = this.get('documentdetail');
 
@@ -188,8 +188,8 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             } if (password === null || password === undefined || password === "") {
                 this.set('passworderror', "field cannot be empty")
                 //return;
-            } if (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") {
-                this.set('confirmpassworderror', "field cannot be empty")
+            } if (repassword === null || repassword === undefined || repassword === "") {
+                this.set('respassworderror', "field cannot be empty")
                 //return;
             } if (chosen === null || chosen === undefined) {
                 this.set('documenttypeerror', "field cannot be empty")
@@ -202,6 +202,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 (email === null || email === undefined || email === "") || 
                 (phonenumber === null || phonenumber === undefined || phonenumber === "") ||
                 (password === null || password === undefined || password === "") ||
+                (repassword === null || repassword === undefined || repassword === "")||
                 (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") ||
                 (chosen === null || chosen === undefined) ||
                 (documentdetail === null || documentdetail === undefined || documentdetail === ""))
@@ -214,6 +215,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 email,
                 phonenumber,
                 password,
+                repassword,
                 selectedtypes,
                 documentdetail,
                 facebook,
@@ -228,6 +230,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 "email": email,
                 "phoneno": phonenumber,
                 "password": password,
+                "repassword":repassword,
                 "document":{"documenttype": selectedtypes,"documentvalue": documentdetail},
                 "facebook":facebook,
                 "blog":blog,
@@ -248,7 +251,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/crowdfunding/register',
+            url: 'http://localhost:3010/registerUser',
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
