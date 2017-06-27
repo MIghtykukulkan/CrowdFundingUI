@@ -156,6 +156,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
     isShowingModal: false,
     organisationtype: ['NGO / Nonprofit', 'Social Enterprise', 'Community Organization', 'Corporate', 'Startup', 'Others', ],
     documenttype: ['Passport', 'PAN No', 'Aadhar No',],
+     usertype: ['Funder', 'Fundraiser',],
     actions: {
         registerindividual: function(record) {
             this.set('isIndividualAuthorize', true);
