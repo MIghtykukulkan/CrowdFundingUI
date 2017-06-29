@@ -64,7 +64,7 @@
                                         </div>
                                         <input
                                             multiple="true"
-                                            onchange={{action "upload"}}
+                                            onchange={{action "toggleModal1"}}
                                             accept="image/png,image/jpeg"
                                             type="file"/>
                                      </div>
@@ -81,7 +81,7 @@
                                         <div class="videoupload">
                                         <input
                                             multiple="true"
-                                            onchange={{action "videoupload"}}
+                                            onchange={{action "toggleModal1"}}
                                             accept="video/mp4,video/AVI"
                                             type="file"/>
                                         </div>
@@ -209,7 +209,7 @@ targetAttachment="center"
 translucentOverlay=true}}
 <p>Campaign created...!!!!</p>
 <div class="modal-header">
-<!--<button type="button" class="close">ok</button>>-->
+<button type="button" class="close" {{action 'home'}}>ok</button>
 </div>
 {{/modal-dialog}}
 {{/if}}
