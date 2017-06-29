@@ -227,7 +227,9 @@ export default Ember.Controller.extend(Validations,{
             this.toggleProperty('isSaveReward');
            
             },
-            toggleModal1: function() {
+            toggleModal1: function(e) {
+                var test = e;
+                console.log(test);
             var campaigntitle = this.get('campaigntitle');
             var chosen = this.get('selectedtypes');
             var content = this.get('content');
@@ -305,48 +307,50 @@ export default Ember.Controller.extend(Validations,{
                rewarddescription
              } = this.getProperties('campaigntitle','selectedtypes','content','contents','goalamount','startdeliverydate','startproject','enddeliverydate','rewardtitle','rewardamount','rewarddescription');
             
+          //  var startdeliverydate =this.get('startdeliverydate');
+            console.log(JSON.stringify(startdeliverydate));
+               // var inputFiles = [];
+             var  inputFiles = e.target.files;
+             var imgFile = inputFiles;
+             var formData = new FormData();
+             formData.append('photo', imgFile);
+
+             console.log(JSON.stringify(formData));
+
+            var inputFiles = e.target.files;
+            var videoFile = inputFiles;
+            var myformData = new FormData();
+            myformData.append('video', videoFile);
+             
+
              var datastring={
-                
-                 "campaigntitle": campaigntitle,
-                 "campaigncategory":selectedtypes,
-                 "campaigndescription":content,
-                 "campaignstory":contents,
-                 "image" :img,
-                 "goalamount":goalamount,
-                 "startcampaigndate":startdeliverydate,
-                 c:startproject,
-                 "endcampaigndate":enddeliverydate,
-                 "reward":[
-                     {
-                        "reward1": 
-                    {
-                        "rewardtitle":rewardtitle,
-                        "rewardamount":rewardamount,
-                        "rewarddescription":rewarddescription
-                    }
-                }
-                 ]  
-                
-             };
-                  
-                    
-           
-                // console.log(CONFIG.GOURL);
-            //alert('YOU ARE SUCCESSFULLY REGISTERED');
-            //this.toggleProperty('isShowingModal');
-            //this.set('loading_image_visibility', "show");
+                 "campaign_title":campaigntitle,
+            "campaign_category":selectedtypes,
+            "campaign_story":content,
+            "campaign_discription":content,
+            "campaign_image":JSON.stringify(formData),
+            "campaign_video":JSON.stringify(myformData),
+            "goal_amt":goalamount,
+            "project_start_date":JSON.stringify(startdeliverydate),
+            "initial_amount":startproject,
+            "campaign_end_date":JSON.stringify(enddeliverydate)
+
+            }
+                    console.log(JSON.stringify(datastring));
+            
             var mycontroller = this;
             var uid;
             var message;
             var mydata ;
             //console.log(mydata);
             return $.ajax({
-            url: 'http://localhost:8082/crowdfunding/createcampaign',
+            url: "http://192.168.0.24:3010/createCampaign",
 
             type: 'POST',
-            accepts: 'application/json',
-            data: datastring,
-            success: function(response) {
+            contentType:'application/json',
+            data:JSON.stringify(datastring),
+            success:function(response) {
+                console.log("abc");
                    console.log(JSON.stringify(response));
                    message=response.message.message;
                      console.log(response.message);
