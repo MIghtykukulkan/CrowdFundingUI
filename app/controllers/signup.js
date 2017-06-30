@@ -169,15 +169,19 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
         },
 
         toggleModal: function() {
+            var usertype = this.get('usertype');
             var name = this.get('name');
             var email = this.get('email');
             var phonenumber = this.get('phonenumber');
             var password = this.get('password');
-            var repassword = this.get('repassword');
+            var confirmpassword = this.get('confirmpassword');
             var chosen = this.get('selectedtypes');
             var documentdetail = this.get('documentdetail');
 
-            if (name === null || name === undefined || name === ""){
+             if (usertype === null || usertype === undefined || usertype === ""){
+                this.set('nameerror', "field cannot be empty")
+                //return;
+            }if (name === null || name === undefined || name === ""){
                 this.set('nameerror', "field cannot be empty")
                 //return;
             } if (email === null || email === undefined || email === "") {
@@ -189,8 +193,8 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             } if (password === null || password === undefined || password === "") {
                 this.set('passworderror', "field cannot be empty")
                 //return;
-            } if (repassword === null || repassword === undefined || repassword === "") {
-                this.set('respassworderror', "field cannot be empty")
+            } if (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") {
+                this.set('confirmpassworderror', "field cannot be empty")
                 //return;
             } if (chosen === null || chosen === undefined) {
                 this.set('documenttypeerror', "field cannot be empty")
@@ -199,11 +203,11 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 this.set('documentdetailerror', "field cannot be empty")
                 //return;
             }
-             if ((name === null || name === undefined || name === "") || 
+             if ((usertype === null || usertype === undefined || usertype === "")||
+                (name === null || name === undefined || name === "") || 
                 (email === null || email === undefined || email === "") || 
                 (phonenumber === null || phonenumber === undefined || phonenumber === "") ||
                 (password === null || password === undefined || password === "") ||
-                (repassword === null || repassword === undefined || repassword === "")||
                 (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") ||
                 (chosen === null || chosen === undefined) ||
                 (documentdetail === null || documentdetail === undefined || documentdetail === ""))
@@ -212,38 +216,40 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 }
                 else{
                      let {
-                name,
-                email,
-                phonenumber,
-                password,
-                repassword,
-                selectedtypes,
-                documentdetail,
-                facebook,
-                blog,
-                websiteurl,
-                youtube
-            } = this.getProperties('name', 'email', 'phonenumber', 'password','selectedtypes','documentdetail','facebook','blog','websiteurl','youtube');
+               selectedtype,          
+               name,
+               email,
+               phonenumber,
+               password,
+               confirmpassword,
+               selectedtypes,
+               documentdetail,
+               facebook,
+               blog,
+               websiteurl,
+               youtube
+           } = this.getProperties('selectedtype','name', 'email', 'phonenumber', 'password','confirmpassword','selectedtypes','documentdetail','facebook','blog','websiteurl','youtube');
 
-            var dataString = {
-                "usertype":"funder",
-                "name": name,
-                "email": email,
-                "phoneno": phonenumber,
-                "password": password,
-                "repassword":repassword,
-                "document":{"documenttype": selectedtypes,"documentvalue": documentdetail},
-                "facebook":facebook,
-                "blog":blog,
-                "websiteurl":websiteurl,
-                "youtube":youtube,
-                "organisationname":"",
-                "organisationemail":"",
-                "organisationphoneno":"",
-                "organisationtype":"",
-                "designation":""
-            };
-            //console.log(CONFIG.GOURL);
+           var dataString = {
+               "usertype":selectedtype,
+               "name": name,
+               "email": email,
+               "phone": phonenumber,
+               "password": password,
+               "repassword": confirmpassword,
+               "doctype": documentdetail,
+               "facebook":facebook,
+               "blog":blog,
+               "websiteurl":websiteurl,
+               "youtube":youtube,
+               "org":"org",
+              /* "organisationname":"",
+               "organisationemail":"",
+               "organisationphoneno":"",
+               "organisationtype":"",*/
+               "designation":"designation"
+           };
+          
             //alert('YOU ARE SUCCESSFULLY REGISTERED');
             //this.toggleProperty('isShowingModal');
            // this.set('loading_image_visibility', "show");
@@ -252,8 +258,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-
-            url: 'http://192.168.0.24:3010/registerUser',
+            url:'http://192.168.0.24:3010/registeruser',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(dataString),
@@ -456,7 +461,6 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
        /* toggleModal1: function() {
             var chosen = this.get('selectedtype');
             console.log(chosen);
-
             var mycontroller = this;
             if (chosen === null || chosen === undefined) {
                 this.set('errorMessage1', "Please Select Oragnisation");
