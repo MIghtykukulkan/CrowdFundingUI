@@ -226,7 +226,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             } = this.getProperties('name', 'email', 'phonenumber', 'password','selectedtypes','documentdetail','facebook','blog','websiteurl','youtube');
 
             var dataString = {
-                "userType":"Individual",
+                "userType":Individual,
                 "name": name,
                 "email": email,
                 "phoneno": phonenumber,
@@ -252,7 +252,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:3010/registerUser',
+            url: 'http://172.17.0.1:3010/registerUser',
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
