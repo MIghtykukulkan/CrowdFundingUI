@@ -15,8 +15,11 @@ export default Ember.Route.extend({
             this.controllerFor('application').set('showAdminHeaderModules', false);
         } else if (userType === "Fundraiser") {
             showFund = true;
-            this.controllerFor('home').set('isDefault', true);
-            this.controllerFor('home').set('showFund', showFund);
+             this.controllerFor('home').set('isDefault', false);
+            this.controllerFor('home').set('showFunder', showFunder);
+            this.controllerFor('application').set('showFunderModules', true);
+            this.controllerFor('application').set('showStartCampaign', false);
+           
             this.controllerFor('application').set('showStartCampaign', true);
         } else if (userType === "Funder") {
             showFunder = true;

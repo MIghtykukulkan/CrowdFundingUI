@@ -252,10 +252,11 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
+
             url: 'http://172.17.0.1:3010/registerUser',
             type: 'POST',
-            accepts: 'application/json',
-            data: dataString,
+            contentType: 'application/json',
+            data: JSON.stringify(dataString),
             success: function(response) {
                    console.log(JSON.stringify(response));
                    message=response.message.message;
@@ -277,7 +278,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
         },
 
 
-        toggleModal1: function() {
+         toggleModal1: function() {
             var chosen = this.get('selectedtype');
             console.log(chosen);
             var Organisationname = this.get('Organisationname');
@@ -370,39 +371,39 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 }
                 else{
                         let {
-                selectedtype,
-                Organisationname,
-                emailid,
-                phonenumbers,
-                panno,
-                passwords,
-                facebook,
-                blog,
-                websiteurl,
-                youtube,
-                fullname,
-                enterdesignation,
-                email2,
-                phoneno
-            } = this.getProperties('selectedtype', 'Organisationname', 'emailid', 'phonenumbers','panno','passwords','facebook','blog','websiteurl','youtube','fullname','enterdesignation','email2','phoneno');
-                
-            var dataString = {
-                "userType":"Organisation",
-                "organisation": {"organisationtype": selectedtype, "organisationvalue": Organisationname},
-                "organisationemail": emailid,
-                "organisationphoneno": phonenumbers,
-                "documenttype":{"panno": panno},
-                "password":passwords,
-                "facebook":facebook,
-                "blog":blog,
-                "websiteurl":websiteurl,
-                "youtube":youtube,
-                "name":fullname,
-                "designation":enterdesignation,
-                "email2":email2,
-                "phoneno":phoneno,
-            };
-            //console.log(CONFIG.GOURL);
+               selectedtype,
+               Organisationname,
+               emailid,
+               phonenumbers,
+               panno,
+               passwords,
+               facebook,
+               blog,
+               websiteurl,
+               youtube,
+               fullname,
+               enterdesignation,
+               email2,
+               phoneno
+           } = this.getProperties('selectedtype', 'Organisationname', 'emailid', 'phonenumbers','panno','passwords','facebook','blog','websiteurl','youtube','fullname','enterdesignation','email2','phoneno');
+               
+           var dataString = {
+               "userType":"Organisation",
+               "organisation": {"organisationtype": selectedtype, "organisationvalue": Organisationname},
+               "organisationemail": emailid,
+               "organisationphoneno": phonenumbers,
+               "documenttype":{"panno": panno},
+               "password":passwords,
+               "facebook":facebook,
+               "blog":blog,
+               "websiteurl":websiteurl,
+               "youtube":youtube,
+               "name":fullname,
+               "designation":enterdesignation,
+               "email2":email2,
+               "phoneno":phoneno,
+           };
+           
             //alert('YOU ARE SUCCESSFULLY REGISTERED');
             //this.toggleProperty('isShowingModal');
             //this.set('loading_image_visibility', "show");
@@ -411,7 +412,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/crowdfunding/register',
+            url: 'http://192.168.0.24:3010/registeruser',
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
