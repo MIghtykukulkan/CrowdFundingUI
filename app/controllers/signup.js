@@ -283,17 +283,19 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
         },
 
 
-         toggleModal1: function() {
-              var usertype = this.get('usertype');
+         toggleModal1: function() { 
+            var organisationtype = this.get('selectedtype1');
+            console.log('Organisationtype'+organisationtype)
             var name = this.get('name');
             var email = this.get('email');
             var phonenumber = this.get('phonenumber');
             var password = this.get('password');
             var confirmpassword = this.get('confirmpassword');
-            var chosen = this.get('selectedtypes');
+            var documenttype = this.get('selectedtypes1');
+            console.log('documenttype'+documenttype);
             var documentdetail = this.get('documentdetail');
             var designation = this.get('desaination');
-          /* var usertype = this.get('usertype');
+            /*var usertype = this.get('usertype');
             var name = this.get('name');
             var email = this.get('email');
             var phonenumber = this.get('phonenumber');
@@ -305,7 +307,6 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             var email1 = this.get('email1');
             var phonenumber1 = this.get('phonenumber1');
             var designation = this.get ('designation');
-
            /* if ((chosen === null || chosen === undefined) || 
                 (Organisationname === null || Organisationname === undefined || Organisationname === "") || 
                 (emailid === null || emailid === undefined || emailid === "") ||
@@ -419,9 +420,8 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                "email":email,
                "phone":phonenumber1,
                "designation":designation,
-
            };*/
-            if (usertype === null || usertype === undefined || usertype === ""){
+            if (organisationtype === null || organisationtype === undefined || organisationtype === ""){
                 this.set('nameerror', "field cannot be empty")
                 //return;
             }if (name === null || name === undefined || name === ""){
@@ -439,7 +439,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             } if (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") {
                 this.set('confirmpassworderror', "field cannot be empty")
                 //return;
-            } if (chosen === null || chosen === undefined) {
+            } if (documenttype === null || documenttype === undefined) {
                 this.set('documenttypeerror', "field cannot be empty")
                 //return;
             } if (documentdetail === null || documentdetail === undefined || documentdetail === "") {
@@ -448,13 +448,13 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
             } if (designation == null || designation == undefined || designation == ""){
                 this.set('designationerror', "fields cannot be empty")
             }
-             if ((usertype === null || usertype === undefined || usertype === "")||
+             if ((organisationtype === null ||organisationtype === undefined || organisationtype === "")||
                 (name === null || name === undefined || name === "") || 
                 (email === null || email === undefined || email === "") || 
                 (phonenumber === null || phonenumber === undefined || phonenumber === "") ||
                 (password === null || password === undefined || password === "") ||
                 (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") ||
-                (chosen === null || chosen === undefined) ||
+                (documenttype === null || documenttype === undefined) ||
                 (documentdetail === null || documentdetail === undefined || documentdetail === "")
                 (designation === null || designation === undefined || designation === ""))
                 {
@@ -462,13 +462,13 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 }
                 else{
                      let {
-               selectedtype,          
+               selectedtype1,          
                name,
                email,
                phonenumber,
                password,
                confirmpassword,
-               selectedtypes,
+               selectedtypes1,
                documentdetail,
                facebook,
                blog,
@@ -479,32 +479,33 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                designation1,
                email1,
                phonenumber1
-           } = this.getProperties('selectedtype','name', 'email', 'phonenumber', 'password','confirmpassword','selectedtypes','documentdetail','facebook','blog','websiteurl','youtube','designation','name1','designation1','email1','phonenumber1');
+           } = this.getProperties('organisationtype','name', 'email', 'phonenumber', 'password','confirmpassword','documenttype','documentdetail','facebook','blog','websiteurl','youtube','designation','name1','designation1','email1','phonenumber1');
 
            var dataString = {
-               "usertype":"selectedtype",
-               "name": "name",
-               "email": "email",
-               "phone": "phonenumber",
-               "password": "password",
-               "repassword": "confirmpassword",
-               "doctype": "documentdetail",
-               "facebook":"facebook",
-               "blog":"blog",
-               "websiteurl":"websiteurl",
-               "youtube":"youtube",
-               "org":"org",
+               "organisationtype":selectedtype1,
+               "name": name,
+               "email": email,
+               "phone": phonenumber,
+               "password": password,
+               "repassword": confirmpassword,
+               "doctype": selectedtypes1,
+               "facebook":facebook,
+               "blog":blog,
+               "websiteurl":websiteurl,
+               "youtube":youtube,
+               //"org":"org",
               /* "organisationname":"",
                "organisationemail":"",
                "organisationphoneno":"",
                "organisationtype":"",*/
-               "designation":"designation",
-               "name":"name1",
-               "designation":"designation1",
-               "email":"email1",
-               "phone":"phonenumber1"
+               "designation":designation,
+               "name":name1,
+               "designation":designation1,
+               "email":email1,
+               "phone":phonenumber1
            };
-          
+                
+          console.log(dataString);
            
             //alert('YOU ARE SUCCESSFULLY REGISTERED');
             //this.toggleProperty('isShowingModal');
