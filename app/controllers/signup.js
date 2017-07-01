@@ -284,18 +284,27 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
 
 
          toggleModal1: function() {
-            var chosen = this.get('selectedtype');
-            console.log(chosen);
-            var Organisationname = this.get('Organisationname');
-            var emailid = this.get('emailid');
-            var phonenumbers = this.get('phonenumbers');
-            var panno = this.get('panno');
-            var passwords = this.get('passwords');
-            var confirmpasswords = this.get('confirmpasswords');
-            var fullname = this.get('fullname');
-            var enterdesignation = this.get('enterdesignation');
-            var email2 = this.get('email2');
-            var phoneno = this.get('phoneno');
+              var usertype = this.get('usertype');
+            var name = this.get('name');
+            var email = this.get('email');
+            var phonenumber = this.get('phonenumber');
+            var password = this.get('password');
+            var confirmpassword = this.get('confirmpassword');
+            var chosen = this.get('selectedtypes');
+            var documentdetail = this.get('documentdetail');
+            var designation = this.get('desaination');
+          /* var usertype = this.get('usertype');
+            var name = this.get('name');
+            var email = this.get('email');
+            var phonenumber = this.get('phonenumber');
+            var password = this.get('password');
+            var confirmpassword = this.get('confirmpassword');
+            var chosen = this.get('selectedtypes');
+            var documentdetail = this.get('documentdetail');
+            var name1 = this.get('name1');
+            var email1 = this.get('email1');
+            var phonenumber1 = this.get('phonenumber1');
+            var designation = this.get ('designation');
 
            /* if ((chosen === null || chosen === undefined) || 
                 (Organisationname === null || Organisationname === undefined || Organisationname === "") || 
@@ -313,7 +322,7 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 this.set('errormessage7', "This field cannot be blank");
                 this.toggleProperty('isShowingModals');
                 return;
-            }*/ 
+            } 
             if (chosen === null || chosen === undefined){
                 this.set('errormessage1', "Please Select Organisation");
                 //this.toggleProperty('isShowingModals');
@@ -377,37 +386,125 @@ export default Ember.Controller.extend(Validations, ValidationsOrg, {
                 else{
                         let {
                selectedtype,
-               Organisationname,
-               emailid,
-               phonenumbers,
-               panno,
-               passwords,
+               name,
+               email,
+               phonenumber,
+               password,
+               confirmpassword,
+               documentdetail,
                facebook,
                blog,
                websiteurl,
                youtube,
-               fullname,
-               enterdesignation,
-               email2,
-               phoneno
-           } = this.getProperties('selectedtype', 'Organisationname', 'emailid', 'phonenumbers','panno','passwords','facebook','blog','websiteurl','youtube','fullname','enterdesignation','email2','phoneno');
+               name1,
+               email1,
+               phonenumber1,
+               designation,
+           } = this.getProperties('selectedtype', 'name', 'email', 'phonenumber','password', 'confirmpassword','documentdetail','facebook','blog','websiteurl','youtube','name1','email1','phonenumber1','designation');
                
            var dataString = {
-               "userType":"Organisation",
-               "organisation": {"organisationtype": selectedtype, "organisationvalue": Organisationname},
-               "organisationemail": emailid,
-               "organisationphoneno": phonenumbers,
-               "documenttype":{"panno": panno},
-               "password":passwords,
+               "usertype":selectedtype,
+               "name": name,
+               "email": email,
+               "phone": phonenumber,
+               "password": password,
+               "repassword": confirmpassword,
+               "doctype": documentdetail,
                "facebook":facebook,
                "blog":blog,
                "websiteurl":websiteurl,
                "youtube":youtube,
-               "name":fullname,
-               "designation":enterdesignation,
-               "email2":email2,
-               "phoneno":phoneno,
+               "org":"org",
+               "name":name1,
+               "email":email,
+               "phone":phonenumber1,
+               "designation":designation,
+
+           };*/
+            if (usertype === null || usertype === undefined || usertype === ""){
+                this.set('nameerror', "field cannot be empty")
+                //return;
+            }if (name === null || name === undefined || name === ""){
+                this.set('nameerror', "field cannot be empty")
+                //return;
+            } if (email === null || email === undefined || email === "") {
+                this.set('emailerror', "field cannot be empty")
+                //return;
+            } if (phonenumber === null || phonenumber === undefined || phonenumber === "") {
+                this.set('phonenumbererror', "field cannot be empty")
+                //return;
+            } if (password === null || password === undefined || password === "") {
+                this.set('passworderror', "field cannot be empty")
+                //return;
+            } if (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") {
+                this.set('confirmpassworderror', "field cannot be empty")
+                //return;
+            } if (chosen === null || chosen === undefined) {
+                this.set('documenttypeerror', "field cannot be empty")
+                //return;
+            } if (documentdetail === null || documentdetail === undefined || documentdetail === "") {
+                this.set('documentdetailerror', "field cannot be empty")
+                //return;
+            } if (designation == null || designation == undefined || designation == ""){
+                this.set('designationerror', "fields cannot be empty")
+            }
+             if ((usertype === null || usertype === undefined || usertype === "")||
+                (name === null || name === undefined || name === "") || 
+                (email === null || email === undefined || email === "") || 
+                (phonenumber === null || phonenumber === undefined || phonenumber === "") ||
+                (password === null || password === undefined || password === "") ||
+                (confirmpassword === null || confirmpassword === undefined || confirmpassword === "") ||
+                (chosen === null || chosen === undefined) ||
+                (documentdetail === null || documentdetail === undefined || documentdetail === "")
+                (designation === null || designation === undefined || designation === ""))
+                {
+                  this.toggleProperty('isShowingModals');  
+                }
+                else{
+                     let {
+               selectedtype,          
+               name,
+               email,
+               phonenumber,
+               password,
+               confirmpassword,
+               selectedtypes,
+               documentdetail,
+               facebook,
+               blog,
+               websiteurl,
+               youtube,
+               designation,
+               name1,
+               designation1,
+               email1,
+               phonenumber1
+           } = this.getProperties('selectedtype','name', 'email', 'phonenumber', 'password','confirmpassword','selectedtypes','documentdetail','facebook','blog','websiteurl','youtube','designation','name1','designation1','email1','phonenumber1');
+
+           var dataString = {
+               "usertype":"selectedtype",
+               "name": "name",
+               "email": "email",
+               "phone": "phonenumber",
+               "password": "password",
+               "repassword": "confirmpassword",
+               "doctype": "documentdetail",
+               "facebook":"facebook",
+               "blog":"blog",
+               "websiteurl":"websiteurl",
+               "youtube":"youtube",
+               "org":"org",
+              /* "organisationname":"",
+               "organisationemail":"",
+               "organisationphoneno":"",
+               "organisationtype":"",*/
+               "designation":"designation",
+               "name":"name1",
+               "designation":"designation1",
+               "email":"email1",
+               "phone":"phonenumber1"
            };
+          
            
             //alert('YOU ARE SUCCESSFULLY REGISTERED');
             //this.toggleProperty('isShowingModal');
