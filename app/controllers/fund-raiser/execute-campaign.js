@@ -8,8 +8,8 @@ export default Ember.Controller.extend({
             "filterPlaceholder": "Id"
         }, {
             "propertyName": "campaignname",
-            "title": "Campaign Name",
-            "filterPlaceholder": "Campaign Name"
+            "title": "Project Name",
+            "filterPlaceholder": "Project Name"
         }, {
             "propertyName": "fundtransfer",
             "title": "Fund transfer",

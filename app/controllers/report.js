@@ -4,7 +4,7 @@ import CONFIG from 'crowdfunding/config/environment';
 export default Ember.Controller.extend({
     columns: [{
         "propertyName": "CampaignName",
-        "title": "Campaign Name",
+        "title": "Project Name",
         "filterPlaceholder": "Campaign Name",
     }, {
         "propertyName": "PledgeAmount",

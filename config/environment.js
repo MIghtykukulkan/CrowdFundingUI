@@ -40,10 +40,11 @@ module.exports = function(environment) {
         ENV.APP.LOG_VIEW_LOOKUPS = false;
 
         ENV.APP.rootElement = '#ember-testing';
+        ENV.BASE_URL = 'http://119.81.218.178:8082'; 
     }
 
     if (environment === 'production') {
-
+        ENV.BASE_URL = 'http://119.81.218.178:8082'; 
     }
 
     return ENV;
