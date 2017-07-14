@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 var browse="";
 var showHelpPopUp = false;
 export default Ember.Controller.extend({
@@ -36,7 +37,7 @@ export default Ember.Controller.extend({
 
          var data;
          return   $.ajax({
-         url:"http://localhost:8082/crowdfunding/browsecampaign/"+arg,
+         url: CONFIG.BASE_URL + "/crowdfunding/browsecampaign/" + arg,
          type: 'GET',
          contentType: 'application/json;charset=utf-8',
             //Authorization: token,

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 export default Ember.Controller.extend({
     isCampAuthorize: false,
@@ -44,7 +45,7 @@ export default Ember.Controller.extend({
            //console.log(token);
            this.set('campaignname',record.campaignname);
             $.ajax({
-                    url: 'http://localhost:8082/fund-raiser/dashboard/',
+                    url: CONFIG.BASE_URL + "/fund-raiser/dashboard/",
                     type: 'GET',
                     accepts: 'application/json',
                     //Authorization: token,

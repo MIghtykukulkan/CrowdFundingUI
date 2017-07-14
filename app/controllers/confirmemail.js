@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 import {
     validator,
@@ -41,7 +42,7 @@ export default Ember.Controller.extend(Validations,{
             var message;
             //console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/confirmemail/mail',
+            url: CONFIG.BASE_URL + "/confirmemail/mail",
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
@@ -62,7 +63,7 @@ export default Ember.Controller.extend(Validations,{
             }
            });
            
-             this.toggleProperty('isShowingModal');
+             //this.toggleProperty('isShowingModal');
         },
         resetpassword:function(){
              let {
@@ -81,7 +82,7 @@ export default Ember.Controller.extend(Validations,{
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/confirmemail/otp',
+            url: CONFIG.BASE_URL + "/confirmemail/otp",
             type: 'POST',
             accepts: 'application/json',
             data: dataString,

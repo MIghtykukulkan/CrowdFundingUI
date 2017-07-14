@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 export default Ember.Controller.extend({
     actions: {
@@ -13,7 +14,7 @@ export default Ember.Controller.extend({
             sessionStorage.setItem('createdby', arg3);
              var datastring;
             $.ajax({
-                url:"http://localhost:8082/crowdfunding/createcampaign",
+                url: CONFIG.BASE_URL + "/crowdfunding/createcampaign",
                 type: 'GET',
                 contentType: 'application/json;charset=utf-8',
             //Authorization: token,

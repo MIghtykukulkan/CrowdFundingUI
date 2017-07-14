@@ -10,7 +10,7 @@ export default Ember.Component.extend({
         function drawRegionsMap() {
 
             var data = google.visualization.arrayToDataTable([
-                ['Country', 'Campaigns', 'Percentage of Funder'],
+                ['Country', 'Projects', 'Percentage of Funder'],
                 ['Germany', 100, 65],
                 ['United States', 300, 20],
                 ['Brazil', 400, 86],

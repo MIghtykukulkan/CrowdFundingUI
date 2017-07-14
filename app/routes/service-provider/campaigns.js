@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 export default Ember.Route.extend({
     model() {
@@ -28,7 +29,7 @@ export default Ember.Route.extend({
            //var token = sessionStorage.getItem('token');
            //console.log(token);
            return $.ajax({
-                    url: 'http://localhost:8082/service-provider/campaigns/',
+                    url: CONFIG.BASE_URL + "/service-provider/campaigns/",
                     type: 'GET',
                     accepts: 'application/json',
                     //Authorization: token,

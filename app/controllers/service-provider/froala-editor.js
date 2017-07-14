@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 export default Ember.Controller.extend({
   
@@ -13,7 +14,7 @@ actions:{
         }
          var mycontroller = this;
        return $.ajax({
-            url: 'http://localhost:8082/service-provider/froala-editor',
+            url: CONFIG.BASE_URL + "/service-provider/froala-editor",
             type: 'POST',
             accepts: 'application/json',
             data: datastring,

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 var likecount =0;
 var spamcount =0;
 export default Ember.Controller.extend({
@@ -34,7 +35,7 @@ export default Ember.Controller.extend({
             var message;
            // console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/campaign-detail',
+            url: CONFIG.BASE_URL + "/campaign-detail",
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
@@ -67,7 +68,7 @@ export default Ember.Controller.extend({
 
             var datastring;
             $.ajax({
-                url:"http://localhost:8082/campaign-detail/aboutfunder",
+                url: CONFIG.BASE_URL + "/campaign-detail/aboutfunder",
                 type: 'GET',
                 contentType: 'application/json;charset=utf-8',
             //Authorization: token,

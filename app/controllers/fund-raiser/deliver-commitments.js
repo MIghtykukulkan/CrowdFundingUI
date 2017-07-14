@@ -2,13 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     columns: [{
-        "propertyName": "campaignId",
-        "title": "Campaign Id",
-        "filterPlaceholder": "Campaign Id"
+        "propertyName": "ProjectId",
+        "title": "Project Id",
+        "filterPlaceholder": "Project Id"
     }, {
-        "propertyName": "campaigndetails",
-        "title": "Campaign Details",
-        "filterPlaceholder": "Campaign Details"
+        "propertyName": "Projectdetails",
+        "title": "Project Details",
+        "filterPlaceholder": "Project Details"
     }, {
         "propertyName": "fundername",
         "title": "Funder Name",

@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
+
 export default Ember.Route.extend({
         model() {
             /*var data = [{
@@ -25,7 +27,7 @@ export default Ember.Route.extend({
            //var token = sessionStorage.getItem('token');
            //console.log(token);
            return $.ajax({
-                    url: 'http://localhost:8082/fund-raiser/list-approve-bids',
+                    url: CONFIG.BASE_URL + "/fund-raiser/list-approve-bids",
                     type: 'GET',
                     accepts: 'application/json',
                     //Authorization: token,

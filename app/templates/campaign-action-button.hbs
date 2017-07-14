@@ -1,9 +1,9 @@
 
 {{#if record.regStatus}}
     {{#if record.campStatus}}
-        Campaign closed
+        Project closed
     {{else}}
-        <button {{action 'sendAction' 'action' record}}>Close Campaign</button>
+        <button {{action 'sendAction' 'action' record}}>Close Project</button>
     {{/if}}
 {{else}}
     <button {{action 'sendAction' 'action' record}}>Authorize</button>

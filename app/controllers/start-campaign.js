@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
+
 import {
     validator,
     buildValidations
@@ -63,31 +65,7 @@ var Validations = buildValidations({
          max: 160,
     
         })
-    ],
-
-
-    rewardtitle: [
-         validator('presence', true),
-        validator('format', {
-            regex: /^[A-Za-z/-/-_/ ]+$/
-        })
-    ],
-
-    rewardamount: [
-        validator('presence', true),
-        validator('format', {
-            regex:/^[0-9.]+$/,
-            type: 'number'
-        })
-    ],
-
-    rewarddescription: [
-        validator('presence', true),
-        validator('length', {
-         max: 160,
-    
-        })
-    ],
+    ]
 });
 
 export default Ember.Controller.extend(Validations,{
@@ -118,7 +96,7 @@ export default Ember.Controller.extend(Validations,{
     formData.append('photo', imgFile);
     Ember.$.ajax({
       type: 'POST',
-      url: 'http://localhost:8082/start-campaign/img',
+      url: CONFIG.BASE_URL + "/start-campaign/img",
       data: formData,
       cache: false,
       contentType: false,
@@ -154,7 +132,7 @@ export default Ember.Controller.extend(Validations,{
     formData.append('video', videoFile);
     Ember.$.ajax({
       type: 'POST',
-      url: 'http://localhost:8082/start-campaign/video',
+      url: CONFIG.BASE_URL + "/start-campaign/video",
       data: formData,
       cache: false,
       contentType: false,
@@ -297,7 +275,7 @@ export default Ember.Controller.extend(Validations,{
                selectedtypes,
                content,
                contents,
-               img,
+               //img,
                goalamount,
                startdeliverydate,
                startproject,
@@ -324,16 +302,19 @@ export default Ember.Controller.extend(Validations,{
              
 
              var datastring={
-                 "campaign_title":campaigntitle,
+            "campaign_title":campaigntitle,
             "campaign_category":selectedtypes,
             "campaign_story":content,
             "campaign_discription":content,
-            "campaign_image":JSON.stringify(formData),
-            "campaign_video":JSON.stringify(myformData),
+           // "campaign_image":JSON.stringify(formData),
+           // "campaign_video":JSON.stringify(myformData),
             "goal_amt":goalamount,
-            "project_start_date":JSON.stringify(startdeliverydate),
+            "project_start_date":startdeliverydate,
             "initial_amount":startproject,
-            "campaign_end_date":JSON.stringify(enddeliverydate)
+            "campaign_end_date":enddeliverydate,
+            "rewardtitle":rewardtitle,
+            "rewardamount" : rewardamount,
+            "rewarddescription":rewarddescription
 
             }
                     console.log(JSON.stringify(datastring));
@@ -344,8 +325,7 @@ export default Ember.Controller.extend(Validations,{
             var mydata ;
             //console.log(mydata);
             return $.ajax({
-            url: "http://192.168.0.24:3010/createCampaign",
-
+            url: CONFIG.BASE_URL + "/createcampaign",
             type: 'POST',
             contentType:'application/json',
             data:JSON.stringify(datastring),

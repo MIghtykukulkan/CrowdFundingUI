@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 import {
     validator,
     buildValidations
@@ -47,7 +48,7 @@ export default Ember.Controller.extend(Validations,{
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/funder_dashboard',
+            url: CONFIG.BASE_URL + "/funder_dashboard",
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
@@ -67,7 +68,7 @@ export default Ember.Controller.extend(Validations,{
                    console.log('DEBUG: GET Enquiries Failed');
             }
            });
-            this.toggleProperty('showFeedback');
+           // this.toggleProperty('showFeedback');
         }
     }
 });

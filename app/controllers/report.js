@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 export default Ember.Controller.extend({
     columns: [{
@@ -37,7 +38,7 @@ export default Ember.Controller.extend({
 
                var data;
          $.ajax({
-         url:"http://localhost:8082/funder_dashboard",
+         url: CONFIG.BASE_URL + "/funder_dashboard",
          type: 'GET',
          contentType: 'application/json;charset=utf-8',
             //Authorization: token,

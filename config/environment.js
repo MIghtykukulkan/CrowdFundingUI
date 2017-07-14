@@ -28,6 +28,7 @@ module.exports = function(environment) {
         // ENV.APP.LOG_TRANSITIONS = true;
         // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
         // ENV.APP.LOG_VIEW_LOOKUPS = true;
+        ENV.BASE_URL = 'http://119.81.218.178:8082'; 
     }
 
     if (environment === 'test') {

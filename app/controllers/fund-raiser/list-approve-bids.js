@@ -3,8 +3,8 @@ export default Ember.Controller.extend({
     isFunderAuthorize: false,
     columns: [{
         "propertyName": "CampaignName",
-        "title": "Campaign Name",
-        "filterPlaceholder": "Campaign Name"
+        "title": "Project Name",
+        "filterPlaceholder": "Project Name"
     }, {
         "propertyName": "FunderName",
         "title": "Funder Name",

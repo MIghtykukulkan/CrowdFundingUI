@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'crowdfunding/config/environment';
 
 import {
     validator,
@@ -49,7 +50,7 @@ export default Ember.Controller.extend(Validations,{
             var message;
             console.log("Registration Input: " + JSON.stringify(dataString));
             return $.ajax({
-            url: 'http://localhost:8082/reset-password',
+            url: CONFIG.BASE_URL + "/reset-password",
             type: 'POST',
             accepts: 'application/json',
             data: dataString,
